@@ -1,0 +1,7 @@
+{
+  "name": "geosurveyhub",
+  "private": true,
+  "devDependencies": {
+    "wrangler": "^4.28.0"
+  }
+}

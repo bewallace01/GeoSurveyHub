@@ -1,0 +1,13 @@
+# Not served as public static files (Worker code & tooling live outside the asset bundle)
+src/
+scripts/
+docs/
+.github/
+
+# Meta / local
+.env
+.env.*
+*.md
+.cursorrules
+
+node_modules/
