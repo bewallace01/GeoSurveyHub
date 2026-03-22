@@ -46,4 +46,5 @@ Use your real `news-config.local.js` locally; Wrangler does not run the inject s
 
 - **Blank news on production:** Confirm `RSS2JSON_KEY` is set, **Save**, then **Deployments → Retry deployment** or push a new commit.
 - **Build fails:** Ensure **Root directory** is `geosurveyhub` so `node scripts/inject-news-config.mjs` runs from the folder that contains `scripts/`.
+- **`npm ci` / “no package-lock.json”:** The lockfile is under `geosurveyhub/`. Either set **Root directory** to `geosurveyhub`, or from the repo root use `npm ci --prefix geosurveyhub` (see [CLOUDFLARE-WORKERS.md](./CLOUDFLARE-WORKERS.md)).
 - **Keys in client bundle:** rss2json keys are always visible in the browser; that’s normal for this static approach. For stronger protection you’d add a small Worker proxy (advanced).
