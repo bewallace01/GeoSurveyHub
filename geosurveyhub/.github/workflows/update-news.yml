@@ -1,0 +1,92 @@
+# .github/workflows/update-news.yml
+#
+# GeoSurveyHub — Daily News Updater
+#
+# Runs automatically every day at 6:30 AM UTC (2:30 AM Eastern)
+# so fresh news is ready when US visitors arrive in the morning.
+#
+# Setup (one time):
+#   1. Push this repo to GitHub
+#   2. Go to Settings → Secrets and variables → Actions
+#   3. Add secret: ANTHROPIC_API_KEY = your Anthropic API key
+#   4. (Optional) Add secret: NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID
+#      to trigger an automatic Netlify redeploy after news updates
+#
+# Manual trigger:
+#   Go to Actions tab → "Daily News Update" → Run workflow
+
+name: Daily News Update
+
+on:
+  schedule:
+    # 6:30 AM UTC every day (2:30 AM Eastern, 11:30 PM Pacific)
+    - cron: '30 6 * * *'
+  workflow_dispatch:
+    # Allow manual trigger from GitHub Actions tab
+    inputs:
+      force_refresh:
+        description: 'Force refresh all articles'
+        required: false
+        default: 'false'
+
+jobs:
+  update-news:
+    name: Fetch & Curate Geospatial News
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write   # needed to commit news.json back to repo
+
+    steps:
+      # ── 1. Checkout repo ─────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── 2. Setup Node.js ─────────────────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ── 3. Run the news updater ───────────────────────────────
+      - name: Fetch and curate news
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "Running GeoSurveyHub news updater..."
+          node scripts/update-news.js
+
+      # ── 4. Commit updated news.json ───────────────────────────
+      - name: Commit news.json if changed
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GeoSurveyHub Bot"
+          git add content/news.json
+          # Only commit if news.json actually changed
+          if git diff --staged --quiet; then
+            echo "No changes to news.json — skipping commit"
+          else
+            git commit -m "chore: update news feed [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+            git push
+            echo "news.json committed and pushed"
+          fi
+
+      # ── 5. Trigger Netlify redeploy (optional) ────────────────
+      # Only runs if NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID secrets are set
+      - name: Trigger Netlify redeploy
+        if: ${{ secrets.NETLIFY_AUTH_TOKEN != '' && secrets.NETLIFY_SITE_ID != '' }}
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+            "https://api.netlify.com/api/v1/sites/${{ secrets.NETLIFY_SITE_ID }}/builds"
+          echo "Netlify redeploy triggered"
+
+      # ── 6. Summary ────────────────────────────────────────────
+      - name: Print summary
+        run: |
+          echo "### News Update Complete" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "**Articles in news.json:** $(node -e "const d=require('./content/news.json');console.log(d.length)" 2>/dev/null || echo 'unknown')" >> $GITHUB_STEP_SUMMARY

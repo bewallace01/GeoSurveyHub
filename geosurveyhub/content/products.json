@@ -1,0 +1,302 @@
+[
+  {
+    "id": "dji-matrice-350-rtk",
+    "name": "DJI Matrice 350 RTK",
+    "category": "drones",
+    "subcategory": "drone-platform",
+    "price": 13699,
+    "brand": "DJI Enterprise",
+    "badge": "Best Seller",
+    "specs": {
+      "flight_time": "55 min",
+      "payload_capacity": "2.7 kg",
+      "transmission_range": "20 km",
+      "ip_rating": "IP55",
+      "max_speed": "23 m/s",
+      "compatible_sensors": ["Zenmuse L2", "Zenmuse P1", "Zenmuse H30T"]
+    },
+    "description": "Industry-standard multirotor platform for LiDAR and photogrammetry. Pairs with Zenmuse L2 for centimeter-accurate terrain mapping. 55-minute flight time and IP55 rating make it the workhorse for most commercial survey operations.",
+    "use_cases": ["topographic-mapping", "corridor-mapping", "construction", "forestry"],
+    "guide_match": ["drone-lidar", "drone-photogrammetry"]
+  },
+  {
+    "id": "dji-zenmuse-l2",
+    "name": "DJI Zenmuse L2",
+    "category": "sensors",
+    "subcategory": "drone-lidar",
+    "price": 11000,
+    "brand": "DJI Enterprise",
+    "badge": "New",
+    "specs": {
+      "point_rate": "240,000 pts/sec",
+      "range": "450 m",
+      "accuracy_vertical": "4 cm",
+      "accuracy_horizontal": "5 cm",
+      "camera": "4/3 CMOS, 20MP",
+      "compatible_platforms": ["Matrice 350 RTK"]
+    },
+    "description": "DJI's flagship LiDAR payload. 240,000 points/sec, 450m detection range, and integrated 4/3-inch CMOS camera for true-color point clouds. The standard choice for commercial survey operations on DJI platforms.",
+    "use_cases": ["topographic-mapping", "forestry", "construction", "powerline-inspection"],
+    "guide_match": ["drone-lidar"]
+  },
+  {
+    "id": "riegl-vux-10025",
+    "name": "RIEGL VUX-10025",
+    "category": "sensors",
+    "subcategory": "drone-lidar",
+    "price": 75000,
+    "brand": "RIEGL",
+    "badge": "Pro Series",
+    "specs": {
+      "point_rate": "1,300,000 pts/sec",
+      "pulse_rate": "1,500 kHz",
+      "fov": "160°",
+      "weight": "2.2 kg",
+      "range": "1,400 m (80% reflectivity)",
+      "scan_speed": "200 lines/sec"
+    },
+    "description": "Professional UAV LiDAR scanner with industry-leading 1.3M pts/sec acquisition. 160-degree extra-wide FOV for complex terrain and narrow canyon mapping. Available standalone or as fully integrated UAV system with IMU/GNSS.",
+    "use_cases": ["corridor-mapping", "mining", "forestry", "topographic-mapping", "canyon-mapping"],
+    "guide_match": ["airborne-lidar", "drone-lidar"]
+  },
+  {
+    "id": "riegl-vux-820g",
+    "name": "RIEGL VUX-820-G",
+    "category": "sensors",
+    "subcategory": "drone-lidar",
+    "price": 95000,
+    "brand": "RIEGL",
+    "badge": "New 2025",
+    "specs": {
+      "weight": "5.7 kg",
+      "capability": "Topo + Bathymetric",
+      "gnss_imu": "Embedded RiLOC-F-inside",
+      "accuracy": "2–3 cm after post-processing",
+      "bathymetric_depth": "2× Secchi depth",
+      "camera_interface": "RGB, yes"
+    },
+    "description": "All-in-one topographic and shallow-water bathymetric LiDAR for drones. Maps land and water in a single flight. Embedded GNSS/IMU eliminates external navigation boxes. Ideal for coastal, riverine, and watershed surveys.",
+    "use_cases": ["coastal-survey", "riverine-mapping", "watershed", "flood-modeling", "topo-bathy"],
+    "guide_match": ["airborne-lidar", "drone-lidar"]
+  },
+  {
+    "id": "leica-rtc360",
+    "name": "Leica RTC360",
+    "category": "lidar",
+    "subcategory": "terrestrial-scanner",
+    "price": 55000,
+    "brand": "Leica",
+    "badge": "Industry Standard",
+    "specs": {
+      "point_rate": "2,000,000 pts/sec",
+      "range": "130 m",
+      "accuracy": "1.9 mm @ 10 m",
+      "scan_time": "< 2 min full dome",
+      "imaging": "HDR 360° onboard",
+      "weight": "5.35 kg"
+    },
+    "description": "The benchmark terrestrial LiDAR scanner for as-built documentation, BIM, and structural inspection. Under 2-minute full-dome scan time. Onboard HDR imaging for true-color point clouds. Integrates with Leica Cyclone ecosystem.",
+    "use_cases": ["as-built", "bim", "structural-inspection", "heritage", "interior-mapping"],
+    "guide_match": []
+  },
+  {
+    "id": "trimble-r12i",
+    "name": "Trimble R12i GNSS",
+    "category": "gnss-rtk",
+    "subcategory": "rtk-rover",
+    "price": 25000,
+    "brand": "Trimble",
+    "badge": "Top Rated",
+    "specs": {
+      "accuracy_hz": "8 mm + 0.5 ppm",
+      "accuracy_v": "15 mm + 0.5 ppm",
+      "tilt_compensation": "Yes, IMU-based, up to 60°",
+      "constellations": "GPS, GLONASS, Galileo, BeiDou",
+      "frequencies": "L1/L2/L5",
+      "data_link": "UHF radio + cellular"
+    },
+    "description": "Industry-leading RTK rover with ProPoint GNSS engine and IMU-based tilt compensation. Take accurate measurements up to 60° of tilt — no need to level the rod. The benchmark for precision land surveying.",
+    "use_cases": ["boundary-survey", "construction-stakeout", "topographic-survey", "as-built"],
+    "guide_match": ["rtk-photogrammetry"]
+  },
+  {
+    "id": "emlid-reach-rs3",
+    "name": "Emlid Reach RS3",
+    "category": "gnss-rtk",
+    "subcategory": "rtk-rover",
+    "price": 2999,
+    "brand": "Emlid",
+    "badge": "Best Value",
+    "specs": {
+      "accuracy_hz": "7 mm + 1 ppm",
+      "accuracy_v": "14 mm + 1 ppm",
+      "constellations": "GPS, GLONASS, Galileo, BeiDou, QZSS",
+      "frequencies": "L1/L2/L5",
+      "correction": "LoRa radio + NTRIP",
+      "battery": "16 hours"
+    },
+    "description": "Affordable RTK GNSS rover with professional specifications. Multi-frequency, multi-constellation. Connects to NTRIP correction networks via cellular. The go-to entry point for budget-conscious survey operations and drone GCP work.",
+    "use_cases": ["gcps", "boundary-survey", "topographic-survey", "drone-georeferencing"],
+    "guide_match": ["rtk-photogrammetry"]
+  },
+  {
+    "id": "dji-zenmuse-p1",
+    "name": "DJI Zenmuse P1",
+    "category": "sensors",
+    "subcategory": "photogrammetry-camera",
+    "price": 8999,
+    "brand": "DJI Enterprise",
+    "badge": null,
+    "specs": {
+      "resolution": "45 MP",
+      "sensor": "Full-frame 35mm",
+      "shutter": "Mechanical global shutter",
+      "stabilization": "3-axis",
+      "gsd_at_100m": "2.4 cm",
+      "compatible_platforms": ["Matrice 350 RTK", "Matrice 300 RTK"]
+    },
+    "description": "45MP full-frame photogrammetry payload for DJI enterprise drones. Mechanical global shutter eliminates rolling shutter distortion. 3-axis stabilization ensures sharp images at higher speeds. The standard for drone photogrammetry deliverables.",
+    "use_cases": ["photogrammetry", "topographic-mapping", "construction", "orthophoto"],
+    "guide_match": ["drone-photogrammetry", "fixed-wing-photogrammetry"]
+  },
+  {
+    "id": "emesent-gx1",
+    "name": "Emesent GX1",
+    "category": "lidar",
+    "subcategory": "slam-scanner",
+    "price": 45000,
+    "brand": "Emesent",
+    "badge": "New 2026",
+    "specs": {
+      "technology": "SLAM + RTK",
+      "imaging": "360° integrated",
+      "gps_required": "No — GPS-denied capable",
+      "platforms": "Handheld / Drone / Backpack",
+      "connectivity": "Real-time data streaming",
+      "environment": "Indoor + Outdoor"
+    },
+    "description": "All-in-one SLAM LiDAR, RTK positioning, and 360° imagery in a single integrated unit. Maps GPS-denied environments including tunnels, mines, underground utilities, and dense urban canyons. Launched at Geo Week 2026.",
+    "use_cases": ["underground", "mining", "tunnels", "gps-denied", "indoor-mapping"],
+    "guide_match": ["gpr-total-station"]
+  },
+  {
+    "id": "leica-ts16",
+    "name": "Leica TS16 Total Station",
+    "category": "lidar",
+    "subcategory": "total-station",
+    "price": 18000,
+    "brand": "Leica",
+    "badge": null,
+    "specs": {
+      "angular_accuracy": "1\"",
+      "emd_range_prism": "3,500 m",
+      "edm_range_reflectorless": "1,000 m",
+      "automation": "ATR (Auto Target Recognition)",
+      "onboard_camera": "Video live view",
+      "operation": "Robotic / Manual"
+    },
+    "description": "The benchmark robotic total station for boundary, control, and construction surveys. Automatic Target Recognition locks onto prism without manual aiming. 1-arc-second angular accuracy. Integrates with Leica Captivate field software.",
+    "use_cases": ["boundary-survey", "construction-stakeout", "control-network", "monitoring"],
+    "guide_match": []
+  },
+  {
+    "id": "faro-focus-premium",
+    "name": "Faro Focus Premium",
+    "category": "lidar",
+    "subcategory": "terrestrial-scanner",
+    "price": 42000,
+    "brand": "Faro",
+    "badge": null,
+    "specs": {
+      "range": "350 m",
+      "point_rate": "2,000,000 pts/sec",
+      "accuracy": "±1 mm @ 10 m",
+      "weight": "4.2 kg",
+      "ip_rating": "IP54",
+      "imaging": "165 MP integrated"
+    },
+    "description": "Long-range terrestrial scanner popular for construction, architecture, and as-built documentation. 350m range, 165MP onboard imaging. Compact, lightweight design. Widely used for BIM deliverables and factory/industrial scanning.",
+    "use_cases": ["as-built", "bim", "construction", "architecture", "factory-scanning"],
+    "guide_match": []
+  },
+  {
+    "id": "trimble-mx9",
+    "name": "Trimble MX9 Mobile Mapping",
+    "category": "trucks",
+    "subcategory": "mobile-mapping-system",
+    "price": 185000,
+    "brand": "Trimble",
+    "badge": "Fleet Pricing",
+    "specs": {
+      "lidar_scanners": "4× rotating scanners",
+      "cameras": "360° + forward oblique",
+      "gnss": "Dual-antenna",
+      "accuracy": "2–3 cm absolute",
+      "coverage_rate": "50–200 km/day",
+      "vehicle_compatibility": "Any vehicle roof rack"
+    },
+    "description": "Modular mobile mapping system for road condition surveys, corridor mapping, and urban 3D. Four LiDAR scanners ensure full 360° coverage at highway speeds. Mounts on any vehicle with a standard roof rack.",
+    "use_cases": ["corridor-mapping", "road-survey", "urban-3d", "asset-inventory", "infrastructure"],
+    "guide_match": ["mobile-mapping-truck"]
+  },
+  {
+    "id": "rugged-tablet-fc7",
+    "name": "Getac ZX10 Field Tablet",
+    "category": "computers",
+    "subcategory": "rugged-tablet",
+    "price": 3200,
+    "brand": "Getac",
+    "badge": null,
+    "specs": {
+      "display": "10.1\" sunlight-readable",
+      "mil_spec": "MIL-STD-810H",
+      "ip_rating": "IP67",
+      "battery": "12+ hours",
+      "os": "Windows 11 Pro",
+      "connectivity": "4G LTE, GPS, Bluetooth 5.2"
+    },
+    "description": "Military-spec rugged tablet built for field survey work. Sunlight-readable display works in direct sun. IP67 waterproof — survives submersion. Runs full Windows for Trimble Access, Leica Captivate, and field GIS applications.",
+    "use_cases": ["field-data-collection", "survey-control", "gis-field", "inspection"],
+    "guide_match": []
+  },
+  {
+    "id": "topcon-gt1003",
+    "name": "Topcon GT-1003 Total Station",
+    "category": "lidar",
+    "subcategory": "total-station",
+    "price": 22000,
+    "brand": "Topcon",
+    "badge": null,
+    "specs": {
+      "angular_accuracy": "0.5\"",
+      "edm_range_prism": "6,000 m",
+      "edm_range_reflectorless": "2,000 m",
+      "automation": "Robotic, auto-tracking",
+      "measurement_rate": "0.3 sec",
+      "battery": "8 hours"
+    },
+    "description": "High-accuracy robotic total station with 0.5-arc-second precision and 6km prism range. Sub-second measurement speed for efficient stakeout and control work. Auto-tracking prism for one-person operation.",
+    "use_cases": ["boundary-survey", "construction-stakeout", "deformation-monitoring", "machine-control"],
+    "guide_match": []
+  },
+  {
+    "id": "ids-mymo",
+    "name": "IDS GeoRadar MyMO Monitor",
+    "category": "sensors",
+    "subcategory": "monitoring",
+    "price": 18500,
+    "brand": "IDS GeoRadar",
+    "badge": "New 2026",
+    "specs": {
+      "technology": "Radar interferometry",
+      "accuracy": "Sub-millimeter displacement",
+      "contact_required": "No — non-contact",
+      "portability": "Handheld / tripod mount",
+      "applications": "Bridges, retaining walls, slopes",
+      "data_output": "Real-time displacement data"
+    },
+    "description": "Portable non-contact structural monitoring device using radar interferometry. Detects millimeter-level displacement in bridges, retaining walls, and unstable slopes — without attaching targets to the structure. Released February 2026.",
+    "use_cases": ["structural-monitoring", "bridge-inspection", "slope-stability", "dam-monitoring"],
+    "guide_match": []
+  }
+]

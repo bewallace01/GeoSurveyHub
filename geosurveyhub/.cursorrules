@@ -1,0 +1,425 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  GeoSurveyHub — Cursor AI Master Rules                        ║
+# ║  Read this ENTIRE file before writing a single line of code ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# ── SITE MISSION ──────────────────────────────────────────────
+# GeoSurveyHub is a FREE educational platform for the surveying,
+# GIS, and geospatial industry. It does NOT sell equipment.
+# It educates, guides, and connects — then routes interested
+# readers to a financing/interest form.
+#
+# Three pillars:
+#   1. EDUCATE  — explain every technology from zero to expert
+#   2. GUIDE    — help anyone figure out what they need
+#   3. CONNECT  — financing form for people ready to act
+# ─────────────────────────────────────────────────────────────
+
+
+# ════════════════════════════════════════════════════════════════
+# SECTION 1 — DESIGN SYSTEM (MNTN TEMPLATE, NON-NEGOTIABLE)
+# ════════════════════════════════════════════════════════════════
+
+## COLOR PALETTE — exact hex, zero deviation allowed
+```css
+:root {
+  --bg:           #0B1D26;
+  --surface:      #162535;
+  --surface2:     #1C2F3D;
+  --surface3:     #0f1e2a;
+  --white:        #FFFFFF;
+  --muted:        #7A8B99;
+  --accent:       #FBD784;
+  --accent-dim:   #C9A55A;
+  --accent-glow:  rgba(251,215,132,0.08);
+  --border:       rgba(255,255,255,0.07);
+  --border-mid:   rgba(255,255,255,0.12);
+  --border-accent:rgba(251,215,132,0.25);
+}
+```
+
+## TYPOGRAPHY
+- Display/H1/H2: Playfair Display serif — italic for emphasis words in em tags
+- UI/Nav/Kickers/Labels/Buttons: Barlow Condensed sans-serif
+- Body paragraphs: Barlow sans-serif weight 300
+- Code/Specs/Coords/Numbers: Space Mono monospace
+- Google Fonts: https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600&family=Space+Mono&display=swap
+
+## LAYOUT CONSTANTS
+- Max content width: 1200px centered
+- Section padding: 120px vertical / 60px horizontal
+- Text column max-width: 440px
+- MNTN alternating sections: grid 1fr 1fr, direction:rtl for reverse
+- Dividers: 1px solid var(--border) — never hr tags
+- Border-radius: 2px for buttons/badges, 4px for cards/panels
+- NO box-shadows, NO gradients on backgrounds, NO white backgrounds
+
+## AESTHETIC REQUIREMENTS — STRICTLY ENFORCED
+Every page MUST have:
+  - A full-viewport hero with SVG background (terrain/grid/crosshair motif)
+  - Kicker labels: 11px, 5px letter-spacing, uppercase, accent color, 32px line prefix
+  - Section numbers (01/02/03) above each major section
+  - Playfair Display headlines with at least one italic accent word in em tags
+  - "Read More" links with arrow suffix and gap-grow hover animation
+  - Vertical side-text on hero (writing-mode: vertical-rl)
+  - Scroll indicator bottom-left on hero
+  - Step dots bottom-right on hero
+  - Brands/partners row muted then brightens on hover
+  - Full 4-column footer
+
+Pages must feel like precision instruments: dark, calibrated, purposeful.
+Every section needs visual breathing room. Never crowd content.
+SVG icons throughout: stroke var(--accent), fill none, stroke-width 1.
+
+
+# ════════════════════════════════════════════════════════════════
+# SECTION 2 — COMPLETE FILE STRUCTURE
+# ════════════════════════════════════════════════════════════════
+
+geosurveyhub/
+  index.html
+  pages/
+    guide.html
+    lidar.html
+    drones.html
+    gnss-rtk.html
+    sensors.html
+    computers.html
+    trucks.html
+    ai-ml.html          (NEW — AI & Machine Learning in Geospatial)
+    news.html
+    financing.html      (NEW — Equipment Financing Interest Form)
+  assets/
+    css/
+      global.css
+      pages.css
+      animations.css    (NEW)
+    js/
+      nav.js
+      quiz.js
+      news.js
+      financing.js      (NEW)
+      animations.js     (NEW)
+    images/
+  components/
+    nav.html
+    footer.html
+  content/
+    products.json
+    news.json
+    guide-content.json
+  docs/
+    BRIEF.md
+    NEWS.md
+    TECH-RUNDOWN.md
+    CONTENT-GUIDE.md
+    AI-ML-GUIDE.md      (NEW)
+    SEO-GEO-GUIDE.md    (NEW)
+    FINANCING-SPEC.md   (NEW)
+
+
+# ════════════════════════════════════════════════════════════════
+# SECTION 3 — SEO & GEO OPTIMIZATION (EVERY PAGE)
+# ════════════════════════════════════════════════════════════════
+
+## HEAD META TEMPLATE — apply to every HTML file
+```html
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Page Title] | GeoSurveyHub</title>
+  <meta name="description" content="[150 chars max]">
+  <meta name="keywords" content="[5-8 keywords]">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.geosurveyhub.com/[path]">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[Title]">
+  <meta property="og:description" content="[Description]">
+  <meta property="og:url" content="https://www.geosurveyhub.com/[path]">
+  <meta property="og:site_name" content="GeoSurveyHub">
+  <meta property="og:image" content="https://www.geosurveyhub.com/assets/images/og-[page].jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[Title]">
+  <meta name="twitter:description" content="[Description]">
+  <meta name="geo.region" content="US">
+  <meta name="geo.placename" content="Charlotte, North Carolina">
+  <meta name="geo.position" content="35.2271;-80.0936">
+  <meta name="ICBM" content="35.2271, -80.0936">
+  <meta name="ai-content-type" content="educational-guide">
+  <meta name="content-focus" content="geospatial, surveying, LiDAR, GIS, photogrammetry">
+  <meta name="expertise-level" content="beginner to professional">
+  <script type="application/ld+json">{ /* page schema */ }</script>
+</head>
+```
+
+## PER-PAGE TITLES & DESCRIPTIONS
+
+index.html:
+  Title: Professional Surveying & GIS Equipment Guide | GeoSurveyHub
+  Desc: Free guide to LiDAR, drone surveying, GNSS/RTK, photogrammetry, and GIS equipment. Learn what technology fits your project and connect with financing options.
+  Schema: Organization + WebSite with SearchAction
+
+pages/guide.html:
+  Title: Surveying Equipment Buyer's Guide — Find the Right Tech | GeoSurveyHub
+  Desc: Answer 4 questions and get a personalized equipment recommendation. Covers LiDAR, drones, GNSS/RTK, total stations, and mobile mapping for all project types.
+  Schema: FAQPage
+
+pages/lidar.html:
+  Title: LiDAR Technology Explained — Systems, Uses & How to Choose | GeoSurveyHub
+  Desc: Complete guide to terrestrial, drone, and airborne LiDAR systems. Learn how LiDAR works, when to use it, and which sensors fit your project type and budget.
+  Schema: TechArticle
+
+pages/drones.html:
+  Title: Survey Drones — Platforms, Payloads & Photogrammetry Guide | GeoSurveyHub
+  Desc: Learn how survey drones work, what LiDAR and camera payloads exist, and how to choose the right UAV platform for mapping and construction surveys.
+  Schema: TechArticle
+
+pages/gnss-rtk.html:
+  Title: GNSS & RTK Explained — Centimeter GPS for Surveyors | GeoSurveyHub
+  Desc: Understand how RTK GNSS achieves centimeter accuracy, the difference between RTK and PPK, and which receivers fit your surveying application.
+  Schema: TechArticle
+
+pages/ai-ml.html:
+  Title: AI & Machine Learning in Geospatial — Automating LiDAR, GIS & Photogrammetry | GeoSurveyHub
+  Desc: How machine learning is automating point cloud classification, photogrammetry processing, and GIS feature extraction. Tools, workflows, and what it means for surveyors in 2026.
+  Schema: TechArticle + HowTo
+
+pages/news.html:
+  Title: Geospatial & Surveying Industry News 2026 | GeoSurveyHub
+  Desc: Latest news from the geospatial industry. New LiDAR releases, drone systems, GIS software updates, and AI workflow announcements from Geo Week and INTERGEO.
+  Schema: NewsArticle per item
+
+pages/financing.html:
+  Title: Equipment Financing Interest Form — Surveying & GIS | GeoSurveyHub
+  Desc: Interested in LiDAR, drone, or GNSS equipment but need financing? Submit your interest and we'll connect you with financing partners for your project.
+  Schema: ContactPage
+
+## ORGANIZATION SCHEMA — add to every page
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GeoSurveyHub",
+  "url": "https://www.geosurveyhub.com",
+  "description": "Free educational platform for surveying, GIS, and geospatial professionals",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Charlotte",
+    "addressRegion": "NC",
+    "addressCountry": "US"
+  },
+  "areaServed": "US",
+  "knowsAbout": ["LiDAR","Photogrammetry","GNSS","GIS","Drone Surveying","Geospatial Technology"]
+}
+```
+
+## HEADING HIERARCHY (enforced)
+- Exactly ONE h1 per page (in hero)
+- h2 for major section titles
+- h3 for subsections
+- h4 for card titles and spec labels
+- Never skip levels
+
+## INTERNAL LINKING RULES
+- Every page links to 3+ other internal pages
+- Guide links to all category pages
+- AI/ML links to guide, lidar, drones, news
+- Every category page links to guide and financing
+- Financing links back to guide
+- Descriptive anchor text — never "click here"
+- Breadcrumbs on all pages except index (BreadcrumbList schema)
+
+## AI / LLM OPTIMIZATION
+- Open every educational section with a direct answer to the implied question
+- Use question-answer format in FAQ sections with details/summary elements
+- semantic HTML throughout: main, article, section, aside, nav
+- Schema FAQPage on guide and category pages
+- Clear, authoritative sentences — AI assistants surface direct answers
+
+
+# ════════════════════════════════════════════════════════════════
+# SECTION 4 — FINANCING FORM SPECIFICATION
+# ════════════════════════════════════════════════════════════════
+
+This is NOT a purchase form. It collects interest from users who want
+help finding financing for surveying equipment.
+
+Page hero:
+  Kicker: "Take the Next Step"
+  H1: "Equipment Financing — Let's Talk"
+  Subtext: "We don't sell equipment — but we connect interested buyers with
+  financing partners. Tell us what you're looking at and we'll be in touch."
+
+Form uses div.financing-form NOT a form tag. Submit via JS fetch.
+
+Fields:
+  Group 1 — About You:
+    Full Name (required), Email (required), Phone, Company, Job Title,
+    State/Region (required, select all US states + International)
+
+  Group 2 — Your Project:
+    Project Type (required, select), Project Scale (select), Timeline (select)
+
+  Group 3 — Equipment Interest:
+    Equipment Categories (required, multi-checkbox: LiDAR Systems / Survey
+    Drones / GNSS-RTK / Total Stations / Terrestrial Scanners / Mobile
+    Mapping Systems / Field Computers & Software / Sensors & Camera Payloads)
+    Budget Range (required, select), Specific Equipment in Mind (textarea),
+    Additional Notes (textarea)
+
+  Group 4 — Consent:
+    Checkbox: I agree to be contacted (required)
+    Checkbox: I understand this is an educational site, not a direct retailer (required)
+
+Submit behavior:
+  - Validate all required fields first
+  - Highlight missing fields with border-color var(--accent)
+  - On success: replace form with success message in same panel
+  - Success: "Thank you, [Name]. We've received your interest and will be in touch within 2 business days."
+  - Endpoint: const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'
+
+Form styling:
+  - Background: var(--surface)
+  - Labels: Barlow Condensed 11px uppercase letter-spacing 3px color var(--muted)
+  - Inputs: background var(--surface2), border 1px solid var(--border), color var(--white)
+  - Focus: border-color var(--accent), outline none
+  - Two columns desktop, single column mobile
+  - Required asterisk in accent color
+
+
+# ════════════════════════════════════════════════════════════════
+# SECTION 5 — AI/ML PAGE STRUCTURE (pages/ai-ml.html)
+# ════════════════════════════════════════════════════════════════
+
+Hero:
+  Kicker: "The Intelligent Field"
+  H1: "Machine Learning is Reshaping Geospatial Work"
+  Side text: "GeoAI & Automation"
+
+Section 01 — LiDAR Automation:
+  Kicker: "Point Cloud Intelligence"
+  H2: "How AI classifies 6 billion points overnight"
+  Cover: Deep learning models (KPConv, PointNet++), 95%+ accuracy,
+  workflow steps, tools: LP360 AI, TerraSolid AutoClass, Lidarvisor cloud,
+  Global Mapper Pro ML
+
+Section 02 — Photogrammetry Automation:
+  Kicker: "Semantic Photogrammetry"
+  H2: "From photos to 3D models without the manual grind"
+  Cover: Pix4D semantic photogrammetry, intersection tie points, SAM
+  integration, auto GCP detection, GPU acceleration
+  Tools: Pix4Dmatic, Metashape, RealityCapture, OpenDroneMap
+
+Section 03 — GeoAI:
+  Kicker: "Spatial Intelligence"
+  H2: "Teaching machines to understand geography"
+  Cover: Automated feature extraction, predictive infrastructure
+  maintenance, change detection, semantic segmentation
+  Tools: ArcGIS AI, QGIS deepness, GeoAI Python, Google Earth Engine, Mach9
+
+Tools Matrix:
+  Table comparing 9 tools: what it automates, skill required, cost tier
+
+FAQ Section (6 questions using details/summary):
+  1. Will AI replace surveyors?
+  2. How accurate is automated LiDAR classification?
+  3. Do I need coding skills?
+  4. AI vs traditional automated processing?
+  5. Can AI process any LiDAR sensor data?
+  6. How does Gaussian Splatting differ from photogrammetry?
+
+CTAs: Link to financing form and guide quiz
+
+
+# ════════════════════════════════════════════════════════════════
+# SECTION 6 — ANIMATIONS
+# ════════════════════════════════════════════════════════════════
+
+Use Intersection Observer in animations.js:
+  - .reveal elements start at opacity:0 translateY(24px)
+  - Transition to opacity:1 translateY(0) in 0.6s ease when visible
+  - Stagger children with 100ms delay increments
+  - .count-up triggers number animation when visible
+  - Hero content animates on page load, not scroll
+  - Card borders brighten to --border-mid on hover
+  - Read More underlines draw in via CSS width transition
+
+
+# ════════════════════════════════════════════════════════════════
+# SECTION 7 — NEVER DO LIST
+# ════════════════════════════════════════════════════════════════
+
+Never use white or light backgrounds
+Never use colors outside the defined palette
+Never use gradients on background surfaces
+Never use box-shadows decoratively
+Never use font-weight 700+ on Barlow (only Playfair Display)
+Never use rounded corners over 4px
+Never use form tags — always div with JS handlers
+Never claim the site sells equipment
+Never put a price without context
+Never use Inter, Roboto, Arial, or system fonts
+Never use purple gradients or generic AI startup aesthetic
+Never skip heading levels
+Never use alert() confirm() or prompt()
+Never use localStorage
+Never write inline event handlers onclick= — use addEventListener
+Never add a page without full SEO meta tags
+
+
+# ════════════════════════════════════════════════════════════════
+# SECTION 11 — START A SURVEYING COMPANY PAGE
+# ════════════════════════════════════════════════════════════════
+
+## Page: pages/start-a-company.html
+
+Title: How to Start a Land Surveying Company — Licenses, Costs & Revenue | GeoSurveyHub
+Description: Complete guide to starting a surveying company: PS license path, NCEES exams, startup costs ($45K–$250K), revenue potential, and what it really takes to go independent.
+Primary Keyword: how to start a land surveying company
+Schema: HowTo + FAQPage
+
+## Hero
+Kicker: "Your Own Firm"
+H1: "How to Start a *Surveying Company*"
+Subtext: "The license you need, what it really costs, how much you can make, and the honest path from technician to firm owner."
+Side text: "Entrepreneur's Guide"
+Stats row: 8 years (typical path to PS license) / $45K–$250K (typical startup cost) / 25–30% (top firm net margin)
+
+## Page Sections (MNTN numbered layout)
+01 — The Opportunity: Market size, talent shortage, why now is the right time
+02 — Getting Licensed: FS exam → supervised experience → PS exam → state exam. Full timeline.
+03 — Business Formation: LLC vs PC, registrations, insurance requirements
+04 — Startup Costs: Tiered tables (solo / small crew / tech-forward). Honest numbers.
+05 — Revenue Potential: Pricing by survey type, revenue scenarios, profit benchmarks
+06 — Year One Roadmap: Month-by-month checklist as a visual workflow
+07 — Common Mistakes: 6 mistakes as a styled warning list
+08 — Key Organizations: NCEES / NSPS / ASPRS / ACSM / State Associations
+
+## Special Components
+License Path Visual: SVG timeline showing FS → Experience → PS → State Exam → License
+Pricing Table: Survey type / typical price range / notes — comparison-table class
+Revenue Scenarios: Info cards with count-up numbers (stat cards)
+Year One Roadmap: workflow-steps component
+FAQ Section (6 items with details/summary accordion):
+  1. Do I need a surveying degree to get licensed?
+  2. Can I start a surveying company if I'm not licensed myself?
+  3. How much does E&O insurance cost for a new surveying firm?
+  4. How do I find my first clients as a new surveying company?
+  5. What is the difference between FS and PS exams?
+  6. How long until a surveying company becomes profitable?
+
+## Internal Links
+→ pages/guide.html (equipment guide)
+→ pages/lidar.html (LiDAR systems)
+→ pages/drones.html (drone survey systems)
+→ pages/gnss-rtk.html (GNSS receivers)
+→ pages/financing.html (equipment financing form)
+
+## Keywords to use in this page
+Primary: how to start a land surveying company, surveying company startup
+H2 keywords: professional land surveyor license, PS exam requirements,
+  surveying business startup costs, land survey revenue potential,
+  how much do surveyors charge, surveying company profit margin
+Long-tail FAQs: NCEES FS exam guide, E&O insurance for surveyors,
+  how to get surveying clients, drone survey company startup
+

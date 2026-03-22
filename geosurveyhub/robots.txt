@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# AI crawler access (for GEO/LLM optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://www.geosurveyhub.com/sitemap.xml
