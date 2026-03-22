@@ -12,17 +12,21 @@ The simplest path. Works on any host including Netlify, GitHub Pages, Vercel.
 2. Click "Sign up for free"
 3. Copy your API key from the dashboard
 
-**Step 2 — Add the key to news-config.js**
-Open `assets/js/news-config.js` and replace `YOUR_RSS2JSON_KEY` with your actual key:
+**Step 2 — Add keys (do not commit secrets)**
+Create `assets/js/news-config.local.js` (this file is gitignored) with your real keys:
 ```javascript
 window.GSH_NEWS_KEYS = {
-  rss2jsonKey: 'paste_key_here',
-  newsdataKey: '',
+  rss2jsonKey: 'paste_rss2json_key',
+  newsdataKey: 'optional_newsdata_key',
 };
 ```
+Keep `news-config.js` in the repo with placeholders only.
 
 **Step 3 — Scripts (already wired)**
-`index.html` and `pages/news.html` load `news-config.js` then `news-feed.js` (live RSS + optional NewsData.io, with `content/news.json` as fallback).
+`index.html` and `pages/news.html` load `news-config.js`, then `news-config.local.js`, then `news-feed.js`. If `news-config.local.js` is missing (e.g. fresh clone), the site falls back to `content/news.json`.
+
+**Deploying (GitHub Pages, etc.)**  
+Upload `news-config.local.js` with your keys alongside the rest of the site, or add a build step that injects it — it is not pushed to Git by default.
 
 **Step 4 — Test it**
 Open `pages/news.html` in a browser. You should see live articles within 3-5 seconds.
