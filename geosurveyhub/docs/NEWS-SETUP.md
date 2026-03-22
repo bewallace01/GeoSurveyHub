@@ -12,24 +12,17 @@ The simplest path. Works on any host including Netlify, GitHub Pages, Vercel.
 2. Click "Sign up for free"
 3. Copy your API key from the dashboard
 
-**Step 2 — Add the key to news-feed.js**
-Open `assets/js/news-feed.js` and find line 8:
+**Step 2 — Add the key to news-config.js**
+Open `assets/js/news-config.js` and replace `YOUR_RSS2JSON_KEY` with your actual key:
 ```javascript
-rss2jsonKey: 'YOUR_RSS2JSON_KEY',
-```
-Replace `YOUR_RSS2JSON_KEY` with your actual key.
-
-**Step 3 — Replace news.js with news-feed.js in your HTML**
-In `pages/news.html` change:
-```html
-<script src="../assets/js/news.js" defer></script>
-```
-to:
-```html
-<script src="../assets/js/news-feed.js" defer></script>
+window.GSH_NEWS_KEYS = {
+  rss2jsonKey: 'paste_key_here',
+  newsdataKey: '',
+};
 ```
 
-Do the same in `index.html` for the homepage preview.
+**Step 3 — Scripts (already wired)**
+`index.html` and `pages/news.html` load `news-config.js` then `news-feed.js` (live RSS + optional NewsData.io, with `content/news.json` as fallback).
 
 **Step 4 — Test it**
 Open `pages/news.html` in a browser. You should see live articles within 3-5 seconds.
