@@ -66,7 +66,7 @@ function isRelevant(item) {
   return (NEWS_CONFIG.relevantKeywords || NEWS_DEFAULTS.relevantKeywords).some(kw => text.includes(kw));
 }
 
-function cleanExcerpt(raw, maxLen = 165) {
+function cleanExcerpt(raw, maxLen = 220) {
   if (!raw) return '';
   const s = raw.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
   return s.length > maxLen ? s.slice(0, maxLen).replace(/\s\S*$/, '') + '...' : s;
@@ -88,6 +88,10 @@ function escapeHtml(s) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+function escapeHtmlAttr(s) {
+  return escapeHtml(s).replace(/'/g, '&#39;');
 }
 
 function safeHttpUrl(raw) {
@@ -216,20 +220,46 @@ async function getLatestNews(forceRefresh = false) {
   }
 
   const seen = new Set();
-  const final = all
-    .filter(a => a.relevant && a.title)
-    .filter(a => {
-      const key = a.title.toLowerCase().slice(0, 60);
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    })
-    .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
-    .slice(0, NEWS_CONFIG.maxArticles);
+
+  function dedupeSort(list) {
+    const s = new Set();
+    return list
+      .filter(a => a.title)
+      .filter(a => {
+        const key = a.title.toLowerCase().slice(0, 60);
+        if (s.has(key)) return false;
+        s.add(key);
+        return true;
+      })
+      .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+      .slice(0, NEWS_CONFIG.maxArticles);
+  }
+
+  let final = dedupeSort(all.filter(a => a.relevant && a.title));
+  /* Keyword filter can drop everything; still show recent items from the feeds */
+  if (!final.length) {
+    final = dedupeSort(all);
+  }
 
   _cache = final;
   _cacheTime = now;
   return final;
+}
+
+function ensureSummary(article) {
+  let s = (article.description || '').trim();
+  if (!s) {
+    s = 'Summary not included in the feed — use the link below to read the full piece at the source.';
+  }
+  return s;
+}
+
+function linkHost(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return '';
+  }
 }
 
 function renderCard(article) {
@@ -237,33 +267,37 @@ function renderCard(article) {
   const external = href !== '#';
   const cardId = stableCardId(article);
   const title = escapeHtml(article.title);
-  const excerpt = escapeHtml(article.description);
+  const excerpt = escapeHtml(ensureSummary(article));
   const source = escapeHtml(article.source);
   const date = escapeHtml(article.formattedDate);
   const cat = escapeHtml(article.category);
   const liveBadge = !article.isSeed
-    ? '<span style="font-family:var(--font-mono);font-size:9px;color:var(--accent);letter-spacing:1px;opacity:0.7">LIVE</span>'
+    ? '<span class="news-live-pill">Live</span>'
     : '';
 
-  const titleBlock = external
-    ? `<h3 class="news-title"><a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${title}</a></h3>`
-    : `<h3 class="news-title">${title}</h3>`;
+  const host = external ? escapeHtml(linkHost(href)) : '';
 
-  const readRow = external
-    ? `<a class="read-more" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">Read article →</a>`
-    : `<a href="${escapeHtml(newsPageHref(cardId))}" class="read-more">On this site →</a>`;
+  const footer = external
+    ? `<footer class="news-card-footer">
+        <a class="news-read-full" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer"
+           aria-label="${escapeHtmlAttr(`Read full article — ${article.title}`)}">Read full article</a>
+        ${host ? `<span class="news-link-host" title="Opens in a new tab">${host}</span>` : ''}
+      </footer>`
+    : `<footer class="news-card-footer">
+        <a class="news-read-full news-read-full--internal" href="${escapeHtml(newsPageHref(cardId))}">View on this page</a>
+      </footer>`;
 
   return `
-    <article class="news-card reveal" id="${cardId}" role="article" data-category="${cat}">
+    <article class="news-card" id="${cardId}" role="article" data-category="${cat}">
       <div class="news-meta">
         <span class="news-date">${date}</span>
         <span class="news-tag">${cat}</span>
         ${liveBadge}
       </div>
       <span class="news-source">${source}</span>
-      ${titleBlock}
-      <p class="news-excerpt">${excerpt}</p>
-      <div style="margin-top:auto;padding-top:14px;">${readRow}</div>
+      <h3 class="news-title">${title}</h3>
+      <p class="news-summary">${excerpt}</p>
+      ${footer}
     </article>
   `;
 }
@@ -303,10 +337,6 @@ async function initNewsFeed({ gridId = 'news-grid', filterBarId = 'news-filter',
     grid.innerHTML = articles.length
       ? articles.map(renderCard).join('')
       : '<p style="color:var(--muted)">No articles matched the filter. Try again later.</p>';
-
-    if (window.__gshRevealObserver) {
-      grid.querySelectorAll('.reveal').forEach(el => window.__gshRevealObserver.observe(el));
-    }
 
     const badge = document.getElementById('news-live-count');
     if (badge) {

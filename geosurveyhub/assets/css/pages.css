@@ -454,6 +454,15 @@
   gap: 24px;
 }
 
+/* JS-injected cards are not observed by animations.js — never hide them with .reveal */
+#news-grid .news-card.reveal,
+#news-preview .news-card.reveal,
+#news-grid .news-card,
+#news-preview .news-card {
+  opacity: 1;
+  transform: none;
+}
+
 @media (max-width: 768px) {
   .news-grid { grid-template-columns: 1fr; }
 }
