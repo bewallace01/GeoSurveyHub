@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const box = wrapper.querySelector('.checkbox-box');
     if (!input || !box) return;
 
-    wrapper.addEventListener('click', () => {
+    wrapper.addEventListener('click', (e) => {
+      e.preventDefault();
       input.checked = !input.checked;
       box.classList.toggle('checked', input.checked);
       input.dispatchEvent(new Event('change'));

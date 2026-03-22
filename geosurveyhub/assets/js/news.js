@@ -46,14 +46,14 @@ async function loadNews(containerId, filterBarId, limit = null) {
 
   function renderArticles(list) {
     container.innerHTML = list.map(article => `
-      <div class="news-card" data-category="${article.category}">
+      <div class="news-card" id="${article.id}" data-category="${article.category}">
         <div class="news-meta">
           <span class="news-date">${formatDate(article.date)}</span>
           <span class="news-tag">${article.category}</span>
         </div>
         <div class="news-title">${article.title}</div>
         <div class="news-excerpt">${article.excerpt}</div>
-        <a href="#" class="read-more">Read More</a>
+        <a href="news.html#${article.id}" class="read-more">Read More</a>
       </div>
     `).join('');
   }

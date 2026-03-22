@@ -171,7 +171,7 @@ class EquipmentQuiz {
           <p style="color: var(--muted); font-size: 13px;">Loading recommended products...</p>
         </div>
         <div style="display: flex; gap: 20px; margin-top: 32px; flex-wrap: wrap;">
-          <a href="pages/${rec.category}.html" class="btn btn-primary">${rec.categoryLabel}</a>
+          <a href="${rec.category}.html" class="btn btn-primary">${rec.categoryLabel}</a>
           <button class="btn btn-ghost" onclick="location.reload()">← Start Over</button>
         </div>
       </div>

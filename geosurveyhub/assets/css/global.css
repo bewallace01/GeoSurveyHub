@@ -18,6 +18,8 @@
   --accent-dim:  #C9A55A;
   --border:      rgba(255, 255, 255, 0.07);
   --border-med:  rgba(255, 255, 255, 0.12);
+  --border-mid:  var(--border-med);
+  --border-accent: rgba(251, 215, 132, 0.28);
 
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -589,5 +591,19 @@ p {
   .section-inner.reverse { direction: ltr; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
+  .nav {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px var(--section-h);
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 14px 20px;
+  }
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
 }

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI LiDAR Processing &amp; Machine Learning for GIS | GeoSurveyHub</title>
+  <meta name="description" content="Automated LiDAR classification, GeoAI, semantic photogrammetry, and Gaussian Splatting — how AI fits surveying workflows in 2026." />
+  <link rel="canonical" href="https://www.geosurveyhub.com/pages/ai-ml.html" />
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/animations.css" />
+  <link rel="stylesheet" href="../assets/css/pages.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"AI & Machine Learning in Geospatial","description":"Guide to AI for point clouds, photogrammetry, and GIS feature extraction.","author":{"@type":"Organization","name":"GeoSurveyHub"},"dateModified":"2026-03-22","about":["GeoAI","LiDAR classification","Machine learning GIS"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Will AI replace surveyors?","acceptedAnswer":{"@type":"Answer","text":"No. AI automates repetitive classification and processing; licensed professionals remain essential for QA, legal liability, and project design. Demand for geospatial talent is growing faster than supply."}},
+    {"@type":"Question","name":"How accurate is automated LiDAR classification?","acceptedAnswer":{"@type":"Answer","text":"Modern models often exceed 95% on benchmarks; real sites vary with density and terrain. Human QA remains required for survey-grade deliverables and ASPRS-style compliance."}}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HowTo","name":"How to Automate LiDAR Point Cloud Classification with AI","description":"Workflow for automated LiDAR classification using machine learning tools.","step":[
+    {"@type":"HowToStep","position":1,"name":"Upload raw point cloud","text":"Upload your LAS or LAZ file to an AI processing platform such as Lidarvisor or LP360."},
+    {"@type":"HowToStep","position":2,"name":"Run automated ground classification","text":"A pre-trained model separates ground returns from vegetation, buildings, and other objects."},
+    {"@type":"HowToStep","position":3,"name":"Extract additional classes","text":"Secondary models label vegetation tiers, structures, utilities, water, and noise."},
+    {"@type":"HowToStep","position":4,"name":"Human QA review","text":"Qualified staff review edge cases — typically far faster than full manual classification."},
+    {"@type":"HowToStep","position":5,"name":"Export deliverable","text":"Export classified clouds to GIS or CAD for DTM, vectors, and client deliverables."}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.geosurveyhub.com/"},
+    {"@type":"ListItem","position":2,"name":"AI & ML","item":"https://www.geosurveyhub.com/pages/ai-ml.html"}
+  ]}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav class="nav">
+      <a href="../index.html" class="nav-logo">Geo<span>Survey</span>Hub</a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="guide.html">Guide</a>
+        <a href="lidar.html">LiDAR</a>
+        <a href="drones.html">Drones</a>
+        <a href="gnss-rtk.html">GNSS</a>
+        <a href="news.html">News</a>
+        <a href="ai-ml.html">AI &amp; ML</a>
+        <a href="financing.html">Financing</a>
+        <a href="start-a-surveying-company.html">Start a Firm</a>
+      </div>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">AI &amp; ML</span>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <p class="kicker">Workflow</p>
+        <h1>AI &amp; Machine Learning in <em>Geospatial</em></h1>
+        <p class="sub">AI is not replacing surveyors — it removes the slowest parts of processing so you can focus on judgment, QC, and client outcomes. In 2026, that means point cloud classification, semantic photogrammetry, and GIS feature extraction at scale.</p>
+      </div>
+    </header>
+
+    <article class="doc-page doc-page-wide prose">
+      <h2>How ML automates LiDAR</h2>
+      <p>Deep learning models trained on millions of labeled points classify ground, vegetation, buildings, utilities, and noise in a fraction of the time manual TerraSolid-style workflows required. Architectures like PointNet++, KPConv, and RandLA-Net power commercial tools — with human QA still mandatory for contract-grade work.</p>
+
+      <div class="workflow-steps" aria-label="Automated LiDAR steps">
+        <div class="workflow-step">
+          <div class="workflow-step-num">1</div>
+          <div class="workflow-step-content"><h4>Upload</h4><p>Standard LAS/LAZ from any sensor.</p></div>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-step-num">2</div>
+          <div class="workflow-step-content"><h4>Classify</h4><p>Ground separation, then feature classes.</p></div>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-step-num">3</div>
+          <div class="workflow-step-content"><h4>Review</h4><p>Focus on complex terrain and edges.</p></div>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-step-num">4</div>
+          <div class="workflow-step-content"><h4>Deliver</h4><p>Export to ArcGIS, CAD, or DTM engines.</p></div>
+        </div>
+      </div>
+
+      <h2>Semantic photogrammetry</h2>
+      <p>Pix4D and peers use ML to find structural tie points — intersections of walls and floors — where texture alone fails. Pair that with faster SfM (RealityCapture, Pix4Dmatic) for large image sets.</p>
+
+      <h2>GeoAI in GIS</h2>
+      <p>Esri ArcGIS Image Analyst, QGIS plugins, Google Earth Engine, and the open-source GeoAI Python package each target different skill levels — from no-code to full PyTorch pipelines.</p>
+
+      <h2>Gaussian Splatting</h2>
+      <p>Radiance-field visualization from imagery is increasingly native in GIS viewers. It is ideal for client walkthroughs — not a substitute for survey-grade geometry from photogrammetry or LiDAR, but a powerful complement.</p>
+
+      <h2>Tool comparison</h2>
+      <div style="overflow-x: auto;">
+        <table class="comparison-table">
+          <thead><tr><th>Tool</th><th>Automates</th><th>Skill</th><th>Cost</th></tr></thead>
+          <tbody>
+            <tr><td>LP360 AI</td><td>Point cloud classification</td><td>Low</td><td>$$</td></tr>
+            <tr><td>Lidarvisor</td><td>Cloud pipeline</td><td>Minimal</td><td>$/GB</td></tr>
+            <tr><td>Pix4Dmatic</td><td>Photogrammetry + semantics</td><td>Low–Med</td><td>$$$</td></tr>
+            <tr><td>Mach9 Digital Surveyor</td><td>Point cloud → CAD/GIS</td><td>Medium</td><td>$$$</td></tr>
+            <tr><td>GeoAI (Python)</td><td>Custom pipelines</td><td>High</td><td>Free</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <section class="content-section alt" aria-labelledby="faq-ai">
+      <div class="content-section-inner doc-page-wide">
+        <h2 id="faq-ai" class="section-num" style="font-size:11px;">FAQ</h2>
+        <p class="kicker">AI &amp; surveying</p>
+        <details>
+          <summary>Will AI replace surveyors?</summary>
+          <div class="faq-answer">No — evidence points the other way. AI automates tedious classification; professionals still own QA, liability, boundary law, and design. Workforce demand for geospatial skills is outpacing new entrants.</div>
+        </details>
+        <details>
+          <summary>How accurate is automated LiDAR classification?</summary>
+          <div class="faq-answer">Benchmarks often show 95%+ overall accuracy; real projects vary with density, noise, and terrain. Dense urban and mixed vegetation remain challenging. Always verify against project standards.</div>
+        </details>
+        <details>
+          <summary>Do I need coding?</summary>
+          <div class="faq-answer">No for LP360, Lidarvisor, Pix4D, and Mach9. Python helps for custom GeoAI pipelines and cloud integrations.</div>
+        </details>
+        <details>
+          <summary>Gaussian Splatting vs photogrammetry?</summary>
+          <div class="faq-answer">Photogrammetry yields measurable 3D geometry. Gaussian Splatting prioritizes photorealistic navigation — use both when you need numbers <em>and</em> stakeholder-friendly visuals.</div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top container">
+      <div><span class="footer-logo">Geo<span>Survey</span>Hub</span><p class="footer-desc">Practical AI in geospatial.</p></div>
+      <div class="footer-col"><h4>Related</h4><ul><li><a href="lidar.html">LiDAR</a></li><li><a href="guide.html">Guide</a></li></ul></div>
+      <div class="footer-col"><h4>News</h4><ul><li><a href="news.html">News</a></li></ul></div>
+      <div class="footer-col"><h4>Home</h4><ul><li><a href="../index.html">Home</a></li></ul></div>
+    </div>
+    <div class="footer-bottom container"><p>© 2026 GeoSurveyHub</p></div>
+  </footer>
+  <script src="../assets/js/nav.js" defer></script>
+</body>
+</html>
