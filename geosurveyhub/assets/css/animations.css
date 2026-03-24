@@ -165,7 +165,7 @@ details summary {
   justify-content: space-between;
   align-items: center;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: calc(16px + var(--fs-bump));
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--white);
@@ -176,7 +176,7 @@ details summary::-webkit-details-marker { display: none; }
 
 details summary::after {
   content: '+';
-  font-size: calc(20px + var(--fs-bump));
+  font-size: 20px;
   color: var(--accent);
   font-weight: 300;
   transition: transform 0.3s ease;
@@ -195,7 +195,7 @@ details[open] summary {
 
 details .faq-answer {
   padding: 20px 0 28px;
-  font-size: calc(1.05rem + var(--fs-bump));
+  font-size: calc(1.05rem + var(--card-text-bump));
   font-weight: 400;
   color: var(--text-body);
   line-height: 1.75;
@@ -214,7 +214,7 @@ details .faq-answer {
 
 .callout-label {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: calc(10px + var(--fs-bump));
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -230,7 +230,7 @@ details .faq-answer {
 }
 
 .callout-box ul li {
-  font-size: calc(0.95rem + var(--fs-bump));
+  font-size: calc(0.95rem + var(--card-text-bump));
   font-weight: 400;
   color: var(--text-body);
   display: flex;
@@ -243,7 +243,7 @@ details .faq-answer {
   color: var(--accent);
   flex-shrink: 0;
   font-family: 'Space Mono', monospace;
-  font-size: calc(12px + var(--fs-bump));
+  font-size: calc(12px + var(--card-text-bump));
   margin-top: 2px;
 }
 
@@ -251,13 +251,13 @@ details .faq-answer {
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: calc(14px + var(--fs-bump));
+  font-size: calc(14px + var(--card-text-bump));
   margin: 32px 0;
 }
 
 .comparison-table th {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: calc(10px + var(--fs-bump));
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -272,7 +272,7 @@ details .faq-answer {
   border-bottom: 1px solid var(--border);
   color: var(--text-body);
   font-weight: 400;
-  font-size: calc(0.95rem + var(--fs-bump));
+  font-size: calc(0.95rem + var(--card-text-bump));
   vertical-align: top;
 }
 
@@ -282,7 +282,7 @@ details .faq-answer {
 
 .comparison-table td:first-child {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: calc(14px + var(--fs-bump));
+  font-size: calc(14px + var(--card-text-bump));
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--accent);
@@ -325,7 +325,7 @@ details .faq-answer {
   align-items: center;
   justify-content: center;
   font-family: 'Space Mono', monospace;
-  font-size: calc(12px + var(--fs-bump));
+  font-size: 12px;
   color: var(--accent);
   flex-shrink: 0;
   position: relative;
@@ -334,7 +334,7 @@ details .faq-answer {
 
 .workflow-step-content h4 {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: calc(15px + var(--fs-bump));
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--white);
@@ -342,7 +342,7 @@ details .faq-answer {
 }
 
 .workflow-step-content p {
-  font-size: calc(0.95rem + var(--fs-bump));
+  font-size: calc(0.95rem + var(--card-text-bump));
   color: var(--text-body);
   line-height: 1.65;
   max-width: 500px;
@@ -355,7 +355,7 @@ details .faq-answer {
   gap: 10px;
   padding: 20px 60px;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: calc(11px + var(--fs-bump));
+  font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -370,7 +370,7 @@ details .faq-answer {
 
 .breadcrumb-sep {
   color: var(--border-mid);
-  font-size: calc(10px + var(--fs-bump));
+  font-size: 10px;
 }
 
 .breadcrumb-current {
@@ -399,7 +399,7 @@ details .faq-answer {
 }
 
 .success-panel h2 {
-  font-size: calc(36px + var(--fs-bump));
+  font-size: 36px;
 }
 
 .success-panel p {

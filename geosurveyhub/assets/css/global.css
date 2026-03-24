@@ -29,7 +29,7 @@
   --font-ui:      'Barlow Condensed', sans-serif;
   --font-body:    'Barlow', sans-serif;
   --font-mono:    'Space Mono', monospace;
-  --fs-bump:      2pt; /* +2pt on all font sizes */
+  --card-text-bump: 2pt; /* cards & UI body text only — not headings / kickers */
 
   /* Spacing */
   --section-v:   120px;
@@ -51,7 +51,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* Keep root fixed; every font-size uses calc(... + var(--fs-bump)) so +2pt is applied once. */
   font-size: 17px;
 }
 
@@ -78,15 +77,15 @@ h1, h2, h3, h4 {
   color: var(--white);
 }
 
-h1 { font-size: calc(clamp(52px, 7vw, 96px) + var(--fs-bump)); letter-spacing: -1px; }
-h2 { font-size: calc(clamp(32px, 3.5vw, 52px) + var(--fs-bump)); }
-h3 { font-size: calc(clamp(22px, 2vw, 32px) + var(--fs-bump)); }
-h4 { font-size: calc(18px + var(--fs-bump)); }
+h1 { font-size: clamp(52px, 7vw, 96px); letter-spacing: -1px; }
+h2 { font-size: clamp(32px, 3.5vw, 52px); }
+h3 { font-size: clamp(22px, 2vw, 32px); }
+h4 { font-size: 18px; }
 
 h1 em, h2 em, h3 em { font-style: italic; color: var(--accent); }
 
 p {
-  font-size: calc(1.05rem + var(--fs-bump));
+  font-size: calc(1.05rem + var(--card-text-bump));
   font-weight: 400;
   color: var(--text-body);
   line-height: 1.75;
@@ -113,7 +112,7 @@ p {
 
 .nav-logo {
   font-family: var(--font-ui);
-  font-size: calc(22px + var(--fs-bump));
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: 6px;
   text-transform: uppercase;
@@ -129,7 +128,7 @@ p {
 
 .nav-links a {
   font-family: var(--font-ui);
-  font-size: calc(13px + var(--fs-bump));
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -146,7 +145,7 @@ p {
   align-items: center;
   gap: 10px;
   font-family: var(--font-ui);
-  font-size: calc(13px + var(--fs-bump));
+  font-size: calc(13px + var(--card-text-bump));
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -184,7 +183,7 @@ p {
 
 .read-more {
   font-family: var(--font-ui);
-  font-size: calc(12px + var(--fs-bump));
+  font-size: calc(12px + var(--card-text-bump));
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -197,14 +196,14 @@ p {
   transition: gap 0.2s, border-color 0.2s;
 }
 
-.read-more::after { content: '→'; font-size: calc(14px + var(--fs-bump)); }
+.read-more::after { content: '→'; font-size: calc(14px + var(--card-text-bump)); }
 .read-more:hover { gap: 18px; border-color: var(--accent); }
 
 /* ── KICKER / LABEL ── */
 /* No decorative dash — text-only label for cleaner layout. */
 .kicker {
   font-family: var(--font-ui);
-  font-size: calc(clamp(14px, 1.35vw, 17px) + var(--fs-bump));
+  font-size: clamp(14px, 1.35vw, 17px);
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -218,7 +217,7 @@ p {
 
 /* Markup uses <p class="kicker"> — match explicitly so body `p` rules never win. */
 p.kicker {
-  font-size: calc(clamp(15px, 1.75vw, 20px) + var(--fs-bump));
+  font-size: clamp(15px, 1.75vw, 20px);
   font-weight: 600;
   letter-spacing: 0.12em;
   color: var(--accent);
@@ -226,7 +225,7 @@ p.kicker {
 
 .section-num {
   font-family: var(--font-ui);
-  font-size: calc(clamp(13px, 1.15vw, 16px) + var(--fs-bump));
+  font-size: clamp(13px, 1.15vw, 16px);
   font-weight: 600;
   letter-spacing: 0.14em;
   color: var(--accent);
@@ -266,7 +265,7 @@ p.kicker {
 
 .section-label {
   font-family: var(--font-ui);
-  font-size: calc(11px + var(--fs-bump));
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -330,7 +329,7 @@ p.kicker {
   top: 16px;
   right: 16px;
   font-family: var(--font-ui);
-  font-size: calc(9px + var(--fs-bump));
+  font-size: calc(9px + var(--card-text-bump));
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -345,7 +344,7 @@ p.kicker {
   bottom: 16px;
   left: 16px;
   font-family: var(--font-ui);
-  font-size: calc(11px + var(--fs-bump));
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -390,7 +389,7 @@ p.kicker {
 
 .product-category {
   font-family: var(--font-ui);
-  font-size: calc(11px + var(--fs-bump));
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -400,7 +399,7 @@ p.kicker {
 
 .product-name {
   font-family: var(--font-display);
-  font-size: calc(17px + var(--fs-bump));
+  font-size: 17px;
   font-weight: 700;
   margin-bottom: 8px;
   line-height: 1.3;
@@ -408,7 +407,7 @@ p.kicker {
 }
 
 .product-desc {
-  font-size: calc(0.95rem + var(--fs-bump));
+  font-size: calc(0.95rem + var(--card-text-bump));
   font-weight: 400;
   color: var(--text-body);
   line-height: 1.65;
@@ -424,7 +423,7 @@ p.kicker {
 
 .product-price {
   font-family: var(--font-ui);
-  font-size: calc(24px + var(--fs-bump));
+  font-size: calc(24px + var(--card-text-bump));
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--white);
@@ -432,7 +431,7 @@ p.kicker {
 
 .add-to-quote {
   font-family: var(--font-ui);
-  font-size: calc(10px + var(--fs-bump));
+  font-size: calc(10px + var(--card-text-bump));
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -471,7 +470,7 @@ p.kicker {
 
 .news-date {
   font-family: var(--font-mono);
-  font-size: calc(10px + var(--fs-bump));
+  font-size: calc(10px + var(--card-text-bump));
   color: var(--muted);
   letter-spacing: 1px;
 }
@@ -479,7 +478,7 @@ p.kicker {
 .news-source {
   display: block;
   font-family: var(--font-ui);
-  font-size: calc(10px + var(--fs-bump));
+  font-size: calc(10px + var(--card-text-bump));
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -490,7 +489,7 @@ p.kicker {
 
 .news-tag {
   font-family: var(--font-ui);
-  font-size: calc(9px + var(--fs-bump));
+  font-size: calc(9px + var(--card-text-bump));
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -502,14 +501,14 @@ p.kicker {
 
 .news-title {
   font-family: var(--font-display);
-  font-size: calc(18px + var(--fs-bump));
+  font-size: 18px;
   font-weight: 700;
   color: var(--white);
   line-height: 1.3;
 }
 
 .news-excerpt {
-  font-size: calc(0.95rem + var(--fs-bump));
+  font-size: calc(0.95rem + var(--card-text-bump));
   color: var(--text-body);
   line-height: 1.65;
   max-width: 100%;
@@ -518,7 +517,7 @@ p.kicker {
 /* In-card summary + visible link to source (overrides global a { color: inherit }) */
 .news-live-pill {
   font-family: var(--font-mono);
-  font-size: calc(9px + var(--fs-bump));
+  font-size: calc(9px + var(--card-text-bump));
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -527,7 +526,7 @@ p.kicker {
 }
 
 .news-summary {
-  font-size: calc(14px + var(--fs-bump));
+  font-size: calc(14px + var(--card-text-bump));
   font-weight: 300;
   color: rgba(255, 255, 255, 0.82);
   line-height: 1.7;
@@ -549,7 +548,7 @@ p.kicker {
 
 .news-read-full {
   font-family: var(--font-ui);
-  font-size: calc(12px + var(--fs-bump));
+  font-size: calc(12px + var(--card-text-bump));
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -571,7 +570,7 @@ p.kicker {
 
 .news-link-host {
   font-family: var(--font-mono);
-  font-size: calc(10px + var(--fs-bump));
+  font-size: calc(10px + var(--card-text-bump));
   color: var(--muted);
   letter-spacing: 0.5px;
 }
@@ -591,7 +590,7 @@ p.kicker {
 
 .footer-logo {
   font-family: var(--font-ui);
-  font-size: calc(24px + var(--fs-bump));
+  font-size: 24px;
   font-weight: 600;
   letter-spacing: 6px;
   text-transform: uppercase;
@@ -603,7 +602,7 @@ p.kicker {
 .footer-logo span { color: var(--accent); }
 
 .footer-desc {
-  font-size: calc(0.95rem + var(--fs-bump));
+  font-size: calc(0.95rem + var(--card-text-bump));
   font-weight: 400;
   color: var(--text-subtle);
   line-height: 1.75;
@@ -612,7 +611,7 @@ p.kicker {
 
 .footer-col h4 {
   font-family: var(--font-ui);
-  font-size: calc(10px + var(--fs-bump));
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -627,7 +626,7 @@ p.kicker {
 }
 
 .footer-col ul a {
-  font-size: calc(0.95rem + var(--fs-bump));
+  font-size: calc(0.95rem + var(--card-text-bump));
   font-weight: 400;
   color: var(--text-subtle);
   transition: color 0.2s;
@@ -646,7 +645,7 @@ p.kicker {
 .footer-bottom p,
 .footer-bottom a {
   font-family: var(--font-mono);
-  font-size: calc(10px + var(--fs-bump));
+  font-size: 10px;
   letter-spacing: 1.5px;
   color: var(--muted);
 }
@@ -662,7 +661,7 @@ p.kicker {
 
 .tag {
   font-family: var(--font-ui);
-  font-size: calc(9px + var(--fs-bump));
+  font-size: calc(9px + var(--card-text-bump));
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -714,7 +713,7 @@ p.kicker {
     gap: 14px 20px;
   }
   .nav-links a {
-    font-size: calc(11px + var(--fs-bump));
+    font-size: 11px;
     letter-spacing: 2px;
   }
 }
