@@ -233,6 +233,35 @@ p.kicker {
   display: block;
 }
 
+/* Number + kicker on one row (e.g. home sections 01 / Get Started) */
+.section-heading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 20px;
+}
+
+.section-heading .section-num {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.section-heading .kicker {
+  margin-bottom: 0;
+}
+
+.section-heading--center {
+  justify-content: center;
+}
+
+@media (max-width: 380px) {
+  .section-heading {
+    flex-wrap: wrap;
+  }
+}
+
 .section-label {
   font-family: var(--font-ui);
   font-size: 11px;
