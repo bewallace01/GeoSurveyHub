@@ -199,7 +199,7 @@ p {
 .read-more:hover { gap: 18px; border-color: var(--accent); }
 
 /* ── KICKER / LABEL ── */
-/* Block + absolute bar so labels wrap; bar width must not be overridden by animations.css without JS. */
+/* No decorative dash — text-only label for cleaner layout. */
 .kicker {
   font-family: var(--font-ui);
   font-size: clamp(14px, 1.35vw, 17px);
@@ -211,20 +211,7 @@ p {
   margin-bottom: 20px;
   line-height: 1.5;
   max-width: 100%;
-  padding-left: calc(40px + 16px);
-  position: relative;
   box-sizing: border-box;
-}
-
-.kicker::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 40px;
-  height: 2px;
-  background: var(--accent);
-  opacity: 1;
 }
 
 /* Markup uses <p class="kicker"> — match explicitly so body `p` rules never win. */
