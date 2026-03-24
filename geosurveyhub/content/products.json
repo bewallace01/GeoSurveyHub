@@ -4,7 +4,8 @@
     "name": "DJI Matrice 350 RTK",
     "category": "drones",
     "subcategory": "drone-platform",
-    "price": 13699,
+    "priceLow": 12000,
+    "priceHigh": 16000,
     "brand": "DJI Enterprise",
     "badge": "Best Seller",
     "specs": {
@@ -24,7 +25,8 @@
     "name": "DJI Zenmuse L2",
     "category": "sensors",
     "subcategory": "drone-lidar",
-    "price": 11000,
+    "priceLow": 9000,
+    "priceHigh": 13000,
     "brand": "DJI Enterprise",
     "badge": "New",
     "specs": {
@@ -44,7 +46,8 @@
     "name": "RIEGL VUX-10025",
     "category": "sensors",
     "subcategory": "drone-lidar",
-    "price": 75000,
+    "priceLow": 65000,
+    "priceHigh": 90000,
     "brand": "RIEGL",
     "badge": "Pro Series",
     "specs": {
@@ -64,7 +67,8 @@
     "name": "RIEGL VUX-820-G",
     "category": "sensors",
     "subcategory": "drone-lidar",
-    "price": 95000,
+    "priceLow": 80000,
+    "priceHigh": 115000,
     "brand": "RIEGL",
     "badge": "New 2025",
     "specs": {
@@ -84,7 +88,8 @@
     "name": "Leica RTC360",
     "category": "lidar",
     "subcategory": "terrestrial-scanner",
-    "price": 55000,
+    "priceLow": 45000,
+    "priceHigh": 68000,
     "brand": "Leica",
     "badge": "Industry Standard",
     "specs": {
@@ -104,7 +109,8 @@
     "name": "Trimble R12i GNSS",
     "category": "gnss-rtk",
     "subcategory": "rtk-rover",
-    "price": 25000,
+    "priceLow": 20000,
+    "priceHigh": 32000,
     "brand": "Trimble",
     "badge": "Top Rated",
     "specs": {
@@ -124,7 +130,8 @@
     "name": "Emlid Reach RS3",
     "category": "gnss-rtk",
     "subcategory": "rtk-rover",
-    "price": 2999,
+    "priceLow": 2500,
+    "priceHigh": 3600,
     "brand": "Emlid",
     "badge": "Best Value",
     "specs": {
@@ -144,7 +151,8 @@
     "name": "DJI Zenmuse P1",
     "category": "sensors",
     "subcategory": "photogrammetry-camera",
-    "price": 8999,
+    "priceLow": 7500,
+    "priceHigh": 10500,
     "brand": "DJI Enterprise",
     "badge": null,
     "specs": {
@@ -164,7 +172,8 @@
     "name": "Emesent GX1",
     "category": "lidar",
     "subcategory": "slam-scanner",
-    "price": 45000,
+    "priceLow": 38000,
+    "priceHigh": 52000,
     "brand": "Emesent",
     "badge": "New 2026",
     "specs": {
@@ -182,9 +191,10 @@
   {
     "id": "leica-ts16",
     "name": "Leica TS16 Total Station",
-    "category": "lidar",
+    "category": "total-stations",
     "subcategory": "total-station",
-    "price": 18000,
+    "priceLow": 14000,
+    "priceHigh": 22000,
     "brand": "Leica",
     "badge": null,
     "specs": {
@@ -204,7 +214,8 @@
     "name": "Faro Focus Premium",
     "category": "lidar",
     "subcategory": "terrestrial-scanner",
-    "price": 42000,
+    "priceLow": 35000,
+    "priceHigh": 50000,
     "brand": "Faro",
     "badge": null,
     "specs": {
@@ -224,7 +235,8 @@
     "name": "Trimble MX9 Mobile Mapping",
     "category": "trucks",
     "subcategory": "mobile-mapping-system",
-    "price": 185000,
+    "priceLow": 150000,
+    "priceHigh": 230000,
     "brand": "Trimble",
     "badge": "Fleet Pricing",
     "specs": {
@@ -244,7 +256,8 @@
     "name": "Getac ZX10 Field Tablet",
     "category": "computers",
     "subcategory": "rugged-tablet",
-    "price": 3200,
+    "priceLow": 2800,
+    "priceHigh": 4000,
     "brand": "Getac",
     "badge": null,
     "specs": {
@@ -262,9 +275,10 @@
   {
     "id": "topcon-gt1003",
     "name": "Topcon GT-1003 Total Station",
-    "category": "lidar",
+    "category": "total-stations",
     "subcategory": "total-station",
-    "price": 22000,
+    "priceLow": 18000,
+    "priceHigh": 28000,
     "brand": "Topcon",
     "badge": null,
     "specs": {
@@ -284,7 +298,8 @@
     "name": "IDS GeoRadar MyMO Monitor",
     "category": "sensors",
     "subcategory": "monitoring",
-    "price": 18500,
+    "priceLow": 14000,
+    "priceHigh": 24000,
     "brand": "IDS GeoRadar",
     "badge": "New 2026",
     "specs": {
@@ -297,6 +312,788 @@
     },
     "description": "Portable non-contact structural monitoring device using radar interferometry. Detects millimeter-level displacement in bridges, retaining walls, and unstable slopes — without attaching targets to the structure. Released February 2026.",
     "use_cases": ["structural-monitoring", "bridge-inspection", "slope-stability", "dam-monitoring"],
+    "guide_match": []
+  },
+  {
+    "id": "leica-multimapper",
+    "name": "Leica CityMapper-2",
+    "category": "lidar",
+    "subcategory": "airborne-hybrid",
+    "priceLow": 180000,
+    "priceHigh": 350000,
+    "brand": "Leica Geosystems",
+    "badge": "Airborne",
+    "specs": {
+      "sensors": "Oblique imaging + LiDAR hybrid",
+      "platform": "Fixed-wing / turboprop aircraft",
+      "coverage": "City-scale corridor and regional blocks",
+      "outputs": "DEM, DSM, ortho, point cloud",
+      "integration": "HxMap processing workflow"
+    },
+    "description": "Hybrid airborne mapping system combining oblique imaging and LiDAR for dense urban and regional projects. Typical deployments are aircraft-mounted; pricing varies widely with aircraft integration, sensors, and service contracts.",
+    "use_cases": ["urban-3d", "regional-mapping", "corridor-mapping", "smart-city"],
+    "guide_match": ["airborne-lidar"]
+  },
+  {
+    "id": "trimble-r750-base",
+    "name": "Trimble R750 Base Station",
+    "category": "gnss-rtk",
+    "subcategory": "base-station",
+    "priceLow": 14000,
+    "priceHigh": 26000,
+    "brand": "Trimble",
+    "badge": null,
+    "specs": {
+      "role": "Reference / CORS-style base",
+      "constellations": "GPS, GLONASS, Galileo, BeiDou, QZSS",
+      "connectivity": "Cellular, Ethernet, UHF options",
+      "tilt": "Optional IMU variants",
+      "use_with": "R12i, R780, and Trimble field rovers"
+    },
+    "description": "Multi-frequency GNSS base for RTK networks and project-specific reference stations. Pairs with Trimble rovers for high-accuracy correction broadcast on site or via NTRIP.",
+    "use_cases": ["rtk-network", "construction-site-base", "mining", "precision-ag"],
+    "guide_match": []
+  },
+  {
+    "id": "spectra-sp85",
+    "name": "Spectra Geospatial SP85 GNSS",
+    "category": "gnss-rtk",
+    "subcategory": "rtk-rover",
+    "priceLow": 12000,
+    "priceHigh": 20000,
+    "brand": "Spectra Geospatial",
+    "badge": null,
+    "specs": {
+      "accuracy_hz": "8 mm + 1 ppm typical RTK",
+      "correction": "RTK, NTRIP, UHF",
+      "constellations": "Full constellation tracking",
+      "field_software": "Survey Pro / third-party",
+      "environment": "IP67"
+    },
+    "description": "Mid-tier professional GNSS rover for topo, stakeout, and as-built work. Common alternative in the Trimble ecosystem family for crews that want Spectra-branded hardware and flexible correction sources.",
+    "use_cases": ["topographic-survey", "construction-stakeout", "gcps", "utility-locating"],
+    "guide_match": ["rtk-photogrammetry"]
+  },
+  {
+    "id": "dji-phantom-4-rtk",
+    "name": "DJI Phantom 4 RTK",
+    "category": "drones",
+    "subcategory": "compact-rtk-drone",
+    "priceLow": 4500,
+    "priceHigh": 7500,
+    "brand": "DJI Enterprise",
+    "badge": "Compact",
+    "specs": {
+      "camera": "1\" CMOS, 20 MP",
+      "rtk": "Onboard RTK / PPK capable",
+      "flight_time": "~30 min",
+      "use_case": "Small sites, mapping, inspection",
+      "gsd": "Sub-5 cm typical with good flight planning"
+    },
+    "description": "All-in-one compact RTK drone for small sites and quick mapping missions. Lower payload than Matrice class but far easier to transport and deploy for photogrammetry and ortho updates.",
+    "use_cases": ["construction", "small-site-mapping", "orthophoto", "stockpile"],
+    "guide_match": ["drone-photogrammetry"]
+  },
+  {
+    "id": "sensefly-ebee-x",
+    "name": "senseFly eBee X",
+    "category": "drones",
+    "subcategory": "fixed-wing",
+    "priceLow": 14000,
+    "priceHigh": 28000,
+    "brand": "AgEagle (senseFly)",
+    "badge": "Fixed-wing",
+    "specs": {
+      "endurance": "Up to ~90 min (configuration dependent)",
+      "coverage": "Large areas per flight vs multirotor",
+      "payloads": "RGB, multispectral, thermal options",
+      "launch": "Hand-launch, belly landing",
+      "ppk_rtk": "PPK standard; RTK options"
+    },
+    "description": "Professional fixed-wing mapping UAV for agriculture, mining, and large-area photogrammetry. Covers far more acreage per flight than quadcopters; ideal when runway-style ops are acceptable.",
+    "use_cases": ["fixed-wing-photogrammetry", "mining", "agriculture", "large-site-mapping"],
+    "guide_match": ["fixed-wing-photogrammetry"]
+  },
+  {
+    "id": "yellowscan-mapper-plus",
+    "name": "YellowScan Mapper+",
+    "category": "sensors",
+    "subcategory": "drone-lidar",
+    "priceLow": 35000,
+    "priceHigh": 65000,
+    "brand": "YellowScan",
+    "badge": null,
+    "specs": {
+      "point_rate": "300,000+ pts/sec class (model dependent)",
+      "weight_class": "Lightweight UAV integration",
+      "platforms": "DJI M300/M350 class and custom mounts",
+      "software": "YellowScan CloudStation / third-party",
+      "typical_accuracy": "Survey-grade with proper control"
+    },
+    "description": "Integrated UAV LiDAR mapping systems from YellowScan, popular in Europe and worldwide for topo, forestry, and power-line surveys. Price varies with scanner class and IMU/GNSS package.",
+    "use_cases": ["forestry", "powerline-inspection", "topographic-mapping", "corridor-mapping"],
+    "guide_match": ["drone-lidar"]
+  },
+  {
+    "id": "geoslam-zeb-horizon",
+    "name": "GeoSLAM ZEB Horizon",
+    "category": "lidar",
+    "subcategory": "handheld-slam",
+    "priceLow": 28000,
+    "priceHigh": 48000,
+    "brand": "GeoSLAM",
+    "badge": null,
+    "specs": {
+      "technology": "SLAM LiDAR",
+      "range": "100 m typical",
+      "capture_rate": "Walking speed mapping",
+      "gps_fusion": "Optional RTK / GNSS integration",
+      "outputs": "Registered point clouds, trajectory"
+    },
+    "description": "Handheld SLAM scanner for indoor, underground, and GPS-challenged environments. Walk-through capture for as-built, mining, and facility documentation without tripod setups.",
+    "use_cases": ["indoor-mapping", "mining", "as-built", "heritage"],
+    "guide_match": ["mobile-mapping-slam"]
+  },
+  {
+    "id": "navvis-vlx-3",
+    "name": "NavVis VLX 3",
+    "category": "lidar",
+    "subcategory": "wearable-mapping",
+    "priceLow": 42000,
+    "priceHigh": 70000,
+    "brand": "NavVis",
+    "badge": null,
+    "specs": {
+      "form_factor": "Wearable backpack / mobile mapper",
+      "cameras": "Panoramic imaging + LiDAR",
+      "indoor_outdoor": "Indoor and outdoor workflows",
+      "software": "NavVis IVION ecosystem",
+      "typical_use": "Facilities, plants, large interiors"
+    },
+    "description": "Wearable mobile mapping for facility-scale indoor and campus projects. Combines LiDAR with panoramic imagery for walkable digital twins and BIM-ready deliverables.",
+    "use_cases": ["bim", "factory-scanning", "campus-mapping", "as-built"],
+    "guide_match": []
+  },
+  {
+    "id": "gssi-utilityscan-gpr",
+    "name": "GSSI UtilityScan GPR System",
+    "category": "sensors",
+    "subcategory": "gpr",
+    "priceLow": 12000,
+    "priceHigh": 45000,
+    "brand": "GSSI",
+    "badge": null,
+    "specs": {
+      "technology": "Ground penetrating radar",
+      "antenna": "Multiple frequency carts available",
+      "depth": "Shallow utility typical; varies with soil",
+      "output": "Radargrams, depth slices, interpretations",
+      "pairing": "Total station / GNSS for georeferencing"
+    },
+    "description": "GPR cart systems for utility locating, void detection, and shallow subsurface mapping. Pricing depends heavily on antenna selection, software, and cart configuration.",
+    "use_cases": ["utility-locating", "underground", "archaeology", "pavement"],
+    "guide_match": ["gpr-total-station"]
+  },
+  {
+    "id": "teledyne-multibeam-kit",
+    "name": "Teledyne Marine Multibeam Survey Kit",
+    "category": "sensors",
+    "subcategory": "hydrography",
+    "priceLow": 85000,
+    "priceHigh": 220000,
+    "brand": "Teledyne Marine",
+    "badge": "Multibeam",
+    "specs": {
+      "type": "Swath multibeam echosounder",
+      "integration": "Vessel pole mount + motion / GNSS",
+      "coverage": "Full swath vs single-beam spot soundings",
+      "deliverables": "Bathymetry, backscatter, 3D seabed",
+      "note": "Price varies with beam count, frequency, and vessel fit-out"
+    },
+    "description": "Survey-grade multibeam systems for harbors, channels, and coastal projects where single-beam is insufficient. Typically sold with motion sensors, sound velocity probes, and integration labor — total project cost often exceeds hardware alone.",
+    "use_cases": ["hydrographic-survey", "dredging", "coastal-engineering", "port-mapping"],
+    "guide_match": []
+  },
+  {
+    "id": "hydrolite-plus-echosounder",
+    "name": "HydroLite Plus Portable Echo Sounder",
+    "category": "sensors",
+    "subcategory": "hydrography",
+    "priceLow": 3500,
+    "priceHigh": 9000,
+    "brand": "Teledyne / survey integrators",
+    "badge": null,
+    "specs": {
+      "application": "Shallow single-beam bathymetry",
+      "integration": "Boat pole / small vessel mounts",
+      "pairing": "RTK GNSS for waterline elevation",
+      "depth_range": "Project and spec dependent",
+      "deliverables": "Depth soundings, cross-sections"
+    },
+    "description": "Portable single-beam echo sounding kits for rivers, ponds, and harbors when multibeam is not justified. Often integrated with survey GNSS for charting and hydraulic models.",
+    "use_cases": ["hydrographic-survey", "riverine-mapping", "dredging", "flood-modeling"],
+    "guide_match": []
+  },
+  {
+    "id": "leica-na730-digital-level",
+    "name": "Leica NA730 Digital Level",
+    "category": "total-stations",
+    "subcategory": "digital-level",
+    "priceLow": 2200,
+    "priceHigh": 4200,
+    "brand": "Leica",
+    "badge": null,
+    "specs": {
+      "accuracy": "0.3 mm class (per km double-run typical)",
+      "staff": "Invar barcode staff required",
+      "use": "Level loops, deformation, construction",
+      "environment": "IP protected field unit"
+    },
+    "description": "Digital leveling instrument for high-precision height networks and construction settlement monitoring. Complements GNSS and total station work where elevation is critical.",
+    "use_cases": ["leveling", "deformation-monitoring", "construction", "control-network"],
+    "guide_match": []
+  },
+  {
+    "id": "seco-prism-pole-kit",
+    "name": "Seco Prism + Bipod Survey Kit",
+    "category": "total-stations",
+    "subcategory": "accessories",
+    "priceLow": 400,
+    "priceHigh": 1400,
+    "brand": "Seco",
+    "badge": null,
+    "specs": {
+      "contents": "360° prism, pole, bipod (kits vary)",
+      "compatibility": "Standard survey threads",
+      "use": "TS stakeout, monitoring, control",
+      "note": "Brand-agnostic accessories"
+    },
+    "description": "Typical field kit for robotic total station work: precision prism, carbon or fiberglass pole, and bipod for stability. Prices vary by prism type and brand.",
+    "use_cases": ["construction-stakeout", "monitoring", "control-network"],
+    "guide_match": []
+  },
+  {
+    "id": "panasonic-toughbook-40",
+    "name": "Panasonic Toughbook 40",
+    "category": "computers",
+    "subcategory": "rugged-laptop",
+    "priceLow": 4200,
+    "priceHigh": 7500,
+    "brand": "Panasonic",
+    "badge": null,
+    "specs": {
+      "form": "14\" modular rugged laptop",
+      "mil_std": "MIL-STD-810H",
+      "os": "Windows 11 Pro",
+      "use": "Office + CAD + field software",
+      "battery": "Hot-swappable options"
+    },
+    "description": "Fully rugged clamshell laptop for surveyors running CAD, point cloud software, and connectivity-heavy field workflows when a tablet is not enough screen or ports.",
+    "use_cases": ["field-data-collection", "cad-field", "lidar-processing-lite"],
+    "guide_match": []
+  },
+  {
+    "id": "trimble-business-center-annual",
+    "name": "Trimble Business Center (annual license)",
+    "category": "computers",
+    "subcategory": "survey-software",
+    "priceLow": 2000,
+    "priceHigh": 6000,
+    "brand": "Trimble",
+    "badge": null,
+    "specs": {
+      "billing": "Annual subscription typical",
+      "modules": "GNSS, scanning, UAV optional add-ons",
+      "outputs": "CAD, surfaces, reports",
+      "note": "Per-seat pricing varies by modules"
+    },
+    "description": "Office software for processing GNSS, total station, UAV, and scanning data into survey deliverables. Annual cost depends on modules and maintenance level.",
+    "use_cases": ["office-processing", "survey-deliverables", "construction"],
+    "guide_match": []
+  },
+  {
+    "id": "leica-blk360-g2",
+    "name": "Leica BLK360 G2",
+    "category": "lidar",
+    "subcategory": "compact-scanner",
+    "priceLow": 16000,
+    "priceHigh": 22000,
+    "brand": "Leica",
+    "badge": "Compact TLS",
+    "specs": {
+      "form": "Compact tripod-mounted scanner",
+      "speed": "Fast setup vs full-size TLS",
+      "imaging": "HDR imagery integration",
+      "software": "Cyclone REGISTER / third-party",
+      "ideal_for": "Architecture, interiors, quick as-built"
+    },
+    "description": "Compact terrestrial scanner for architects and surveyors who need fast, repeatable setups without full RTC360-class throughput. Common entry point into Leica scanning workflows.",
+    "use_cases": ["as-built", "architecture", "heritage", "bim"],
+    "guide_match": []
+  },
+  {
+    "id": "dji-mavic-3-enterprise-rtk",
+    "name": "DJI Mavic 3 Enterprise (RTK module)",
+    "category": "drones",
+    "subcategory": "compact-enterprise",
+    "priceLow": 5200,
+    "priceHigh": 9000,
+    "brand": "DJI Enterprise",
+    "badge": null,
+    "specs": {
+      "camera": "Wide + tele options (model dependent)",
+      "rtk": "Optional RTK module",
+      "portability": "Foldable; backpack deployable",
+      "flight_time": "30+ min typical",
+      "use": "Inspection, mapping, public safety overlap"
+    },
+    "description": "Compact enterprise drone line with optional RTK for mapping-grade photogrammetry on medium-sized sites. Lower cost and footprint than Matrice; less payload flexibility.",
+    "use_cases": ["photogrammetry", "inspection", "construction", "orthophoto"],
+    "guide_match": ["drone-photogrammetry"]
+  },
+  {
+    "id": "mosaic-51-camera-system",
+    "name": "Mosaic 51 Vehicle Imaging System",
+    "category": "trucks",
+    "subcategory": "mobile-imaging",
+    "priceLow": 25000,
+    "priceHigh": 55000,
+    "brand": "Mosaic",
+    "badge": null,
+    "specs": {
+      "type": "360° camera mobile mapping",
+      "mount": "Vehicle roof",
+      "outputs": "Street-level imagery, panoramas",
+      "pairing": "Often combined with GNSS/INS",
+      "use": "Asset inventory, road audit, GIS"
+    },
+    "description": "High-resolution vehicle-mounted camera systems for corridor and street-level documentation. Price varies with camera head, storage, and integration services.",
+    "use_cases": ["corridor-mapping", "asset-inventory", "road-survey", "gis"],
+    "guide_match": ["mobile-mapping-truck"]
+  },
+  {
+    "id": "cors-network-subscription",
+    "name": "NTRIP / CORS Network Subscription (annual)",
+    "category": "gnss-rtk",
+    "subcategory": "corrections",
+    "priceLow": 600,
+    "priceHigh": 5000,
+    "brand": "Various (state, private)",
+    "badge": null,
+    "specs": {
+      "delivery": "NTRIP caster over internet",
+      "coverage": "Regional to statewide",
+      "requires": "Cellular modem or phone hotspot",
+      "accuracy": "RTK/RTK-Network dependent",
+      "note": "Not hardware — ongoing correction service"
+    },
+    "description": "Annual subscription to a commercial or state CORS network for RTK corrections without running your own base. Cost varies by region, seat count, and accuracy tier.",
+    "use_cases": ["rtk-network", "boundary-survey", "topographic-survey"],
+    "guide_match": ["ppk-rtk-network"]
+  },
+  {
+    "id": "machine-control-base-rover-kit",
+    "name": "Machine Control Base + Rover Kit",
+    "category": "gnss-rtk",
+    "subcategory": "machine-control",
+    "priceLow": 25000,
+    "priceHigh": 55000,
+    "brand": "Trimble / Topcon / Leica",
+    "badge": null,
+    "specs": {
+      "components": "Base, machine rover, displays (varies)",
+      "use": "Grading, excavators, dozers",
+      "integration": "Hydraulic machine interfaces",
+      "accuracy": "Sub-foot to cm depending on config"
+    },
+    "description": "GNSS machine control packages for heavy civil and earthwork. Pricing spans a wide range based on brand, number of machines, and 3D model integration.",
+    "use_cases": ["construction", "mining", "earthwork"],
+    "guide_match": []
+  },
+  {
+    "id": "micasense-altum-pt",
+    "name": "MicaSense Altum-PT",
+    "category": "sensors",
+    "subcategory": "multispectral",
+    "priceLow": 14000,
+    "priceHigh": 24000,
+    "brand": "MicaSense (AgEagle)",
+    "badge": "MS + thermal",
+    "specs": {
+      "bands": "Multispectral + high-res Panchromatic + thermal",
+      "resolution": "Sub-meter GSD typical flight altitudes",
+      "platforms": "Fixed-wing and multirotor integrations",
+      "outputs": "Indices, plant health, thermal maps",
+      "integration": "DJI SkyPort / custom mounts"
+    },
+    "description": "Multispectral + thermal payload for precision agriculture, environmental monitoring, and vegetation stress mapping. Often paired with RTK drones for georeferenced raster analytics.",
+    "use_cases": ["agriculture", "environmental", "vegetation-analysis", "water-stress"],
+    "guide_match": ["drone-photogrammetry"]
+  },
+  {
+    "id": "micasense-rededge-p",
+    "name": "MicaSense RedEdge-P",
+    "category": "sensors",
+    "subcategory": "multispectral",
+    "priceLow": 5500,
+    "priceHigh": 12000,
+    "brand": "MicaSense (AgEagle)",
+    "badge": null,
+    "specs": {
+      "bands": "Five narrow multispectral + Panchromatic",
+      "use": "Agriculture, turf, research plots",
+      "weight": "Lightweight UAV class",
+      "calibration": "Radiometric calibration panel recommended"
+    },
+    "description": "Compact multispectral camera for high-frequency crop and turf surveys. Lower cost than Altum-PT; thermal is not included — pair with RGB or thermal separately if needed.",
+    "use_cases": ["agriculture", "research", "environmental"],
+    "guide_match": []
+  },
+  {
+    "id": "headwall-nano-hp",
+    "name": "Headwall Nano HP (UAV hyperspectral)",
+    "category": "sensors",
+    "subcategory": "hyperspectral",
+    "priceLow": 65000,
+    "priceHigh": 140000,
+    "brand": "Headwall Photonics",
+    "badge": "Hyperspectral",
+    "specs": {
+      "type": "VNIR / SWIR options (configuration dependent)",
+      "spectral": "Hundreds of narrow contiguous bands",
+      "applications": "Mineralogy, vegetation species, material ID",
+      "integration": "Custom UAV / manned integrations",
+      "processing": "Requires spectral calibration workflow"
+    },
+    "description": "Research- and commercial-grade hyperspectral imagers for geology, precision agriculture, and environmental forensics. Pricing varies strongly with spectral range, optics, and integration services.",
+    "use_cases": ["geology", "environmental", "precision-ag", "research"],
+    "guide_match": []
+  },
+  {
+    "id": "resonon-pika-ir-hyperspectral",
+    "name": "Resonon Pika IR / L",
+    "category": "sensors",
+    "subcategory": "hyperspectral",
+    "priceLow": 35000,
+    "priceHigh": 85000,
+    "brand": "Resonon",
+    "badge": null,
+    "specs": {
+      "form": "Compact line-scan hyperspectral imagers",
+      "range": "VNIR / NIR / SWIR families",
+      "platforms": "Lab, field carts, UAV with gimbal",
+      "use": "Research, vegetation, geology"
+    },
+    "description": "Line-scan hyperspectral sensors used in research and specialized mapping where multispectral bands are insufficient. Often deployed on ground rigs or UAVs with precise motion compensation.",
+    "use_cases": ["research", "geology", "environmental"],
+    "guide_match": []
+  },
+  {
+    "id": "seafloor-hydrus-auv",
+    "name": "Hydrus Autonomous Underwater Vehicle",
+    "category": "sensors",
+    "subcategory": "usv-auv-hydro",
+    "priceLow": 45000,
+    "priceHigh": 95000,
+    "brand": "Advanced Navigation / Seafloor partners",
+    "badge": "AUV",
+    "specs": {
+      "type": "Compact AUV for shallow bathymetry / inspection",
+      "sensors": "DVL, imaging sonar options, camera payloads",
+      "ops": "Autonomous missions; no tether",
+      "depth_rating": "Model dependent",
+      "note": "Often sold with training and spare batteries"
+    },
+    "description": "Small autonomous underwater vehicles for shallow-water bathymetry, habitat mapping, and inspection where a crewed boat is impractical. Total program cost includes sensors, software, and operations training.",
+    "use_cases": ["hydrographic-survey", "inspection", "research", "coastal"],
+    "guide_match": []
+  },
+  {
+    "id": "oceanscience-zboat-1800",
+    "name": "Ocean Science Z-Boat 1800",
+    "category": "sensors",
+    "subcategory": "usv-auv-hydro",
+    "priceLow": 22000,
+    "priceHigh": 55000,
+    "brand": "Ocean Science International",
+    "badge": "USV",
+    "specs": {
+      "type": "Remote-controlled survey USV",
+      "payloads": "Single-beam / ADCP / small MBES integrations",
+      "environment": "Shallow rivers, ponds, harbors",
+      "telemetry": "Radio link; optional autopilot",
+      "advantage": "Human stays on shore"
+    },
+    "description": "Teleoperated unmanned surface vehicle for hydrographic soundings in shallow or hazardous waterbodies. Price depends on sonar package, GNSS/RTK integration, and software.",
+    "use_cases": ["hydrographic-survey", "riverine-mapping", "mining", "dredging"],
+    "guide_match": []
+  },
+  {
+    "id": "seafloor-trident-usv",
+    "name": "Seafloor Trident / integrated survey USV",
+    "category": "sensors",
+    "subcategory": "usv-auv-hydro",
+    "priceLow": 75000,
+    "priceHigh": 180000,
+    "brand": "Seafloor Survey Systems (typical integrators)",
+    "badge": "Turnkey",
+    "specs": {
+      "type": "USV hull + sensor integration packages",
+      "payloads": "Multibeam, side-scan, lidar options",
+      "ops": "Harbor, inland, coastal corridor projects",
+      "delivery": "Often turnkey with training"
+    },
+    "description": "Integrated unmanned or lightly crewed survey platforms for multibeam and imaging sonar. Mid-to-high tier pricing reflects sonar head, INS, and mobilization — comparable to small crewed survey boats.",
+    "use_cases": ["hydrographic-survey", "port-mapping", "infrastructure", "dredging"],
+    "guide_match": []
+  },
+  {
+    "id": "scintrex-cg6-gravimeter",
+    "name": "Scintrex CG-6 Autograv",
+    "category": "sensors",
+    "subcategory": "gravity",
+    "priceLow": 95000,
+    "priceHigh": 160000,
+    "brand": "Scintrex",
+    "badge": "Gravimetry",
+    "specs": {
+      "type": "Land relative gravimeter",
+      "accuracy": "MicroGal class field surveys",
+      "use": "Geophysics, cavity detection, geothermal, baseline networks",
+      "environment": "Temperature-controlled sensor; careful field procedures",
+      "accessories": "GPS time/position, leveling, transport cases"
+    },
+    "description": "Professional relative gravity meter for microgravity surveys in geophysics and engineering. Not a typical land-survey SKU — requires specialized training and processing software.",
+    "use_cases": ["geophysics", "cavity-detection", "geothermal", "research"],
+    "guide_match": []
+  },
+  {
+    "id": "micro-g-lacoste-gravity-meter",
+    "name": "Micro-g LaCoste Absolute / Airborne Gravity",
+    "category": "sensors",
+    "subcategory": "gravity",
+    "priceLow": 120000,
+    "priceHigh": 350000,
+    "brand": "Micro-g LaCoste",
+    "badge": "Specialist",
+    "specs": {
+      "type": "Absolute or airborne gravimeter programs",
+      "use": "Geoid, regional gravity networks, airborne campaigns",
+      "note": "Often procured as programs, not off-the-shelf drones",
+      "integration": "Aircraft / helicopter mounts for airborne"
+    },
+    "description": "High-end gravimetry for geodetic and geophysical campaigns including airborne gravity. Pricing is project- and configuration-dependent and often includes calibration and analysis services.",
+    "use_cases": ["geodesy", "geophysics", "oil-gas", "research"],
+    "guide_match": []
+  },
+  {
+    "id": "geometrics-magarrow-uav",
+    "name": "Geometrics MagArrow UAS Magnetometer",
+    "category": "sensors",
+    "subcategory": "magnetometry",
+    "priceLow": 18000,
+    "priceHigh": 42000,
+    "brand": "Geometrics",
+    "badge": "UAV mag",
+    "specs": {
+      "type": "Total-field magnetometer for UAV",
+      "use": "UXO, geology, archaeology, pipeline corridor",
+      "compensation": "Requires magnetic cleanliness and flight planning",
+      "pairing": "RTK/PPK positioning for georeferencing"
+    },
+    "description": "Drone-towed or mounted magnetometer for high-productivity magnetic surveys. Complements GPR and EM methods for unexploded ordnance and shallow geology.",
+    "use_cases": ["uxo", "geology", "archaeology", "utility-corridor"],
+    "guide_match": []
+  },
+  {
+    "id": "bartington-gradiometer-system",
+    "name": "Bartington Fluxgate Gradiometer (survey kit)",
+    "category": "sensors",
+    "subcategory": "magnetometry",
+    "priceLow": 8000,
+    "priceHigh": 22000,
+    "brand": "Bartington Instruments",
+    "badge": "Handheld",
+    "specs": {
+      "type": "Fluxgate gradiometer for ground survey",
+      "use": "Archaeology, unexplored anomalies, UXO screening",
+      "coverage": "Walking grid surveys",
+      "resolution": "Sub-nT sensitivity class (model dependent)"
+    },
+    "description": "Walking-magnetic survey instruments common in archaeology and preliminary UXO screening. Lower cost than airborne UAV mag; labor-intensive coverage.",
+    "use_cases": ["archaeology", "uxo", "heritage", "research"],
+    "guide_match": []
+  },
+  {
+    "id": "hexagon-smartnet-annual",
+    "name": "Hexagon SmartNet (regional VRS subscription)",
+    "category": "gnss-rtk",
+    "subcategory": "cors-regional",
+    "priceLow": 800,
+    "priceHigh": 4500,
+    "brand": "Hexagon (Leica Geosystems)",
+    "badge": "VRS",
+    "specs": {
+      "delivery": "NTRIP / cellular to rovers",
+      "coverage": "Regional — country and package dependent",
+      "accuracy": "Network RTK typical",
+      "compatibility": "Multi-brand receivers with open NTRIP",
+      "billing": "Annual subscription typical"
+    },
+    "description": "Commercial GNSS reference network (SmartNet) used worldwide. Exact price depends on region, number of rovers, and accuracy tier — get a quote for your operating area.",
+    "use_cases": ["rtk-network", "boundary-survey", "construction"],
+    "guide_match": ["ppk-rtk-network"]
+  },
+  {
+    "id": "trimble-vrsnow-annual",
+    "name": "Trimble VRS Now (regional subscription)",
+    "category": "gnss-rtk",
+    "subcategory": "cors-regional",
+    "priceLow": 900,
+    "priceHigh": 5000,
+    "brand": "Trimble",
+    "badge": "VRS",
+    "specs": {
+      "delivery": "Cellular / internet correction service",
+      "coverage": "Regional packages (Americas, Europe, etc.)",
+      "pairing": "Trimble and many NTRIP-capable rovers",
+      "accuracy": "Network RTK / RTK-Network"
+    },
+    "description": "Trimble-branded VRS correction service for RTK rovers without a local base. Pricing varies by region and seat count.",
+    "use_cases": ["construction", "topographic-survey", "machine-control"],
+    "guide_match": ["ppk-rtk-network"]
+  },
+  {
+    "id": "topcon-topnet-live-annual",
+    "name": "Topcon TopNet Live (regional subscription)",
+    "category": "gnss-rtk",
+    "subcategory": "cors-regional",
+    "priceLow": 700,
+    "priceHigh": 4200,
+    "brand": "Topcon",
+    "badge": "VRS",
+    "specs": {
+      "delivery": "NTRIP corrections",
+      "coverage": "Strong in EU/APAC; check local availability",
+      "use": "RTK rovers, some machine-control receivers",
+      "billing": "Annual / project options"
+    },
+    "description": "Topcon reference network service for network RTK corrections. Competes with other commercial VRS offerings — verify coverage maps before purchasing.",
+    "use_cases": ["rtk-network", "construction", "topographic-survey"],
+    "guide_match": ["ppk-rtk-network"]
+  },
+  {
+    "id": "state-dot-cors-access",
+    "name": "U.S. State DOT / public CORS access (typical)",
+    "category": "gnss-rtk",
+    "subcategory": "cors-regional",
+    "priceLow": 0,
+    "priceHigh": 1200,
+    "brand": "Various state agencies",
+    "badge": "Public",
+    "specs": {
+      "delivery": "Often free NTRIP for RTK; some states charge",
+      "coverage": "State highway corridors and control densification",
+      "accuracy": "Varies; check metadata and epoch",
+      "note": "Not a single vendor — access policy per state"
+    },
+    "description": "Many U.S. states operate free or low-cost CORS networks for surveying and GIS. Some charge nominal annual fees or restrict commercial use — verify terms for your state DOT or geodetic office.",
+    "use_cases": ["boundary-survey", "gis", "construction"],
+    "guide_match": ["ppk-rtk-network"]
+  },
+  {
+    "id": "leica-geomos-monitoring",
+    "name": "Leica GeoMoS (deformation monitoring suite)",
+    "category": "sensors",
+    "subcategory": "monitoring-network",
+    "priceLow": 8000,
+    "priceHigh": 75000,
+    "brand": "Leica Geosystems",
+    "badge": "Monitoring",
+    "specs": {
+      "type": "Software + integration for automated monitoring",
+      "inputs": "Total stations, GNSS, tilt, meteorological",
+      "outputs": "Time series, alarms, reporting",
+      "billing": "Per-project or enterprise licensing"
+    },
+    "description": "Enterprise deformation-monitoring solution tying together sensors and alerting for dams, bridges, mines, and construction. Price depends on sensor count, redundancy, and support tier.",
+    "use_cases": ["structural-monitoring", "mining", "dam-monitoring", "construction"],
+    "guide_match": []
+  },
+  {
+    "id": "trimble-4d-control-saas",
+    "name": "Trimble 4D Control (monitoring & analytics)",
+    "category": "sensors",
+    "subcategory": "monitoring-network",
+    "priceLow": 5000,
+    "priceHigh": 60000,
+    "brand": "Trimble",
+    "badge": "Monitoring",
+    "specs": {
+      "type": "Cloud / server monitoring analytics",
+      "inputs": "GNSS, scanning, total stations",
+      "use": "Infrastructure, construction, mining",
+      "billing": "Subscription scales with assets and frequency"
+    },
+    "description": "Monitoring platform for combining GNSS and optical measurements with alerting workflows. Common on large civil projects and long-term infrastructure programs.",
+    "use_cases": ["structural-monitoring", "construction", "infrastructure"],
+    "guide_match": []
+  },
+  {
+    "id": "senceive-wireless-monitoring-network",
+    "name": "Senceive wireless monitoring nodes (tilt / displacement)",
+    "category": "sensors",
+    "subcategory": "monitoring-network",
+    "priceLow": 15000,
+    "priceHigh": 90000,
+    "brand": "Senceive",
+    "badge": "Wireless",
+    "specs": {
+      "type": "FlatMesh wireless tilt, crack, vibration sensors",
+      "deployment": "Rail, slopes, structures — long battery life",
+      "gateway": "Cellular backhaul typical",
+      "pricing": "Per-node + annual service"
+    },
+    "description": "Wireless sensor networks for continuous deformation and movement monitoring without running cables across sites. Project cost scales with node count and monitoring duration.",
+    "use_cases": ["structural-monitoring", "rail", "slope-stability", "tunneling"],
+    "guide_match": []
+  },
+  {
+    "id": "campbell-scientific-structural-monitoring",
+    "name": "Campbell Scientific structural monitoring stack",
+    "category": "sensors",
+    "subcategory": "monitoring-network",
+    "priceLow": 12000,
+    "priceHigh": 85000,
+    "brand": "Campbell Scientific",
+    "badge": "Geotech",
+    "specs": {
+      "type": "Dataloggers, vibrating wire, tilt, strain",
+      "use": "Dams, bridges, geotechnical instrumentation",
+      "integration": "SCADA, cloud, long-term networks",
+      "note": "Bill of materials varies widely"
+    },
+    "description": "Geotechnical and structural instrumentation stacks for long-term monitoring networks. Often specified by engineers alongside survey control from GNSS or total stations.",
+    "use_cases": ["dam-monitoring", "geotechnical", "bridge-inspection", "research"],
+    "guide_match": []
+  },
+  {
+    "id": "ids-ibis-radar-monitoring",
+    "name": "IDS GeoRadar IBIS (slope & mine radar)",
+    "category": "sensors",
+    "subcategory": "monitoring-network",
+    "priceLow": 85000,
+    "priceHigh": 220000,
+    "brand": "IDS GeoRadar",
+    "badge": "Radar",
+    "specs": {
+      "type": "Ground-based SAR for displacement monitoring",
+      "use": "Open-pit mines, landslides, dams",
+      "range": "Long-range monitoring swaths",
+      "complement": "Pairs with GNSS prisms and LiDAR QA"
+    },
+    "description": "Ground-based interferometric radar for monitoring large slopes and walls in near-real time. Capital-intensive compared to point sensors; used where failure risk justifies coverage.",
+    "use_cases": ["mining", "slope-stability", "dam-monitoring"],
     "guide_match": []
   }
 ]

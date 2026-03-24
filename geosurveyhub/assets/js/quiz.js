@@ -71,7 +71,7 @@ const RECOMMENDATIONS = {
   'fixed-wing-photogrammetry': {
     title: 'Fixed-Wing Drone + Photogrammetry',
     description: 'For very large open areas, a fixed-wing drone dramatically increases coverage per flight. Pair with a high-res camera and Pix4D or RealityCapture for efficient large-area mapping.',
-    products: ['dji-zenmuse-p1'],
+    products: ['sensefly-ebee-x', 'dji-zenmuse-p1'],
     category: 'drones',
     categoryLabel: 'Explore Sensors →'
   },
@@ -83,16 +83,16 @@ const RECOMMENDATIONS = {
     categoryLabel: 'Explore GNSS/RTK →'
   },
   'gpr-total-station': {
-    title: 'Total Station + GPR / SLAM Scanner',
-    description: 'Underground utility mapping requires Ground Penetrating Radar and precise surface control. For GPS-denied interior spaces, a SLAM scanner like the Emesent GX1 is purpose-built.',
-    products: ['emesent-gx1', 'leica-ts16'],
-    category: 'lidar',
-    categoryLabel: 'Explore Scanners →'
+    title: 'GPR + Total Station + SLAM Scanner',
+    description: 'Underground utility mapping uses Ground Penetrating Radar with precise surface control from a total station or GNSS. For GPS-denied interior spaces, a SLAM scanner like the Emesent GX1 is purpose-built.',
+    products: ['gssi-utilityscan-gpr', 'emesent-gx1', 'leica-ts16'],
+    category: 'sensors',
+    categoryLabel: 'Explore Sensors →'
   },
   'mobile-mapping-truck': {
     title: 'Mobile Mapping System',
     description: 'Urban 3D or corridor mapping is most efficiently done from a vehicle. A mobile mapping system captures roads, infrastructure, and buildings at driving speed.',
-    products: ['trimble-mx9'],
+    products: ['trimble-mx9', 'mosaic-51-camera-system'],
     category: 'trucks',
     categoryLabel: 'Explore Mobile Mapping →'
   },
@@ -162,6 +162,10 @@ class EquipmentQuiz {
   renderResult() {
     const key = recommend(this.state.answers);
     const rec = RECOMMENDATIONS[key];
+    if (!rec) {
+      this.container.innerHTML = '<p class="quiz-result">No recommendation matched. <button type="button" class="btn btn-ghost" onclick="location.reload()">Start over</button></p>';
+      return;
+    }
     this.container.innerHTML = `
       <div class="quiz-result">
         <div class="kicker">Our Recommendation</div>
@@ -170,50 +174,105 @@ class EquipmentQuiz {
         <div class="quiz-result-products" id="quiz-products">
           <p style="color: var(--muted); font-size: 13px;">Loading recommended products...</p>
         </div>
+        <details class="quiz-catalog-details">
+          <summary>Browse full equipment catalog (approximate price ranges)</summary>
+          <div id="quiz-catalog-full" class="quiz-catalog-full" aria-live="polite">
+            <p class="quiz-catalog-loading">Loading catalog…</p>
+          </div>
+        </details>
         <div style="display: flex; gap: 20px; margin-top: 32px; flex-wrap: wrap;">
           <a href="${rec.category}.html" class="btn btn-primary">${rec.categoryLabel}</a>
           <button class="btn btn-ghost" onclick="location.reload()">← Start Over</button>
         </div>
       </div>
     `;
-    this.loadProducts(rec.products);
+    this.loadResultContent(rec);
   }
 
-  async loadProducts(ids) {
+  async loadResultContent(rec) {
+    let all;
     try {
       const res = await fetch('../content/products.json');
-      const all = await res.json();
-      const products = all.filter(p => ids.includes(p.id));
-      const el = document.getElementById('quiz-products');
-      if (!el || !products.length) return;
-      el.innerHTML = `
-        <div class="grid-3" style="margin-top: 24px;">
-          ${products.map(p => `
-            <div class="product-card">
-              <div class="product-card-img">
-                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#FBD784" stroke-width="1" opacity="0.5">
-                  <circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="8"/>
-                  <line x1="12" y1="32" x2="4" y2="32"/><line x1="52" y1="32" x2="60" y2="32"/>
-                  <line x1="32" y1="12" x2="32" y2="4"/><line x1="32" y1="52" x2="32" y2="60"/>
-                </svg>
-                ${p.badge ? `<span class="panel-badge">${p.badge}</span>` : ''}
-              </div>
-              <div class="product-card-body">
-                <div class="product-category">${p.category}</div>
-                <div class="product-name">${p.name}</div>
-                <div class="product-desc">${p.description.substring(0, 100)}...</div>
-                <div class="product-footer">
-                  <div class="product-price">$${p.price.toLocaleString()}</div>
-                  <button class="add-to-quote">Add to Quote</button>
-                </div>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      `;
+      all = await res.json();
     } catch (e) {
       console.warn('Could not load products:', e);
+      const el = document.getElementById('quiz-products');
+      if (el) el.innerHTML = '<p style="color: var(--muted);">Could not load product data.</p>';
+      const full = document.getElementById('quiz-catalog-full');
+      if (full) full.innerHTML = '';
+      return;
     }
+
+    this.renderRecommendedProducts(rec.products, all);
+    this.renderFullCatalog(all);
+  }
+
+  renderRecommendedProducts(ids, all) {
+    const products = all.filter(p => ids.includes(p.id));
+    const el = document.getElementById('quiz-products');
+    if (!el || !products.length) {
+      if (el) el.innerHTML = '<p style="color: var(--muted);">No matching products in catalog.</p>';
+      return;
+    }
+    const price = (p) => (typeof formatPriceRange === 'function' ? formatPriceRange(p) : 'See catalog');
+    const cat = (p) => (typeof formatCategorySlug === 'function' ? formatCategorySlug(p.category) : p.category);
+    el.innerHTML = `
+      <div class="grid-3 quiz-rec-grid" style="margin-top: 24px;">
+        ${products.map(p => `
+          <div class="product-card">
+            <div class="product-card-img">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#FBD784" stroke-width="1" opacity="0.5">
+                <circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="8"/>
+                <line x1="12" y1="32" x2="4" y2="32"/><line x1="52" y1="32" x2="60" y2="32"/>
+                <line x1="32" y1="12" x2="32" y2="4"/><line x1="32" y1="52" x2="32" y2="60"/>
+              </svg>
+              ${p.badge ? `<span class="panel-badge">${p.badge}</span>` : ''}
+            </div>
+            <div class="product-card-body">
+              <div class="product-category">${cat(p)}</div>
+              <div class="product-name">${p.name}</div>
+              <div class="product-desc">${p.description.substring(0, 100)}...</div>
+              <div class="product-footer">
+                <div class="product-price">${price(p)}</div>
+                <button class="add-to-quote">Add to Quote</button>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  renderFullCatalog(all) {
+    const el = document.getElementById('quiz-catalog-full');
+    if (!el) return;
+    const price = (p) => (typeof formatPriceRange === 'function' ? formatPriceRange(p) : 'See catalog');
+    const catLabel = (slug) => (typeof formatCategorySlug === 'function' ? formatCategorySlug(slug) : slug);
+    const byCat = {};
+    all.forEach((p) => {
+      const c = p.category || 'other';
+      if (!byCat[c]) byCat[c] = [];
+      byCat[c].push(p);
+    });
+    Object.keys(byCat).forEach((c) => {
+      byCat[c].sort((a, b) => a.name.localeCompare(b.name));
+    });
+    const order = ['drones', 'sensors', 'lidar', 'gnss-rtk', 'trucks', 'computers', 'total-stations', 'other'];
+    const keys = [...new Set([...order, ...Object.keys(byCat)])].filter((k) => byCat[k]);
+
+    el.innerHTML = keys.map((cat) => `
+      <section class="quiz-catalog-block">
+        <h3 class="quiz-catalog-heading">${catLabel(cat)}</h3>
+        <ul class="quiz-catalog-list">
+          ${byCat[cat].map((p) => `
+            <li class="quiz-catalog-item">
+              <span class="quiz-catalog-name">${p.name}</span>
+              <span class="quiz-catalog-price">${price(p)}</span>
+            </li>
+          `).join('')}
+        </ul>
+      </section>
+    `).join('');
   }
 }
 
