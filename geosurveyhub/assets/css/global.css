@@ -13,7 +13,10 @@
   --surface:     #162535;
   --surface2:    #1C2F3D;
   --white:       #FFFFFF;
-  --muted:       #7A8B99;
+  /* Body copy: higher contrast than legacy --muted for readability */
+  --text-body:   #D6E0E8;
+  --text-subtle: #A8B8C4;
+  --muted:       #8B9DAA;
   --accent:      #FBD784;
   --accent-dim:  #C9A55A;
   --border:      rgba(255, 255, 255, 0.07);
@@ -31,7 +34,7 @@
   --section-v:   120px;
   --section-h:   60px;
   --max-width:   1200px;
-  --text-max:    440px;
+  --text-max:    560px;
 
   /* Radii */
   --radius-sm:   2px;
@@ -47,15 +50,15 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 body {
   background: var(--bg);
-  color: var(--white);
+  color: var(--text-body);
   font-family: var(--font-body);
-  font-weight: 300;
-  line-height: 1.6;
+  font-weight: 400;
+  line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -81,10 +84,10 @@ h4 { font-size: 18px; }
 h1 em, h2 em, h3 em { font-style: italic; color: var(--accent); }
 
 p {
-  font-size: 15px;
-  font-weight: 300;
-  color: var(--muted);
-  line-height: 1.85;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--text-body);
+  line-height: 1.75;
   max-width: var(--text-max);
 }
 
@@ -370,10 +373,10 @@ p {
 }
 
 .product-desc {
-  font-size: 13px;
-  font-weight: 300;
-  color: var(--muted);
-  line-height: 1.6;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-body);
+  line-height: 1.65;
   flex: 1;
   margin-bottom: 20px;
 }
@@ -471,8 +474,8 @@ p {
 }
 
 .news-excerpt {
-  font-size: 13px;
-  color: var(--muted);
+  font-size: 0.95rem;
+  color: var(--text-body);
   line-height: 1.65;
   max-width: 100%;
 }
@@ -565,11 +568,11 @@ p {
 .footer-logo span { color: var(--accent); }
 
 .footer-desc {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 260px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-subtle);
+  line-height: 1.75;
+  max-width: 280px;
 }
 
 .footer-col h4 {
@@ -589,9 +592,9 @@ p {
 }
 
 .footer-col ul a {
-  font-size: 13px;
-  font-weight: 300;
-  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-subtle);
   transition: color 0.2s;
 }
 

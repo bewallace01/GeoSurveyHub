@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Photogrammetry for Surveying — SfM, Orthos &amp; Accuracy | GeoSurveyHub</title>
+  <meta name="description" content="How photogrammetry works for survey-grade mapping: overlap, GCPs, PPK/RTK drones, and when to choose photos over LiDAR." />
+  <link rel="canonical" href="https://www.geosurveyhub.com/pages/photogrammetry.html" />
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/animations.css" />
+  <link rel="stylesheet" href="../assets/css/pages.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"Photogrammetry for Surveying","description":"Educational guide to aerial and terrestrial photogrammetry for mapping: Structure from Motion, orthophotos, and accuracy.","author":{"@type":"Organization","name":"GeoSurveyHub"},"publisher":{"@type":"Organization","name":"GeoSurveyHub"},"dateModified":"2026-03-22","about":["Photogrammetry","Drone mapping","Orthophotos"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is photogrammetry in surveying?","acceptedAnswer":{"@type":"Answer","text":"Photogrammetry reconstructs 3D geometry and scaled maps from overlapping photographs using Structure from Motion (SfM) and dense matching. It produces point clouds, meshes, textured models, and orthophotos when ground or aerial images have sufficient overlap and control."}},
+    {"@type":"Question","name":"When is photogrammetry better than LiDAR?","acceptedAnswer":{"@type":"Answer","text":"Photogrammetry is often more cost-effective for open terrain, delivers natural color texture in the model, and works well for orthophotos. LiDAR is stronger under vegetation, in poor lighting, and when you need ground returns without visible texture."}},
+    {"@type":"Question","name":"How accurate is drone photogrammetry?","acceptedAnswer":{"@type":"Answer","text":"With GCPs or RTK/PPK geotagging, horizontal accuracy often reaches roughly 1–3× the GSD; vertical is typically looser. Always tie to independent check points and follow project specifications."}}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.geosurveyhub.com/"},
+    {"@type":"ListItem","position":2,"name":"Photogrammetry","item":"https://www.geosurveyhub.com/pages/photogrammetry.html"}
+  ]}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html" class="nav-logo">Geo<span>Survey</span>Hub</a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="guide.html">Guide</a>
+        <a href="glossary.html">Topics</a>
+        <a href="lidar.html">LiDAR</a>
+        <a href="drones.html">Drones</a>
+        <a href="gnss-rtk.html">GNSS</a>
+        <a href="news.html">News</a>
+        <a href="ai-ml.html">AI &amp; ML</a>
+        <a href="financing.html">Financing</a>
+        <a href="start-a-surveying-company.html">Start a Firm</a>
+      </div>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Photogrammetry</span>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <p class="kicker">Imaging</p>
+        <h1>Photogrammetry — From <em>Photos</em> to Measurements</h1>
+        <p class="sub">Photogrammetry uses overlapping images to recover camera positions and dense 3D geometry. For surveying, it powers orthophotos, digital surface models, and colorized meshes—often paired with RTK/PPK drones and ground control.</p>
+      </div>
+    </header>
+
+    <article class="doc-page doc-page-wide prose">
+      <h2>How the pipeline works</h2>
+      <p><strong>Capture:</strong> Aerial or terrestrial images with high sidelap and overlap. <strong>SfM:</strong> Tie points link images and solve camera poses. <strong>Dense matching:</strong> Builds a point cloud or depth maps. <strong>Products:</strong> DSM/DTM, orthomosaic, mesh, contours—depending on software and classification.</p>
+
+      <h2>Control and accuracy</h2>
+      <p>GCPs (ground control points) or <a href="ppk-rtk-network.html">PPK/RTK</a> image geotags anchor the model to real coordinates. Use independent check points to verify RMSE. Accuracy depends on flying height (GSD), lens quality, calibration, wind, and vegetation—not just pixel count.</p>
+
+      <h2>Photogrammetry vs LiDAR (quick)</h2>
+      <div style="overflow-x: auto;">
+        <table class="comparison-table">
+          <thead><tr><th>Topic</th><th>Photogrammetry</th><th>LiDAR</th></tr></thead>
+          <tbody>
+            <tr><td>Canopy</td><td>Weak under dense trees</td><td>Strong with multi-return</td></tr>
+            <tr><td>Lighting</td><td>Needs decent light &amp; texture</td><td>Active illumination</td></tr>
+            <tr><td>Color / texture</td><td>Built-in</td><td>Often needs separate imagery</td></tr>
+            <tr><td>Typical budget</td><td>Often lower entry</td><td>Higher sensor cost</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout-box">
+        <div class="callout-label">Go deeper</div>
+        <p style="margin:0; max-width:100%;">Pair this with <a href="drones.html">drone platforms</a>, <a href="surveying-accuracy.html">accuracy &amp; tolerances</a>, and <a href="point-cloud-processing.html">point cloud processing</a> for a full workflow picture.</p>
+      </aside>
+
+      <h2>FAQ</h2>
+      <dl class="glossary-grid">
+        <dt>Do I need GCPs if I use RTK on the drone?</dt>
+        <dd>RTK/PPK reduces the need for many GCPs but check points still validate the solution—especially for vertical.</dd>
+        <dt>Can I mix photogrammetry and LiDAR?</dt>
+        <dd>Yes—colorize LiDAR with imagery, or fuse clouds in software when deliverables require both geometry and texture.</dd>
+      </dl>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top container">
+      <div><span class="footer-logo">Geo<span>Survey</span>Hub</span><p class="footer-desc">Free guides for surveying &amp; mapping—not professional advice.</p></div>
+      <div class="footer-col"><h4>Learn</h4><ul><li><a href="guide.html">Buyer's Guide</a></li><li><a href="glossary.html">Topics &amp; glossary</a></li><li><a href="about.html">About</a></li></ul></div>
+      <div class="footer-col"><h4>Related</h4><ul><li><a href="lidar.html">LiDAR</a></li><li><a href="drones.html">Drones</a></li><li><a href="ai-ml.html">AI &amp; ML</a></li></ul></div>
+      <div class="footer-col"><h4>Finance</h4><ul><li><a href="financing.html">Financing</a></li></ul></div>
+    </div>
+    <div class="footer-bottom container"><p>© 2026 GeoSurveyHub</p></div>
+  </footer>
+  <script src="../assets/js/nav.js" defer></script>
+</body>
+</html>

@@ -205,10 +205,10 @@ details[open] summary {
 
 details .faq-answer {
   padding: 20px 0 28px;
-  font-size: 15px;
-  font-weight: 300;
-  color: var(--muted);
-  line-height: 1.85;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--text-body);
+  line-height: 1.75;
   max-width: 640px;
 }
 
@@ -240,9 +240,9 @@ details .faq-answer {
 }
 
 .callout-box ul li {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-body);
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -280,8 +280,9 @@ details .faq-answer {
 .comparison-table td {
   padding: 14px 16px;
   border-bottom: 1px solid var(--border);
-  color: var(--white);
-  font-weight: 300;
+  color: var(--text-body);
+  font-weight: 400;
+  font-size: 0.95rem;
   vertical-align: top;
 }
 
@@ -351,8 +352,8 @@ details .faq-answer {
 }
 
 .workflow-step-content p {
-  font-size: 13px;
-  color: var(--muted);
+  font-size: 0.95rem;
+  color: var(--text-body);
   line-height: 1.65;
   max-width: 500px;
 }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Point Cloud Processing — Classification, DTM &amp; QA | GeoSurveyHub</title>
+  <meta name="description" content="Point cloud processing workflow: noise removal, ground classification, meshes, CAD/GIS export, and how AI speeds feature extraction." />
+  <link rel="canonical" href="https://www.geosurveyhub.com/pages/point-cloud-processing.html" />
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/animations.css" />
+  <link rel="stylesheet" href="../assets/css/pages.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"Point Cloud Processing for Surveyors","description":"Workflow guide for LiDAR and photogrammetry point clouds: cleaning, classification, and deliverables.","author":{"@type":"Organization","name":"GeoSurveyHub"},"publisher":{"@type":"Organization","name":"GeoSurveyHub"},"dateModified":"2026-03-22","about":["Point cloud","LiDAR processing","DTM"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is point cloud classification?","acceptedAnswer":{"@type":"Answer","text":"Classification labels each point—ground, vegetation, buildings, noise—so you can create a bare-earth DTM, vectors, or analytics. Manual editing plus automated tools (including ML) are common in production."}},
+    {"@type":"Question","name":"Which software processes survey point clouds?","acceptedAnswer":{"@type":"Answer","text":"Common options include vendor-specific suites, global mapper–class tools, CAD/GIS integrations, and specialized packages for meshing and clash detection—choice depends on deliverable format and client standards."}},
+    {"@type":"Question","name":"How does AI help point clouds?","acceptedAnswer":{"@type":"Answer","text":"Machine learning can accelerate ground extraction, building footprint detection, and clutter removal—usually with human QA on boundary cases. See our AI & ML guide for realistic expectations."}}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.geosurveyhub.com/"},
+    {"@type":"ListItem","position":2,"name":"Point cloud processing","item":"https://www.geosurveyhub.com/pages/point-cloud-processing.html"}
+  ]}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html" class="nav-logo">Geo<span>Survey</span>Hub</a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="guide.html">Guide</a>
+        <a href="glossary.html">Topics</a>
+        <a href="lidar.html">LiDAR</a>
+        <a href="drones.html">Drones</a>
+        <a href="gnss-rtk.html">GNSS</a>
+        <a href="news.html">News</a>
+        <a href="ai-ml.html">AI &amp; ML</a>
+        <a href="financing.html">Financing</a>
+        <a href="start-a-surveying-company.html">Start a Firm</a>
+      </div>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Point clouds</span>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <p class="kicker">Office</p>
+        <h1>Point Cloud <em>Processing</em></h1>
+        <p class="sub">Field capture is half the story. Processing turns millions of points into surfaces, vectors, and client-ready files—ground separation, noise stripping, and format conversion are where projects succeed or slip.</p>
+      </div>
+    </header>
+
+    <article class="doc-page doc-page-wide prose">
+      <h2>Typical workflow</h2>
+      <p><strong>1. Ingest &amp; register</strong> — Combine flights or scans; verify control.</p>
+      <p><strong>2. Clean</strong> — Remove outliers and multipath noise.</p>
+      <p><strong>3. Classify</strong> — Ground vs non-ground; refine with breaklines where needed.</p>
+      <p><strong>4. Deliver</strong> — DTM/DSM, contours, classified LAS/LAZ, CAD, or GIS layers.</p>
+
+      <h2>AI-assisted steps</h2>
+      <p>See <a href="ai-ml.html">AI &amp; machine learning</a> for how modern tools assist classification—always budget QA on edges (steep terrain, water, thin objects).</p>
+
+      <h2>Hardware note</h2>
+      <p>Large projects stress CPUs/GPUs and storage—<a href="computers.html">workstations &amp; field PCs</a> matter as much as the sensor.</p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top container">
+      <div><span class="footer-logo">Geo<span>Survey</span>Hub</span><p class="footer-desc">Free guides for surveying &amp; mapping—not professional advice.</p></div>
+      <div class="footer-col"><h4>Learn</h4><ul><li><a href="guide.html">Buyer's Guide</a></li><li><a href="glossary.html">Topics &amp; glossary</a></li><li><a href="about.html">About</a></li></ul></div>
+      <div class="footer-col"><h4>Related</h4><ul><li><a href="lidar.html">LiDAR</a></li><li><a href="photogrammetry.html">Photogrammetry</a></li><li><a href="ai-ml.html">AI &amp; ML</a></li></ul></div>
+      <div class="footer-col"><h4>Finance</h4><ul><li><a href="financing.html">Financing</a></li></ul></div>
+    </div>
+    <div class="footer-bottom container"><p>© 2026 GeoSurveyHub</p></div>
+  </footer>
+  <script src="../assets/js/nav.js" defer></script>
+</body>
+</html>

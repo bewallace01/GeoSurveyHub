@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PPK vs RTK vs Network RTK — GNSS Corrections Explained | GeoSurveyHub</title>
+  <meta name="description" content="PPK, RTK, and network RTK compared: when to use each, baselines, latency, and typical accuracy for survey rovers and drones." />
+  <link rel="canonical" href="https://www.geosurveyhub.com/pages/ppk-rtk-network.html" />
+  <link rel="stylesheet" href="../assets/css/global.css" />
+  <link rel="stylesheet" href="../assets/css/animations.css" />
+  <link rel="stylesheet" href="../assets/css/pages.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"PPK vs RTK vs Network RTK","description":"Plain-English comparison of post-processed kinematic, real-time kinematic, and network corrections for survey GNSS.","author":{"@type":"Organization","name":"GeoSurveyHub"},"publisher":{"@type":"Organization","name":"GeoSurveyHub"},"dateModified":"2026-03-22","about":["RTK","PPK","GNSS corrections"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is RTK in surveying?","acceptedAnswer":{"@type":"Answer","text":"RTK (Real-Time Kinematic) applies corrections from a base station or network in real time so a rover or drone can achieve centimeter-level positioning while moving, as long as integer ambiguity is fixed and multipath is controlled."}},
+    {"@type":"Question","name":"What is PPK?","acceptedAnswer":{"@type":"Answer","text":"PPK (Post-Processed Kinematic) applies the same differential idea after the survey: raw observations are processed against base or network data. It can recover fixes when real-time links drop, at the cost of office processing time."}},
+    {"@type":"Question","name":"What is network RTK?","acceptedAnswer":{"@type":"Answer","text":"Network RTK uses a grid of permanent reference stations and a correction service (often VRS or similar) so you do not need your own base on every job—ideal when you have cellular or radio access to the service."}}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.geosurveyhub.com/"},
+    {"@type":"ListItem","position":2,"name":"PPK vs RTK","item":"https://www.geosurveyhub.com/pages/ppk-rtk-network.html"}
+  ]}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html" class="nav-logo">Geo<span>Survey</span>Hub</a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="guide.html">Guide</a>
+        <a href="glossary.html">Topics</a>
+        <a href="lidar.html">LiDAR</a>
+        <a href="drones.html">Drones</a>
+        <a href="gnss-rtk.html">GNSS</a>
+        <a href="news.html">News</a>
+        <a href="ai-ml.html">AI &amp; ML</a>
+        <a href="financing.html">Financing</a>
+        <a href="start-a-surveying-company.html">Start a Firm</a>
+      </div>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">PPK vs RTK</span>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <p class="kicker">GNSS</p>
+        <h1>PPK, RTK &amp; <em>Network</em> RTK</h1>
+        <p class="sub">All three improve on standalone GNSS by using differential corrections—but they differ in timing (real-time vs post-process), equipment (own base vs subscription network), and how you handle dropouts in the field.</p>
+      </div>
+    </header>
+
+    <article class="doc-page doc-page-wide prose">
+      <h2>RTK (real-time)</h2>
+      <p>Corrections arrive over radio, cellular, or network link while you work. Best when you need immediate stakeout, live QC, or drone flights that require fixed status before shutter. Vulnerable to link loss, baseline length, and sky obstruction.</p>
+
+      <h2>PPK (post-processed)</h2>
+      <p>Store raw observations; apply corrections in software later. Often rescues epochs when real-time links failed. Adds office time and requires disciplined file management. Common for drone mapping and some mobile campaigns.</p>
+
+      <h2>Network RTK</h2>
+      <p>Uses a commercial or public CORS-style network (VRS, MAC, etc.) instead of a local base. Reduces setup time—verify subscription coverage, datum, and latency for your accuracy class. See also <a href="gnss-rtk.html">GNSS &amp; RTK overview</a>.</p>
+
+      <div style="overflow-x: auto;">
+        <table class="comparison-table">
+          <thead><tr><th>Mode</th><th>Best for</th><th>Watch for</th></tr></thead>
+          <tbody>
+            <tr><td>RTK + own base</td><td>Remote jobs, full control</td><td>Baseline limits, setup time</td></tr>
+            <tr><td>Network RTK</td><td>Urban / covered areas with NTRIP</td><td>Subscription, multipath</td></tr>
+            <tr><td>PPK</td><td>Drones, dropped links</td><td>Processing workflow</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout-box">
+        <div class="callout-label">Accuracy</div>
+        <p style="margin:0; max-width:100%;">Nominal specs are not guarantees—read <a href="surveying-accuracy.html">surveying accuracy &amp; error</a> and validate with check shots.</p>
+      </aside>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top container">
+      <div><span class="footer-logo">Geo<span>Survey</span>Hub</span><p class="footer-desc">Free guides for surveying &amp; mapping—not professional advice.</p></div>
+      <div class="footer-col"><h4>Learn</h4><ul><li><a href="guide.html">Buyer's Guide</a></li><li><a href="glossary.html">Topics &amp; glossary</a></li><li><a href="about.html">About</a></li></ul></div>
+      <div class="footer-col"><h4>Related</h4><ul><li><a href="gnss-rtk.html">GNSS / RTK</a></li><li><a href="photogrammetry.html">Photogrammetry</a></li><li><a href="drones.html">Drones</a></li></ul></div>
+      <div class="footer-col"><h4>Finance</h4><ul><li><a href="financing.html">Financing</a></li></ul></div>
+    </div>
+    <div class="footer-bottom container"><p>© 2026 GeoSurveyHub</p></div>
+  </footer>
+  <script src="../assets/js/nav.js" defer></script>
+</body>
+</html>
