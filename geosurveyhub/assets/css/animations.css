@@ -102,15 +102,8 @@
   display: inline-block;
 }
 
-/* ── KICKER LINE DRAW ── */
-.kicker::before {
-  width: 0;
-  transition: width 0.4s ease;
-}
-
-.kicker.visible::before {
-  width: 32px;
-}
+/* Kicker bar: width comes from global.css. Do not set width:0 here unless
+   animations.js is loaded (it adds .visible). No HTML page loads that script yet. */
 
 /* ── READ MORE HOVER ── */
 .read-more {
