@@ -6,7 +6,12 @@
     "title": "Emesent Launches GX1 — All-in-One SLAM LiDAR, RTK and 360° Imagery Scanner",
     "excerpt": "Unveiled at Geo Week 2026, the GX1 integrates SLAM mapping, RTK positioning, and 360° imaging into a single handheld unit — designed for GPS-denied environments.",
     "source": "GeoConnexion",
-    "tags": ["LiDAR", "SLAM", "New Product", "Mobile Mapping"]
+    "tags": [
+      "LiDAR",
+      "SLAM",
+      "New Product",
+      "Mobile Mapping"
+    ]
   },
   {
     "id": "riegl-vux820g",
@@ -15,7 +20,13 @@
     "title": "RIEGL Debuts VUX-820-G — Topographic and Bathymetric LiDAR in One Drone Payload",
     "excerpt": "The 5.7kg VUX-820-G maps land and shallow water in a single drone flight, with embedded GNSS/IMU for 2–3cm accuracy. Shown at INTERGEO 2025.",
     "source": "Inside Unmanned Systems",
-    "tags": ["LiDAR", "RIEGL", "Drone", "Bathymetric", "New Product"]
+    "tags": [
+      "LiDAR",
+      "RIEGL",
+      "Drone",
+      "Bathymetric",
+      "New Product"
+    ]
   },
   {
     "id": "topcon-capture-reality-handheld",
@@ -24,7 +35,12 @@
     "title": "Topcon Expands Capture Reality Portfolio with New Handheld Scanner",
     "excerpt": "Topcon introduced a portable handheld scanning system targeting field crews who need fast reality capture without tripod setups.",
     "source": "GeoConnexion",
-    "tags": ["Topcon", "Handheld", "Mobile Mapping", "New Product"]
+    "tags": [
+      "Topcon",
+      "Handheld",
+      "Mobile Mapping",
+      "New Product"
+    ]
   },
   {
     "id": "leica-multimapper",
@@ -33,7 +49,12 @@
     "title": "New Leica MultiMapper Brings Portability and Versatility to Airborne Mapping",
     "excerpt": "Leica's MultiMapper targets light aircraft and large UAV operators needing flexible airborne mapping — bridging the gap between drone payloads and high-end scanners like the CityMapper.",
     "source": "GeoConnexion",
-    "tags": ["Leica", "Airborne", "LiDAR", "New Product"]
+    "tags": [
+      "Leica",
+      "Airborne",
+      "LiDAR",
+      "New Product"
+    ]
   },
   {
     "id": "revolution-acquires-phoenix",
@@ -42,7 +63,12 @@
     "title": "Revolution Geosystems Acquires Phoenix LiDAR Systems",
     "excerpt": "The acquisition accelerates consolidation in the UAV LiDAR market as demand for integrated end-to-end geospatial workflows continues to grow.",
     "source": "GIM International",
-    "tags": ["Industry", "Acquisition", "LiDAR", "UAV"]
+    "tags": [
+      "Industry",
+      "Acquisition",
+      "LiDAR",
+      "UAV"
+    ]
   },
   {
     "id": "esri-pix4d-realtime",
@@ -51,7 +77,13 @@
     "title": "Esri and Pix4D Launch Real-Time Terrestrial Mapping Workflow",
     "excerpt": "Field crews can now capture photogrammetry data with Pix4D and visualize results in ArcGIS in near real time — collapsing the traditional days-long data delivery gap.",
     "source": "GeoConnexion",
-    "tags": ["Software", "GIS", "Esri", "Pix4D", "Photogrammetry"]
+    "tags": [
+      "Software",
+      "GIS",
+      "Esri",
+      "Pix4D",
+      "Photogrammetry"
+    ]
   },
   {
     "id": "geoweek-2026-recap",
@@ -60,7 +92,13 @@
     "title": "Geo Week 2026 Draws 3,500 Professionals — Workforce Gap Dominates Conversations",
     "excerpt": "Denver hosted 238 exhibitors from 25 countries. AI-assisted workflows and drone-ground tradeoffs dominated the show floor. A structural talent shortage is the industry's quiet crisis.",
     "source": "GIM International",
-    "tags": ["Events", "Geo Week", "Industry", "AI", "Workforce"]
+    "tags": [
+      "Events",
+      "Geo Week",
+      "Industry",
+      "AI",
+      "Workforce"
+    ]
   },
   {
     "id": "gaussian-splatting-arcgis",
@@ -69,7 +107,13 @@
     "title": "Gaussian Splatting Goes Mainstream — ArcGIS Native Support Signals Tipping Point",
     "excerpt": "Gaussian Splatting — photorealistic 3D from images — is now natively supported in ArcGIS. Shrinking file sizes and faster rendering are driving rapid adoption in professional GIS workflows.",
     "source": "Mosaic / Intergeo 2025 Recap",
-    "tags": ["Software", "GIS", "Gaussian Splatting", "3D", "Trend"]
+    "tags": [
+      "Software",
+      "GIS",
+      "Gaussian Splatting",
+      "3D",
+      "Trend"
+    ]
   },
   {
     "id": "mach9-digital-surveyor",
@@ -78,7 +122,13 @@
     "title": "Mach9 Unveils AI-Assisted Digital Surveyor — Human Control Stays Central",
     "excerpt": "Mach9 redesigned its AI workflow to enable real-time collaboration between surveyors and AI — accepting suggestions interactively rather than reviewing fully automated output.",
     "source": "Geo Week News",
-    "tags": ["Software", "AI", "Point Cloud", "CAD", "Workflow"]
+    "tags": [
+      "Software",
+      "AI",
+      "Point Cloud",
+      "CAD",
+      "Workflow"
+    ]
   },
   {
     "id": "topcon-conexpo-2026",
@@ -87,7 +137,13 @@
     "title": "Topcon Unveils Machine Control and Geomatics Innovations at CONEXPO 2026",
     "excerpt": "Updates across GNSS receivers, robotic total stations, and machine control systems were shown at CONEXPO in Las Vegas, with a focus on construction survey workflows.",
     "source": "GeoConnexion",
-    "tags": ["Topcon", "Construction", "GNSS", "Total Station", "CONEXPO"]
+    "tags": [
+      "Topcon",
+      "Construction",
+      "GNSS",
+      "Total Station",
+      "CONEXPO"
+    ]
   },
   {
     "id": "ids-mymo-launch",
@@ -96,7 +152,12 @@
     "title": "IDS GeoRadar Launches MyMO — Portable Non-Contact Structural Monitor",
     "excerpt": "The MyMO uses radar interferometry to detect sub-millimeter displacement in bridges, walls, and slopes — without attaching sensors to the structure.",
     "source": "GeoConnexion",
-    "tags": ["Sensors", "Monitoring", "Radar", "New Product"]
+    "tags": [
+      "Sensors",
+      "Monitoring",
+      "Radar",
+      "New Product"
+    ]
   },
   {
     "id": "dji-l2-vs-l1-comparison",
@@ -105,6 +166,11 @@
     "title": "DJI Zenmuse L2 vs L1 — What the Upgrade Actually Gets You in the Field",
     "excerpt": "The L2 delivers 240k pts/sec and 450m range vs the L1's lower specs — but for most projects under 120m AGL in open terrain, the cost difference may not justify the upgrade.",
     "source": "GeoSurveyHub Editorial",
-    "tags": ["DJI", "LiDAR", "Drone", "Comparison"]
+    "tags": [
+      "DJI",
+      "LiDAR",
+      "Drone",
+      "Comparison"
+    ]
   }
 ]

@@ -4,3 +4,4 @@ node_modules/
 
 # Optional: copy news-config.js here and gitignore the real keys
 geosurveyhub/assets/js/news-config.local.js
+geosurveyhub/.dev.vars

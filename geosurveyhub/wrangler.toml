@@ -1,4 +1,4 @@
-# Cloudflare Workers — static site + optional Worker entry
+# Cloudflare Workers — static site + /api/news/* proxy (see src/worker.ts)
 # Deploy: npx wrangler deploy
 # Docs: https://developers.cloudflare.com/workers/static-assets/
 
@@ -6,6 +6,10 @@
 name = "geosurvey-hub"
 main = "src/worker.ts"
 compatibility_date = "2025-03-22"
+
+# Secrets (do not commit values). Set in dashboard → Workers → geosurvey-hub → Settings → Variables and Secrets,
+# or: wrangler secret put GSH_RSS2JSON_KEY   and   wrangler secret put GSH_NEWSDATA_KEY
+# Local dev: copy .dev.vars.example to .dev.vars (gitignored)
 
 [assets]
 directory = "."

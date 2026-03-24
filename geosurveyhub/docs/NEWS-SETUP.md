@@ -28,6 +28,22 @@ Keep `news-config.js` in the repo with placeholders only.
 **Deploying (GitHub Pages, etc.)**  
 Upload `news-config.local.js` with your keys alongside the rest of the site, or add a build step that injects it — it is not pushed to Git by default.
 
+---
+
+## OPTION D: Cloudflare Worker proxy (recommended for geosurvey-hub)
+
+Keys stay **only** in Cloudflare (never in the browser bundle).
+
+1. **Dashboard** → Workers & Pages → **geosurvey-hub** → **Settings** → **Variables and Secrets** → add **Secrets**:
+   - `GSH_RSS2JSON_KEY` — from [rss2json.com](https://rss2json.com)
+   - `GSH_NEWSDATA_KEY` — optional; from [newsdata.io](https://newsdata.io)
+2. **Deploy** from repo: `cd geosurveyhub && npx wrangler deploy`
+3. The site calls **`/api/news/rss`** and **`/api/news/newsdata`** on the same origin; the Worker forwards to the APIs using those secrets.
+
+**Local dev:** `cp .dev.vars.example .dev.vars` and fill keys, then `npx wrangler dev` (serves Worker + static assets).
+
+**Static server only** (`python -m http.server`): `/api/news/*` is missing — keep `news-config.local.js` with keys for **direct** API fallback, or use `wrangler dev`.
+
 **Step 4 — Test it**
 Open `pages/news.html` in a browser. You should see live articles within 3-5 seconds.
 If you see "Fetching live feed..." stuck, open browser DevTools → Console to see errors.

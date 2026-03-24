@@ -3,7 +3,11 @@
 // When set, "Read article" opens the publisher. Otherwise links to this site's news page anchor.
 
 function newsPageHref(articleId) {
-  const inPagesFolder = /\/pages\//.test(window.location.pathname);
+  const { protocol, hostname, pathname } = window.location;
+  if (hostname && (protocol === 'http:' || protocol === 'https:')) {
+    return `/pages/news.html#${articleId}`;
+  }
+  const inPagesFolder = /\/pages\//.test(pathname);
   return `${inPagesFolder ? '' : 'pages/'}news.html#${articleId}`;
 }
 
@@ -54,18 +58,19 @@ async function loadNews(containerId, filterBarId, limit = null) {
   function renderArticles(list) {
     container.innerHTML = list.map(article => {
       const src = article.source ? `<span class="news-source">${escapeHtml(article.source)}</span>` : '';
-      const externalUrl = article.sourceUrl ? safeHttpUrl(article.sourceUrl) : null;
+      const rawOut = article.sourceUrl || article.url || article.link;
+      const externalUrl = rawOut ? normalizeNewsUrl(rawOut) : null;
       const summary = (article.excerpt || '').trim()
         || 'Summary not on file — use the link below for the full story.';
       const host = externalUrl ? escapeHtml(String(externalUrl).replace(/^https?:\/\//, '').split('/')[0].replace(/^www\./, '')) : '';
       const footer = externalUrl
         ? `<footer class="news-card-footer">
-            <a class="news-read-full" href="${escapeHtml(externalUrl)}" target="_blank" rel="noopener noreferrer"
+            <a class="news-read-full" href="${escapeHrefAttr(externalUrl)}" target="_blank" rel="noopener noreferrer"
                aria-label="${escapeHtmlAttr(`Read full article — ${article.title}`)}">Read full article</a>
             ${host ? `<span class="news-link-host">${host}</span>` : ''}
           </footer>`
         : `<footer class="news-card-footer">
-            <a class="news-read-full news-read-full--internal" href="${escapeHtml(newsPageHref(article.id))}">View on this page</a>
+            <a class="news-read-full news-read-full--internal" href="${escapeHrefAttr(newsPageHref(article.id))}">View on this page</a>
           </footer>`;
       return `
       <article class="news-card" id="${escapeHtml(article.id)}" data-category="${escapeHtml(article.category)}">
@@ -100,15 +105,39 @@ function escapeHtmlAttr(s) {
   return escapeHtml(s).replace(/'/g, '&#39;');
 }
 
+/** Decode &#038; etc. so new URL() does not treat # inside entities as a fragment. */
+function decodeHtmlEntitiesInUrl(s) {
+  let t = String(s);
+  t = t.replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)));
+  t = t.replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)));
+  t = t.replace(/&amp;/gi, '&');
+  return t;
+}
+
+function escapeHrefAttr(url) {
+  if (url == null || url === '') return '';
+  return String(url)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 /** Only allow http(s) URLs for source links (avoids javascript: etc.) */
-function safeHttpUrl(raw) {
+function normalizeNewsUrl(raw) {
+  if (raw == null || raw === '') return null;
+  let s = decodeHtmlEntitiesInUrl(String(raw).trim());
+  if (s.startsWith('//')) s = 'https:' + s;
   try {
-    const url = new URL(String(raw).trim());
+    const url = new URL(s);
     if (url.protocol !== 'http:' && url.protocol !== 'https:') return null;
     return url.href;
   } catch {
     return null;
   }
+}
+
+function safeHttpUrl(raw) {
+  return normalizeNewsUrl(raw);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

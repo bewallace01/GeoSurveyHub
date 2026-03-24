@@ -1,6 +1,7 @@
 // ============================================================
 // GeoSurveyHub — Live News Feed  (assets/js/news-feed.js)
-// RSS via rss2json.com → optional NewsData.io → seed news.json fallback
+// Production: same-origin /api/news/rss and /api/news/newsdata (Worker proxy; keys in env).
+// Fallback: direct APIs if news-config.local.js has keys (local static preview without wrangler).
 // Load news-config.js before this script (sets window.GSH_NEWS_KEYS).
 // ============================================================
 
@@ -94,18 +95,99 @@ function escapeHtmlAttr(s) {
   return escapeHtml(s).replace(/'/g, '&#39;');
 }
 
-function safeHttpUrl(raw) {
+/**
+ * RSS/XML often leaves numeric entities (e.g. &#038;) in link text. The # would
+ * otherwise start a URL fragment in new URL() and break query strings.
+ */
+function decodeHtmlEntitiesInUrl(s) {
+  let t = String(s);
+  t = t.replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)));
+  t = t.replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)));
+  t = t.replace(/&amp;/gi, '&');
+  return t;
+}
+
+/** Safe for href="..." — avoids mangling &#038;-style sequences before & becomes &amp;. */
+function escapeHrefAttr(url) {
+  if (url == null || url === '') return '';
+  return String(url)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/** Accepts http(s) URLs, protocol-relative //..., and paths relative to feed origin. */
+function normalizeExternalUrl(raw, baseFeedUrl) {
+  if (raw == null || raw === '') return '';
+  let s = String(raw).trim().replace(/<[^>]+>/g, '').trim();
+  if (!s) return '';
+  s = decodeHtmlEntitiesInUrl(s);
+  if (s.startsWith('//')) s = 'https:' + s;
   try {
-    const url = new URL(String(raw).trim());
-    if (url.protocol !== 'http:' && url.protocol !== 'https:') return null;
-    return url.href;
+    const u = new URL(s);
+    if (u.protocol === 'http:' || u.protocol === 'https:') return u.href;
   } catch {
-    return null;
+    if (baseFeedUrl) {
+      try {
+        const base = new URL(baseFeedUrl);
+        const u = new URL(s, base.origin);
+        if (u.protocol === 'http:' || u.protocol === 'https:') return u.href;
+      } catch { /* ignore */ }
+    }
   }
+  return '';
+}
+
+function safeHttpUrl(raw) {
+  const u = normalizeExternalUrl(raw, null);
+  return u || null;
+}
+
+/** First http(s) href in HTML (description/content) when <link> is empty or bad. */
+function extractHttpUrlFromHtml(html) {
+  if (!html || typeof html !== 'string') return '';
+  const m = html.match(/href\s*=\s*["'](https?:\/\/[^"'>\s]+)/i);
+  if (!m) return '';
+  return normalizeExternalUrl(m[1], null);
+}
+
+/** RSS feeds often put the article URL in link, guid, or enclosure when link is empty. */
+function resolveRssItemLink(item, feedUrl) {
+  const candidates = [];
+  if (item.link) candidates.push(item.link);
+  if (item.enclosure) {
+    if (typeof item.enclosure === 'string') candidates.push(item.enclosure);
+    else if (item.enclosure.link) candidates.push(item.enclosure.link);
+  }
+  if (item.guid) {
+    const g = String(item.guid).replace(/<[^>]+>/g, '').trim();
+    const looksLikeUrl =
+      /^https?:\/\//i.test(g) || g.startsWith('//') || (g.startsWith('/') && g.length > 1);
+    if (looksLikeUrl) candidates.push(g);
+  }
+  const htmlBlob = [item.description, item.content, item.contentSnippet].filter(Boolean).join('\n');
+  if (htmlBlob) {
+    const fromHtml = extractHttpUrlFromHtml(htmlBlob);
+    if (fromHtml) candidates.push(fromHtml);
+  }
+  for (const raw of candidates) {
+    const u = normalizeExternalUrl(raw, feedUrl);
+    if (u) return u;
+  }
+  return '';
+}
+
+function resolveNewsDataLink(a) {
+  const raw = a.link || a.url || a.source_url;
+  return normalizeExternalUrl(raw, null);
 }
 
 function newsPageHref(anchorId) {
-  const inPagesFolder = /\/pages\//.test(window.location.pathname);
+  const { protocol, hostname, pathname } = window.location;
+  if (hostname && (protocol === 'http:' || protocol === 'https:')) {
+    return `/pages/news.html#${anchorId}`;
+  }
+  const inPagesFolder = /\/pages\//.test(pathname);
   return `${inPagesFolder ? '' : 'pages/'}news.html#${anchorId}`;
 }
 
@@ -116,17 +198,31 @@ function stableCardId(article) {
   return 'live-' + Math.abs(h).toString(36);
 }
 
+/** Fetch RSS via Worker proxy; optional direct rss2json if proxy missing (e.g. python -m http.server). */
+async function fetchRssJson(rssUrl, count) {
+  const proxyUrl = `/api/news/rss?rss_url=${encodeURIComponent(rssUrl)}&count=${count}`;
+  let res = await fetch(proxyUrl);
+  let data = await res.json().catch(() => ({}));
+  if (res.ok && data.status === 'ok') return data;
+
+  if (NEWS_CONFIG.rss2jsonKey && NEWS_CONFIG.rss2jsonKey !== 'YOUR_RSS2JSON_KEY') {
+    const direct = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&api_key=${NEWS_CONFIG.rss2jsonKey}&count=${count}`;
+    res = await fetch(direct);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    data = await res.json();
+    if (data.status !== 'ok') throw new Error(data.message || 'Bad response');
+    return data;
+  }
+  throw new Error(data.message || `RSS unavailable (${res.status})`);
+}
+
 async function fetchOneFeed(feed) {
-  const url = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&api_key=${NEWS_CONFIG.rss2jsonKey}&count=${NEWS_CONFIG.articlesPerFeed}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const data = await res.json();
-  if (data.status !== 'ok') throw new Error(data.message || 'Bad response');
+  const data = await fetchRssJson(feed.url, NEWS_CONFIG.articlesPerFeed);
   return (data.items || []).map(item => ({
     id: item.guid || item.link || item.title,
     title: item.title || '',
     description: cleanExcerpt(item.description || item.content),
-    link: item.link || '',
+    link: resolveRssItemLink(item, feed.url),
     pubDate: item.pubDate,
     formattedDate: formatDate(item.pubDate),
     source: feed.name,
@@ -135,29 +231,42 @@ async function fetchOneFeed(feed) {
   }));
 }
 
+async function fetchNewsDataSingle(query) {
+  const proxyUrl = `/api/news/newsdata?q=${encodeURIComponent(query)}&language=en`;
+  let res = await fetch(proxyUrl);
+  let data = await res.json().catch(() => ({}));
+  if (res.ok && data.status === 'success') return data.results || [];
+
+  if (NEWS_CONFIG.newsdataKey) {
+    res = await fetch(
+      `https://newsdata.io/api/1/news?apikey=${NEWS_CONFIG.newsdataKey}&q=${encodeURIComponent(query)}&language=en`
+    );
+    if (!res.ok) return [];
+    data = await res.json();
+    if (data.status === 'success') return data.results || [];
+  }
+  return [];
+}
+
 async function fetchNewsDataIO() {
-  if (!NEWS_CONFIG.newsdataKey) return [];
   const queries = ['LiDAR surveying', 'drone photogrammetry', 'GNSS RTK survey', 'geospatial GIS AI'];
   const out = [];
   for (const q of queries) {
     try {
-      const res = await fetch(`https://newsdata.io/api/1/news?apikey=${NEWS_CONFIG.newsdataKey}&q=${encodeURIComponent(q)}&language=en`);
-      const data = await res.json();
-      if (data.status === 'success') {
-        (data.results || []).slice(0, 3).forEach(a => {
-          out.push({
-            id: a.article_id || a.link,
-            title: a.title || '',
-            description: cleanExcerpt(a.description),
-            link: a.link || '',
-            pubDate: a.pubDate,
-            formattedDate: formatDate(a.pubDate),
-            source: a.source_id || 'NewsData',
-            category: detectCategory(a.title + ' ' + a.description),
-            relevant: true,
-          });
+      const results = await fetchNewsDataSingle(q);
+      results.slice(0, 3).forEach(a => {
+        out.push({
+          id: a.article_id || a.link,
+          title: a.title || '',
+          description: cleanExcerpt(a.description),
+          link: resolveNewsDataLink(a) || '',
+          pubDate: a.pubDate,
+          formattedDate: formatDate(a.pubDate),
+          source: a.source_id || 'NewsData',
+          category: detectCategory(a.title + ' ' + a.description),
+          relevant: true,
         });
-      }
+      });
     } catch {
       /* continue */
     }
@@ -175,7 +284,7 @@ async function loadFallback() {
           id: a.id,
           title: a.title,
           description: a.excerpt || '',
-          link: '',
+          link: normalizeExternalUrl(a.sourceUrl || a.url || a.link, null) || '',
           pubDate: a.date,
           formattedDate: formatDate(a.date),
           source: a.source || 'GeoSurveyHub',
@@ -198,13 +307,11 @@ async function getLatestNews(forceRefresh = false) {
   const all = [];
   let liveOk = false;
 
-  if (NEWS_CONFIG.rss2jsonKey && NEWS_CONFIG.rss2jsonKey !== 'YOUR_RSS2JSON_KEY') {
-    const results = await Promise.all(
-      NEWS_CONFIG.feeds.map(f => fetchOneFeed(f).catch(e => { console.warn('[news]', f.name, e.message); return []; }))
-    );
-    results.forEach(r => all.push(...r));
-    if (all.length) liveOk = true;
-  }
+  const rssResults = await Promise.all(
+    NEWS_CONFIG.feeds.map(f => fetchOneFeed(f).catch(e => { console.warn('[news]', f.name, e.message); return []; }))
+  );
+  rssResults.forEach(r => all.push(...r));
+  if (rssResults.some(r => r.length > 0)) liveOk = true;
 
   const ndItems = await fetchNewsDataIO();
   if (ndItems.length) {
@@ -263,7 +370,7 @@ function linkHost(url) {
 }
 
 function renderCard(article) {
-  const href = safeHttpUrl(article.link) || '#';
+  const href = normalizeExternalUrl(article.link, null) || '#';
   const external = href !== '#';
   const cardId = stableCardId(article);
   const title = escapeHtml(article.title);
@@ -279,12 +386,12 @@ function renderCard(article) {
 
   const footer = external
     ? `<footer class="news-card-footer">
-        <a class="news-read-full" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer"
+        <a class="news-read-full" href="${escapeHrefAttr(href)}" target="_blank" rel="noopener noreferrer"
            aria-label="${escapeHtmlAttr(`Read full article — ${article.title}`)}">Read full article</a>
         ${host ? `<span class="news-link-host" title="Opens in a new tab">${host}</span>` : ''}
       </footer>`
     : `<footer class="news-card-footer">
-        <a class="news-read-full news-read-full--internal" href="${escapeHtml(newsPageHref(cardId))}">View on this page</a>
+        <a class="news-read-full news-read-full--internal" href="${escapeHrefAttr(newsPageHref(cardId))}">View on this page</a>
       </footer>`;
 
   return `

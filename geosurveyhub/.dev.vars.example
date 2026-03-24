@@ -1,0 +1,5 @@
+# Local Wrangler only — copy to .dev.vars (gitignored)
+# Same names as Cloudflare dashboard secrets for this Worker.
+
+GSH_RSS2JSON_KEY=
+GSH_NEWSDATA_KEY=
