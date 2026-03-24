@@ -1,0 +1,117 @@
+[
+  {
+    "title": "Home",
+    "path": "index.html",
+    "text": "GeoSurveyHub surveying GIS geospatial equipment guide LiDAR drones GNSS photogrammetry Charlotte North Carolina professional mapping field"
+  },
+  {
+    "title": "Surveying equipment buyer's guide",
+    "path": "pages/guide.html",
+    "text": "Interactive quiz equipment recommender LiDAR photogrammetry RTK GNSS total stations mobile mapping what gear do you need plain English technologies"
+  },
+  {
+    "title": "Equipment catalog",
+    "path": "pages/catalog.html",
+    "text": "Full product catalog approximate prices USD retail ranges drones LiDAR sensors GNSS software hydrography monitoring browse all equipment"
+  },
+  {
+    "title": "Topics & glossary",
+    "path": "pages/glossary.html",
+    "text": "Glossary terms definitions topics hub links to every guide photogrammetry accuracy licensing"
+  },
+  {
+    "title": "Photogrammetry",
+    "path": "pages/photogrammetry.html",
+    "text": "SfM structure from motion orthomosaic dense matching drone mapping Pix4D Agisoft RealityCapture camera overlap GCPs"
+  },
+  {
+    "title": "PPK vs RTK & CORS networks",
+    "path": "pages/ppk-rtk-network.html",
+    "text": "Post-processed kinematic real-time kinematic corrections NTRIP base rover network accuracy"
+  },
+  {
+    "title": "Total stations",
+    "path": "pages/total-stations.html",
+    "text": "Robotic total station prism reflectorless optical surveying stakeout construction layout Leica Trimble Topcon"
+  },
+  {
+    "title": "Mobile mapping & SLAM",
+    "path": "pages/mobile-mapping-slam.html",
+    "text": "Vehicle mounted mapping handheld SLAM GPS denied indoor tunnel corridor speed lidar imagery"
+  },
+  {
+    "title": "Point cloud processing",
+    "path": "pages/point-cloud-processing.html",
+    "text": "Classification ground filtering DTM DSM noise QA lidar photogrammetry deliverables CAD GIS"
+  },
+  {
+    "title": "Surveying accuracy",
+    "path": "pages/surveying-accuracy.html",
+    "text": "Error ellipses tolerances RMSE checkpoints control network precision versus accuracy"
+  },
+  {
+    "title": "U.S. surveying license overview",
+    "path": "pages/surveying-license-us.html",
+    "text": "Professional surveyor license NCEES FS PS state board continuing education boundary"
+  },
+  {
+    "title": "About GeoSurveyHub",
+    "path": "pages/about.html",
+    "text": "Mission educational site we do not sell equipment independent guides"
+  },
+  {
+    "title": "AI & machine learning in geospatial",
+    "path": "pages/ai-ml.html",
+    "text": "Machine learning point cloud classification feature extraction automation deep learning ArcGIS"
+  },
+  {
+    "title": "Start a surveying company",
+    "path": "pages/start-a-surveying-company.html",
+    "text": "Business startup costs E&O insurance revenue solo firm equipment stack hiring PS license"
+  },
+  {
+    "title": "LiDAR systems",
+    "path": "pages/lidar.html",
+    "text": "Laser scanning airborne terrestrial mobile drone lidar point cloud canopy penetration RIEGL return intensity"
+  },
+  {
+    "title": "Survey drones",
+    "path": "pages/drones.html",
+    "text": "UAV UAS multirotor fixed-wing Part 107 payload RTK PPK Matrice DJI flight planning"
+  },
+  {
+    "title": "GNSS & RTK",
+    "path": "pages/gnss-rtk.html",
+    "text": "GPS Galileo GLONASS BeiDou rover base antenna multipath tilt compensation network RTK"
+  },
+  {
+    "title": "Sensors",
+    "path": "pages/sensors.html",
+    "text": "Camera payloads LiDAR GPR hyperspectral multispectral monitoring sensors integration"
+  },
+  {
+    "title": "Field computers & tablets",
+    "path": "pages/computers.html",
+    "text": "Rugged tablet laptop Windows field software data collection sunlight readable MIL-STD"
+  },
+  {
+    "title": "Mobile mapping trucks",
+    "path": "pages/trucks.html",
+    "text": "Vehicle mounted lidar mobile mapping corridor road inventory street view systems"
+  },
+  {
+    "title": "The Field Report — news",
+    "path": "pages/news.html",
+    "text": "Industry news curated RSS geospatial surveying lidar releases trends"
+  },
+  {
+    "title": "Equipment financing",
+    "path": "pages/financing.html",
+    "text": "Lease loan equipment finance survey gear interest rates term length quote"
+  },
+  {
+    "title": "Sample product page",
+    "path": "pages/product.html",
+    "text": "DJI Matrice 350 RTK example product template drone platform"
+  }
+]

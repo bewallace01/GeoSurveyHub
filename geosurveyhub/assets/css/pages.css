@@ -399,6 +399,14 @@
   gap: 12px;
 }
 
+@media (min-width: 640px) {
+  .quiz-options--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
+
 .quiz-option {
   text-align: left;
   padding: 18px 22px;
@@ -535,6 +543,13 @@
 
 .catalog-error code {
   font-size: 0.9em;
+}
+
+.quiz-catalog-item:target {
+  scroll-margin-top: 6rem;
+  background: rgba(251, 215, 132, 0.06);
+  border-radius: var(--radius-sm);
+  outline: 1px solid rgba(251, 215, 132, 0.22);
 }
 
 /* News filters */

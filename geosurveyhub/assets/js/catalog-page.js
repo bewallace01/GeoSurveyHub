@@ -39,7 +39,7 @@
           ${byCat[cat]
             .map(
               (p) => `
-            <li class="quiz-catalog-item">
+            <li class="quiz-catalog-item" id="product-${p.id}">
               <span class="quiz-catalog-name">${p.name}${p.brand ? ` <span class="quiz-catalog-brand">(${p.brand})</span>` : ''}</span>
               <span class="quiz-catalog-price">${price(p)}</span>
             </li>
