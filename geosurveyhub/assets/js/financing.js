@@ -214,9 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <h2>Thank you, ${firstName}.</h2>
         <p>We've received your interest in <strong style="color:var(--white)">${catList}</strong>.
-           Our team will be in touch within 2 business days to discuss your
-           options and connect you with financing partners who specialize in
-           geospatial equipment.</p>
+           Our team will be in touch within 2 business days to connect you with
+           <strong>Axiant Partners</strong>, who can help find funding for geospatial equipment.</p>
         <div class="success-actions">
           <a href="guide.html" class="read-more">Continue exploring the guide</a>
           <a href="../index.html" class="read-more">Back to home</a>

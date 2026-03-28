@@ -36,6 +36,14 @@
   padding: 120px var(--section-h) 100px;
   position: relative;
   overflow: hidden;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(180deg, rgba(11, 29, 38, 0.88) 0%, rgba(11, 29, 38, 0.72) 45%, rgba(11, 29, 38, 0.94) 100%),
+    radial-gradient(ellipse 90% 70% at 75% 15%, rgba(251, 215, 132, 0.09) 0%, transparent 55%),
+    url('../images/hero-earth.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
 }
 
 .hero::before {
@@ -43,9 +51,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(251, 215, 132, 0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(22, 37, 53, 0.9) 0%, transparent 50%),
-    linear-gradient(180deg, var(--bg) 0%, #0a1820 100%);
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(251, 215, 132, 0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(22, 37, 53, 0.75) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
@@ -55,12 +62,18 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
   background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, black 20%, transparent 70%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, black 25%, transparent 72%);
   pointer-events: none;
   z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    background-position: center center;
+  }
 }
 
 .hero-inner {
@@ -117,16 +130,39 @@
   width: 100%;
   max-width: 420px;
   aspect-ratio: 1;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-med);
   border-radius: var(--radius-md);
   background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
 }
 
-.hero-visual svg { opacity: 0.85; }
+.hero-visual-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) brightness(0.78) contrast(1.08);
+}
+
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(251, 215, 132, 0.12), inset 0 -80px 100px rgba(11, 29, 38, 0.65);
+  background: linear-gradient(160deg, transparent 40%, rgba(11, 29, 38, 0.5) 100%);
+}
+
+.hero-visual .panel-badge {
+  z-index: 1;
+}
 
 .scroll-indicator {
   position: absolute;
@@ -606,7 +642,29 @@
   padding: 100px var(--section-h);
   text-align: center;
   border-top: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--bg) 0%, rgba(22, 37, 53, 0.5) 100%);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(180deg, rgba(11, 29, 38, 0.88) 0%, rgba(11, 29, 38, 0.82) 100%),
+    url('../images/panel-mountain-aerial.jpg');
+  background-size: cover;
+  background-position: center 40%;
+}
+
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 100%, rgba(251, 215, 132, 0.06) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.cta-band h2,
+.cta-band p,
+.cta-band .btn {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-band h2 { margin-bottom: 20px; }

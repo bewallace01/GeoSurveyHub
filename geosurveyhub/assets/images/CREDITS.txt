@@ -1,0 +1,10 @@
+Photography via Unsplash (unsplash.com/license) — free to use.
+
+hero-earth.jpg     — Earth / connectivity (NASA-related imagery on Unsplash)
+hero-globe.jpg     — Globe held in hands
+panel-topo-map.jpg — World map / cartography
+panel-mountain-aerial.jpg — Mountain landscape aerial
+panel-data-tech.jpg     — Laptop / workspace
+panel-field-engineering.jpg — Engineering / precision hardware
+
+Replace filenames above with exact Unsplash photographer URLs in your repo if you need attribution lines for print or marketing.
