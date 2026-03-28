@@ -47,6 +47,21 @@
     </div>`;
   }
 
+  function renderJumpNav(keys, catLabel) {
+    if (!keys.length) return '';
+    const links = keys
+      .map((cat) => {
+        const label = esc(catLabel(cat));
+        const hash = 'cat-' + esc(cat);
+        return `<a class="catalog-jump-link" href="#${hash}">${label}</a>`;
+      })
+      .join('');
+    return `<nav class="catalog-jump-nav" aria-label="Jump to category">
+      <span class="catalog-jump-label">Jump to</span>
+      <div class="catalog-jump-links">${links}</div>
+    </nav>`;
+  }
+
   function renderCatalog(all) {
     const price = (p) =>
       typeof formatPriceRange === 'function' ? formatPriceRange(p) : '—';
@@ -74,7 +89,7 @@
     ];
     const keys = [...new Set([...order, ...Object.keys(byCat)])].filter((k) => byCat[k]);
 
-    return keys
+    const sections = keys
       .map((cat) => {
         const cards = byCat[cat]
           .map((p) => {
@@ -118,6 +133,8 @@
     `;
       })
       .join('');
+
+    return renderJumpNav(keys, catLabel) + sections;
   }
 
   document.addEventListener('DOMContentLoaded', async () => {
