@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wallace Web Workers — Web Design &amp; Edge Development | Built GeoSurveyHub</title>
-  <meta name="description" content="Wallace Web Workers builds fast, search-friendly marketing sites and content platforms. GeoSurveyHub is our live demo: guides, catalog, news, and Cloudflare Workers." />
+  <meta name="description" content="Wallace Web Workers builds fast, search-friendly marketing sites and content platforms. GeoSurveyHub is our live demo: guides, catalog, news—hosted on Railway with Cloudflare Workers for edge APIs." />
   <link rel="canonical" href="https://www.geosurveyhub.com/pages/wallace-web-workers.html" />
   <link rel="stylesheet" href="../assets/css/global.css?cb=20260339" />
   <link rel="stylesheet" href="../assets/css/animations.css?cb=20260327" />
-  <link rel="stylesheet" href="../assets/css/pages.css?cb=20260352" />
+  <link rel="stylesheet" href="../assets/css/pages.css?cb=20260361" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"Wallace Web Workers","description":"Web design and edge development studio.","publisher":{"@type":"Organization","name":"Wallace Web Workers","url":"https://www.geosurveyhub.com/pages/wallace-web-workers.html"}}
+  {"@context":"https://schema.org","@type":"WebPage","name":"Wallace Web Workers","description":"Web design and edge development studio. GeoSurveyHub is hosted on Railway with Cloudflare Workers.","publisher":{"@type":"Organization","name":"Wallace Web Workers","url":"https://www.geosurveyhub.com/pages/wallace-web-workers.html"}}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -84,7 +84,7 @@
   </header>
 
   <nav class="breadcrumb" aria-label="Breadcrumb">
-    <a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Wallace Web Workers</span>
+    <a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Studio</span>
   </nav>
 
   <main id="main">
@@ -94,7 +94,7 @@
         <h1>We build sites people <em>trust</em> and use</h1>
         <p class="sub">Wallace Web Workers designs and ships marketing sites, content hubs, and lightweight web apps—with performance, accessibility, and SEO baked in from day one. You’re looking at GeoSurveyHub: a live reference build for a technical audience.</p>
         <div class="hero-cta">
-          <a href="mailto:hello@wallacewebworkers.com?subject=Project%20inquiry%20%E2%80%94%20Wallace%20Web%20Workers" class="btn btn-primary">Start a conversation</a>
+          <a href="#studio-contact" class="btn btn-primary">Start a conversation</a>
           <a href="../index.html" class="btn btn-ghost">View this demo site</a>
         </div>
       </div>
@@ -139,17 +139,21 @@
           <h2 id="case-title">GeoSurveyHub — a <em>technical</em> content platform</h2>
           <p>This site is a demo you can click through: dozens of guide pages, a product catalog with price ranges, quiz flow, site-wide search, live industry news via an edge proxy, and a cohesive visual system. It’s the kind of project we deliver for firms that want authority content—not a single landing page and a contact form.</p>
           <ul class="studio-stack-list">
-            <li><strong>Edge-ready:</strong> Cloudflare Workers serve static assets and API routes (e.g. RSS feeds) without exposing keys in the browser.</li>
+            <li><strong>Edge-ready:</strong> GeoSurveyHub is deployed on <strong>Railway</strong>; Cloudflare Workers handle API routes (e.g. RSS feeds) without exposing keys in the browser.</li>
             <li><strong>Deep content:</strong> Long-form pages, glossary, and cross-links—built for discovery and return visits.</li>
             <li><strong>Polished UI:</strong> Consistent spacing, typography, and motion—professional enough to put in front of investors or enterprise buyers.</li>
           </ul>
-          <a href="guide.html" class="read-more">Explore the buyer’s guide</a>
+          <p class="studio-case-links">
+            <a href="guide.html" class="read-more">Explore the buyer’s guide</a>
+            <a href="catalog.html" class="read-more">Browse the product catalog</a>
+          </p>
         </div>
         <div class="visual-panel">
           <div class="visual-panel-inner studio-panel">
             <p class="panel-label">Stack highlights</p>
             <ul class="studio-mono-list">
               <li>HTML / CSS / JS</li>
+              <li>Railway</li>
               <li>Cloudflare Workers</li>
               <li>Structured data &amp; sitemap</li>
               <li>News feed proxy</li>
@@ -159,11 +163,98 @@
       </div>
     </section>
 
-    <section class="studio-cta-band" aria-labelledby="studio-cta-title">
-      <div class="studio-cta-inner container">
-        <h2 id="studio-cta-title">Ready for a site that sells your work?</h2>
-        <p>Tell us about your business, timeline, and audience. We’ll reply with a clear next step—whether that’s a scope call or a short audit of your current site.</p>
-        <a href="mailto:hello@wallacewebworkers.com?subject=Project%20inquiry%20%E2%80%94%20Wallace%20Web%20Workers" class="btn btn-primary">Email hello@wallacewebworkers.com</a>
+    <div class="divider container"></div>
+
+    <section class="section studio-process" aria-labelledby="studio-process-title">
+      <div class="section-inner studio-process-inner">
+        <div class="section-text">
+          <div class="section-heading">
+            <span class="section-num">03</span>
+            <p class="kicker">Engagement</p>
+          </div>
+          <h2 id="studio-process-title">How a project <em>starts</em></h2>
+          <p>No mystery phases: you get a clear reply, a short call if it’s a fit, then a written scope with timeline and investment range before we write code.</p>
+        </div>
+        <ol class="studio-process-steps">
+          <li>
+            <span class="studio-process-step-num" aria-hidden="true">1</span>
+            <div>
+              <strong>Intro &amp; goals</strong>
+              <span>You share audience, must-haves, and deadline—we ask what “done” looks like.</span>
+            </div>
+          </li>
+          <li>
+            <span class="studio-process-step-num" aria-hidden="true">2</span>
+            <div>
+              <strong>Scope &amp; plan</strong>
+              <span>We propose pages, tech approach, and milestones so you can decide with numbers.</span>
+            </div>
+          </li>
+          <li>
+            <span class="studio-process-step-num" aria-hidden="true">3</span>
+            <div>
+              <strong>Build &amp; review</strong>
+              <span>Iterative check-ins; staging URL; accessibility and performance checks before launch.</span>
+            </div>
+          </li>
+          <li>
+            <span class="studio-process-step-num" aria-hidden="true">4</span>
+            <div>
+              <strong>Launch &amp; handoff</strong>
+              <span>DNS, analytics, training if needed—then you own the site and the content workflow.</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="studio-contact" class="section studio-contact" aria-labelledby="studio-contact-title">
+      <div class="studio-contact-inner container">
+        <div class="section-head studio-contact-head">
+          <div class="section-heading section-heading--center">
+            <span class="section-num">04</span>
+            <p class="kicker">Contact</p>
+          </div>
+          <h2 id="studio-contact-title">Ready for a site that sells your work?</h2>
+          <p class="studio-contact-lead">Tell us about your business, timeline, and audience. We’ll reply with a clear next step—whether that’s a scope call or a short audit of your current site.</p>
+        </div>
+        <div id="studio-contact-form-wrap">
+          <form
+            id="studio-contact-form"
+            class="financing-form studio-contact-form"
+            method="POST"
+            action="https://formspree.io/f/xqegerww"
+          >
+            <input type="hidden" name="_next" value="https://www.geosurveyhub.com/pages/wallace-web-workers.html?sent=1" />
+            <input type="hidden" name="_subject" value="Wallace Web Workers inquiry" />
+            <input type="text" name="_gotcha" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="form-grid-2">
+              <div class="field-group">
+                <label for="studio-contact-name">Name <span class="req">*</span></label>
+                <input type="text" id="studio-contact-name" name="name" placeholder="Your name" autocomplete="name" required maxlength="120" />
+              </div>
+              <div class="field-group">
+                <label for="studio-contact-email">Email <span class="req">*</span></label>
+                <input type="email" id="studio-contact-email" name="email" placeholder="you@company.com" autocomplete="email" required />
+              </div>
+              <div class="field-group field-group-full">
+                <label for="studio-contact-company">Company <span class="req-hint">(optional)</span></label>
+                <input type="text" id="studio-contact-company" name="company" placeholder="Firm or organization" autocomplete="organization" maxlength="120" />
+              </div>
+              <div class="field-group field-group-full">
+                <label for="studio-contact-message">Message <span class="req">*</span></label>
+                <textarea id="studio-contact-message" name="message" rows="5" placeholder="Project goals, timeline, anything we should know…" required></textarea>
+              </div>
+            </div>
+            <div class="studio-contact-actions">
+              <button type="submit" class="btn btn-primary">Send message</button>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=brandon%40wallacewebworkers.com&amp;su=Project%20inquiry%20%E2%80%94%20Wallace%20Web%20Workers" class="btn btn-ghost" rel="noopener noreferrer" target="_blank">Email brandon@wallacewebworkers.com instead</a>
+            </div>
+          </form>
+        </div>
+        <div id="studio-contact-success" class="studio-contact-success" hidden tabindex="-1" role="status">
+          <p>Thanks — we received your message and will get back to you soon.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -185,8 +276,8 @@
       <div class="footer-col">
         <h4>Studio</h4>
         <ul>
-          <li><a href="wallace-web-workers.html" aria-current="page">Wallace Web Workers</a></li>
-          <li><a href="mailto:hello@wallacewebworkers.com">Contact</a></li>
+          <li><a href="https://wallacewebworkers.com" rel="noopener noreferrer" target="_blank">Wallace Web Workers</a></li>
+          <li><a href="#studio-contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -199,10 +290,12 @@
     </div>
     <div class="footer-bottom container">
       <p>© 2026 GeoSurveyHub · Charlotte, NC</p>
-      <p class="footer-credit">Site by <a href="wallace-web-workers.html">Wallace Web Workers</a></p>
+      <p class="footer-credit">Site by <a href="https://wallacewebworkers.com" rel="noopener noreferrer" target="_blank">Wallace Web Workers</a></p>
     </div>
   </footer>
+  <script src="../assets/js/studio-form-config.js"></script>
   <script src="../assets/js/nav.js" defer></script>
   <script src="../assets/js/site-search.js" defer></script>
+  <script src="../assets/js/studio-contact.js" defer></script>
 </body>
 </html>

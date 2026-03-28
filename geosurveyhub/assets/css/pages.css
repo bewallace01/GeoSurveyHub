@@ -1432,6 +1432,18 @@ a.quiz-catalog-name:hover {
   margin-bottom: 16px;
 }
 
+.studio-band h2 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(251, 215, 132, 0.35);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.studio-band h2 a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
 .studio-band p {
   max-width: 520px;
   margin-bottom: 24px;
@@ -1476,13 +1488,121 @@ a.quiz-catalog-name:hover {
   font-weight: 500;
 }
 
+.studio-hero.page-hero {
+  background:
+    linear-gradient(180deg, rgba(22, 37, 53, 0.5) 0%, var(--bg) 100%),
+    linear-gradient(90deg, rgba(251, 215, 132, 0.06) 0%, transparent 42%);
+  border-bottom-color: var(--border-med);
+}
+
 .studio-hero .sub {
   max-width: 640px;
+}
+
+/* Metrics: full-width intro, then three pillars in a row */
+.studio-metrics .section-inner {
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
 .studio-pill-grid {
   display: grid;
   gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .studio-pill-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.section-text p.studio-case-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-bottom: 8px;
+}
+
+.studio-case-links .read-more {
+  margin: 0;
+}
+
+/* Case study stack panel: don’t force 4:3 on text-only card */
+.visual-panel-inner.studio-panel {
+  aspect-ratio: auto;
+  min-height: 0;
+  padding: 32px 28px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Process (section 03) */
+.studio-process-inner {
+  grid-template-columns: 1fr 1.1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.studio-process-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--border-med);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(22, 37, 53, 0.35);
+}
+
+.studio-process-steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+
+.studio-process-steps li:last-child {
+  border-bottom: none;
+}
+
+.studio-process-step-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  line-height: 1.6;
+  padding-top: 2px;
+}
+
+.studio-process-steps strong {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.studio-process-steps li > div > span:last-child {
+  display: block;
+  font-size: calc(14px + var(--card-text-bump));
+  color: var(--text-body);
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .studio-process-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 .studio-pill {
@@ -1559,6 +1679,60 @@ a.quiz-catalog-name:hover {
 .studio-cta-inner p {
   margin: 0 auto 28px;
   max-width: 520px;
+}
+
+/* Wallace Web Workers — embedded Formspree contact */
+.studio-contact {
+  scroll-margin-top: 100px;
+  border-top: 1px solid var(--border);
+}
+
+.studio-contact-head {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.studio-contact-head h2 {
+  margin-bottom: 16px;
+}
+
+.studio-contact-lead {
+  font-size: calc(1.05rem + var(--card-text-bump));
+  color: var(--text-body);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.studio-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.studio-contact-success {
+  text-align: center;
+  padding: 40px 24px;
+  border: 1px solid var(--border-med);
+  border-radius: var(--radius-md);
+  background: rgba(22, 37, 53, 0.45);
+}
+
+.studio-contact-success p {
+  margin: 0;
+  font-size: calc(1.125rem + var(--card-text-bump));
+  color: var(--text-body);
+  max-width: none;
+}
+
+.req-hint {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.88em;
 }
 
 @media (max-width: 900px) {

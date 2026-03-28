@@ -117,15 +117,19 @@
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
-    function mailtoFallback(payload) {
-      const subject = encodeURIComponent(payload._subject);
-      const body = encodeURIComponent(
-        Object.entries(payload)
-          .filter(([k]) => k !== '_subject')
-          .map(([k, v]) => `${k}: ${v}`)
-          .join('\n')
-      );
-      window.location.href = `mailto:info@geosurveyhub.com?subject=${subject}&body=${body}`;
+    function gmailComposeFallback(payload) {
+      const bodyText = Object.entries(payload)
+        .filter(([k]) => k !== '_subject')
+        .map(([k, v]) => `${k}: ${v}`)
+        .join('\n');
+      const q = new URLSearchParams({
+        view: 'cm',
+        fs: '1',
+        to: 'brandon@wallacewebworkers.com',
+        su: payload._subject,
+        body: bodyText,
+      });
+      window.location.href = `https://mail.google.com/mail/?${q.toString()}`;
     }
 
     form.addEventListener('submit', async (e) => {
@@ -178,7 +182,7 @@
             'Formspree is not configured yet. Add your form URL in assets/js/lead-form-config.js. Opening your email app as a fallback…';
           statusEl.className = 'product-lead-status product-lead-status--note';
         }
-        mailtoFallback(payload);
+        gmailComposeFallback(payload);
         return;
       }
 
@@ -207,10 +211,10 @@
         console.warn('Lead form submit:', err);
         if (statusEl) {
           statusEl.textContent =
-            'Could not send online. Opening your email app with this information instead…';
+            'Could not send online. Opening Gmail with this information instead…';
           statusEl.className = 'product-lead-status product-lead-status--note';
         }
-        mailtoFallback(payload);
+        gmailComposeFallback(payload);
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;

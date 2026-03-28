@@ -179,15 +179,18 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error('Server error');
       }
     } catch (err) {
-      // Fallback: open mailto
-      const subject = encodeURIComponent(data._subject);
-      const body = encodeURIComponent(
-        Object.entries(data)
-          .filter(([k]) => k !== '_subject')
-          .map(([k, v]) => `${k}: ${v}`)
-          .join('\n')
-      );
-      window.location.href = `mailto:info@geosurveyhub.com?subject=${subject}&body=${body}`;
+      const bodyText = Object.entries(data)
+        .filter(([k]) => k !== '_subject')
+        .map(([k, v]) => `${k}: ${v}`)
+        .join('\n');
+      const q = new URLSearchParams({
+        view: 'cm',
+        fs: '1',
+        to: 'brandon@wallacewebworkers.com',
+        su: data._subject,
+        body: bodyText,
+      });
+      window.location.href = `https://mail.google.com/mail/?${q.toString()}`;
 
       submitBtn.textContent = 'Submit My Interest';
       submitBtn.disabled = false;
