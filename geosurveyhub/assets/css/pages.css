@@ -1005,6 +1005,92 @@ a.quiz-catalog-name:hover {
   max-width: 640px;
 }
 
+/* Product — lead / Formspree (product-detail.js) */
+.product-lead-intro {
+  max-width: 640px;
+  color: var(--text-body);
+  margin: 0 0 24px;
+  line-height: 1.65;
+  font-size: calc(0.9rem + var(--card-text-bump));
+}
+
+.product-lead-form {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px 28px 24px;
+  max-width: 720px;
+}
+
+.product-lead-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+}
+
+@media (max-width: 640px) {
+  .product-lead-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-lead-form .field-group-full {
+  grid-column: 1 / -1;
+}
+
+.product-lead-consent {
+  margin-top: 12px;
+}
+
+.product-lead-check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+.product-lead-check input {
+  margin-top: 0.25em;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.product-lead-actions {
+  margin-top: 20px;
+}
+
+.product-lead-status {
+  margin: 16px 0 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+  min-height: 1.25em;
+}
+
+.product-lead-status--error {
+  color: var(--accent);
+}
+
+.product-lead-status--note {
+  color: var(--muted);
+}
+
+.product-lead-success {
+  font-size: calc(0.95rem + var(--card-text-bump));
+  color: var(--text-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.product-lead-success strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
 .catalog-error {
   color: var(--muted);
   line-height: 1.5;

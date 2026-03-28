@@ -64,6 +64,162 @@
       </div>`;
   }
 
+  function renderLeadSection(p) {
+    return `
+      <section class="product-detail-block product-lead-block" id="learn-more" aria-labelledby="lead-title">
+        <h2 class="product-detail-section-title" id="lead-title">Interested in learning more?</h2>
+        <p class="product-lead-intro">Request a follow-up about this equipment. GeoSurveyHub is an educational reference; we do not sell hardware. We may connect you with partners or resources where appropriate.</p>
+        <form id="product-lead-form" class="product-lead-form" novalidate>
+          <div class="product-lead-form-grid">
+            <div class="field-group">
+              <label for="lead-name">Name <span class="req">*</span></label>
+              <input type="text" id="lead-name" name="name" required autocomplete="name" maxlength="120" />
+            </div>
+            <div class="field-group">
+              <label for="lead-email">Email <span class="req">*</span></label>
+              <input type="email" id="lead-email" name="email" required autocomplete="email" maxlength="200" />
+            </div>
+            <div class="field-group">
+              <label for="lead-phone">Phone</label>
+              <input type="tel" id="lead-phone" name="phone" autocomplete="tel" maxlength="40" />
+            </div>
+            <div class="field-group field-group-full">
+              <label for="lead-message">What would you like to know?</label>
+              <textarea id="lead-message" name="message" rows="4" maxlength="2000" placeholder="Optional — project type, timeline, or questions"></textarea>
+            </div>
+          </div>
+          <div class="product-lead-consent">
+            <label class="product-lead-check">
+              <input type="checkbox" id="lead-consent" name="consent" value="yes" required />
+              <span>I agree to be contacted about this inquiry.</span>
+            </label>
+          </div>
+          <div class="product-lead-actions">
+            <button type="submit" class="btn btn-primary product-lead-submit" id="product-lead-submit">Send request</button>
+          </div>
+          <p class="product-lead-status" id="product-lead-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>`;
+  }
+
+  function setupProductLeadForm(p) {
+    const form = document.getElementById('product-lead-form');
+    const statusEl = document.getElementById('product-lead-status');
+    const submitBtn = document.getElementById('product-lead-submit');
+    if (!form || !p) return;
+
+    const endpoint =
+      typeof window.PRODUCT_LEAD_FORM_ENDPOINT === 'string'
+        ? window.PRODUCT_LEAD_FORM_ENDPOINT.trim()
+        : '';
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function mailtoFallback(payload) {
+      const subject = encodeURIComponent(payload._subject);
+      const body = encodeURIComponent(
+        Object.entries(payload)
+          .filter(([k]) => k !== '_subject')
+          .map(([k, v]) => `${k}: ${v}`)
+          .join('\n')
+      );
+      window.location.href = `mailto:info@geosurveyhub.com?subject=${subject}&body=${body}`;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (statusEl) statusEl.textContent = '';
+
+      const consent = document.getElementById('lead-consent');
+      if (!consent || !consent.checked) {
+        if (statusEl) {
+          statusEl.textContent = 'Please confirm you agree to be contacted.';
+          statusEl.className = 'product-lead-status product-lead-status--error';
+        }
+        return;
+      }
+
+      const name = document.getElementById('lead-name')?.value?.trim() || '';
+      const email = document.getElementById('lead-email')?.value?.trim() || '';
+      const phone = document.getElementById('lead-phone')?.value?.trim() || '';
+      const message = document.getElementById('lead-message')?.value?.trim() || '';
+
+      if (!name || !email) {
+        if (statusEl) {
+          statusEl.textContent = 'Name and email are required.';
+          statusEl.className = 'product-lead-status product-lead-status--error';
+        }
+        return;
+      }
+      if (!validateEmail(email)) {
+        if (statusEl) {
+          statusEl.textContent = 'Please enter a valid email address.';
+          statusEl.className = 'product-lead-status product-lead-status--error';
+        }
+        return;
+      }
+
+      const payload = {
+        name,
+        email,
+        phone,
+        message,
+        product_id: p.id,
+        product_name: p.name,
+        product_url: window.location.href.split('#')[0],
+        _subject: `Equipment inquiry: ${p.name}`,
+      };
+
+      if (!endpoint || endpoint.includes('YOUR_FORM_ID')) {
+        if (statusEl) {
+          statusEl.textContent =
+            'Formspree is not configured yet. Add your form URL in assets/js/lead-form-config.js. Opening your email app as a fallback…';
+          statusEl.className = 'product-lead-status product-lead-status--note';
+        }
+        mailtoFallback(payload);
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+        if (res.ok) {
+          form.innerHTML = `<p class="product-lead-success" tabindex="-1">Thanks — we received your request about <strong>${esc(p.name)}</strong>. We’ll be in touch soon.</p>`;
+          form.closest('.product-lead-block')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          form.querySelector('.product-lead-success')?.focus();
+          return;
+        }
+        throw new Error(String(res.status));
+      } catch (err) {
+        console.warn('Lead form submit:', err);
+        if (statusEl) {
+          statusEl.textContent =
+            'Could not send online. Opening your email app with this information instead…';
+          statusEl.className = 'product-lead-status product-lead-status--note';
+        }
+        mailtoFallback(payload);
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send request';
+        }
+      }
+    });
+  }
+
   function renderList(title, id, items, variant) {
     if (!items || !items.length) return '';
     const lis = items.map((t) => `<li>${esc(t)}</li>`).join('');
@@ -122,6 +278,8 @@
       ${renderList('Highlights', 'highlights', p.highlights, 'highlights')}
       ${renderList('Limitations & caveats', 'downfalls', p.downfalls, 'downfalls')}
       ${renderSpecsTable(p.specs)}
+
+      ${renderLeadSection(p)}
 
       <aside class="callout-box product-detail-callout">
         <div class="callout-label">More context</div>
@@ -187,6 +345,7 @@
 
       setHead(p);
       root.innerHTML = renderProduct(p);
+      setupProductLeadForm(p);
 
       if (bc) {
         const catHref = categoryHref(p.category);
