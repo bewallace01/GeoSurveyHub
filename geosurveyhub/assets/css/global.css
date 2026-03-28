@@ -1009,6 +1009,32 @@ a.product-card--link:focus-visible {
   color: var(--white);
 }
 
+.footer-credits {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  text-align: right;
+}
+
+.footer-financing {
+  font-size: 10px;
+  letter-spacing: 0.35px;
+  margin: 0;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.footer-financing a {
+  color: var(--text-subtle);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-financing a:hover {
+  color: var(--accent);
+}
+
 /* ── UTILITY ── */
 .container {
   max-width: var(--max-width);
@@ -1058,6 +1084,10 @@ a.product-card--link:focus-visible {
   .section-inner.reverse { direction: ltr; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; }
+  .footer-credits {
+    align-items: flex-start;
+    text-align: left;
+  }
   .nav {
     flex-wrap: wrap;
     gap: 16px;
