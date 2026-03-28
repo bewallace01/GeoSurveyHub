@@ -240,6 +240,14 @@ async function handleNewsDataProxy(url: URL, env: Env): Promise<Response> {
   });
 }
 
+/** /pages/foo → pages/foo.html (clean URLs for local dev + Workers) */
+function extensionlessPagesHtml(pathname: string): string | null {
+  if (!pathname.startsWith('/pages/') || pathname.length <= '/pages/'.length) return null;
+  const rest = pathname.slice('/pages/'.length);
+  if (rest.includes('/') || rest.includes('.')) return null;
+  return `/pages/${rest}.html`;
+}
+
 export default {
   async fetch(request, env): Promise<Response> {
     const url = new URL(request.url);
@@ -248,6 +256,15 @@ export default {
     }
     if (request.method === 'GET' && url.pathname === '/api/news/newsdata') {
       return handleNewsDataProxy(url, env);
+    }
+    const htmlPath = request.method === 'GET' ? extensionlessPagesHtml(url.pathname) : null;
+    if (htmlPath) {
+      const tryUrl = new URL(htmlPath, url.origin);
+      tryUrl.search = url.search;
+      const res = await env.ASSETS.fetch(new Request(tryUrl.toString(), request));
+      if (res.status !== 404) {
+        return res;
+      }
     }
     return env.ASSETS.fetch(request);
   },
