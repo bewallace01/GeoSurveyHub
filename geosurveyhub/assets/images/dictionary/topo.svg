@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <path stroke="rgba(251,215,132,0.4)" stroke-width="0.9" fill="none" d="M40 140 Q90 80 140 100 T240 70 T300 120"/>
+  <path stroke="rgba(251,215,132,0.6)" stroke-width="0.9" fill="none" d="M35 155 Q85 95 135 115 T235 85 T305 135"/>
+  <path stroke="#FBD784" stroke-width="1" fill="none" d="M30 170 Q80 110 130 130 T230 100 T310 150"/>
+  <text x="50" y="95" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9">relief · features</text>
+</svg>

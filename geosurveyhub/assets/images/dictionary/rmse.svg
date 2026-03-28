@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <line x1="50" y1="150" x2="270" y2="150" stroke="rgba(255,255,255,0.12)"/>
+  <line x1="160" y1="50" x2="160" y2="150" stroke="rgba(255,255,255,0.12)"/>
+  <circle cx="160" cy="100" r="4" fill="#FBD784"/>
+  <text x="168" y="96" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9">true</text>
+  <circle cx="120" cy="115" r="2.5" fill="#A8B8C4" opacity="0.8"/>
+  <circle cx="195" cy="88" r="2.5" fill="#A8B8C4" opacity="0.8"/>
+  <circle cx="175" cy="125" r="2.5" fill="#A8B8C4" opacity="0.8"/>
+  <circle cx="140" cy="90" r="2.5" fill="#A8B8C4" opacity="0.8"/>
+  <text x="160" y="185" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">residuals, RMSE</text>
+</svg>

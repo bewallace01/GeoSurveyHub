@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <text x="90" y="42" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9" text-anchor="middle">precision</text>
+  <circle cx="90" cy="95" r="2.5" fill="#FBD784"/>
+  <circle cx="94" cy="92" r="2.5" fill="#FBD784"/>
+  <circle cx="88" cy="98" r="2.5" fill="#FBD784"/>
+  <circle cx="92" cy="98" r="2.5" fill="#FBD784"/>
+  <text x="230" y="42" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9" text-anchor="middle">accuracy</text>
+  <circle cx="218" cy="95" r="2.5" fill="#A8B8C4" opacity="0.7"/>
+  <circle cx="242" cy="88" r="2.5" fill="#A8B8C4" opacity="0.7"/>
+  <circle cx="230" cy="102" r="2.5" fill="#FBD784"/>
+  <text x="230" y="118" fill="#FBD784" font-family="system-ui,sans-serif" font-size="8" text-anchor="middle">true</text>
+  <text x="160" y="185" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9" text-anchor="middle">repeatability vs truth</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <rect x="50" y="60" width="220" height="90" fill="#162535" stroke="#FBD784" stroke-width="1"/>
+  <rect x="130" y="60" width="40" height="90" fill="rgba(251,215,132,0.15)" stroke="#FBD784" stroke-dasharray="4 3"/>
+  <text x="150" y="108" fill="#FBD784" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">E</text>
+  <text x="160" y="175" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">utility / access strip</text>
+</svg>

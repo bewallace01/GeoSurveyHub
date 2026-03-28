@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <circle cx="60" cy="50" r="5" fill="#FBD784"/>
+  <rect x="220" y="70" width="50" height="90" fill="#162535" stroke="rgba(255,255,255,0.2)"/>
+  <path stroke="#FBD784" stroke-width="1.2" d="M60 55 L160 140"/>
+  <path stroke="rgba(251,215,132,0.45)" stroke-dasharray="5 3" d="M60 55 L220 90 L160 140"/>
+  <circle cx="160" cy="145" r="8" fill="#162535" stroke="#FBD784"/>
+  <text x="160" y="185" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">direct vs reflected path</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <path stroke="#FBD784" stroke-width="2" fill="none" d="M80 120 L140 60 L220 80 L260 130 L200 160 L100 150 Z"/>
+  <circle cx="80" cy="120" r="5" fill="#162535" stroke="#FBD784"/>
+  <text x="160" y="100" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">start a end</text>
+</svg>

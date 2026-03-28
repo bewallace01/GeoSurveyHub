@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <rect x="120" y="70" width="80" height="60" rx="4" fill="#162535" stroke="#FBD784" stroke-width="1"/>
+  <line x1="160" y1="100" x2="220" y2="100" stroke="#FBD784" stroke-width="1.5"/>
+  <text x="228" y="104" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10">x</text>
+  <line x1="160" y1="100" x2="160" y2="45" stroke="#FBD784" stroke-width="1.5"/>
+  <text x="156" y="38" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10">y</text>
+  <line x1="160" y1="100" x2="115" y2="130" stroke="rgba(251,215,132,0.6)" stroke-width="1.5"/>
+  <text x="95" y="138" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10">z</text>
+  <text x="160" y="175" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">accel · gyro</text>
+</svg>

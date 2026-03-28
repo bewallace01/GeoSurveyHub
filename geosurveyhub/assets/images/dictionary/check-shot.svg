@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <circle cx="160" cy="130" r="8" fill="#162535" stroke="#FBD784"/>
+  <line x1="160" y1="122" x2="100" y2="70" stroke="#FBD784" stroke-width="1.5"/>
+  <line x1="160" y1="122" x2="100" y2="70" stroke="rgba(251,215,132,0.35)" stroke-width="4"/>
+  <circle cx="100" cy="70" r="5" fill="#162535" stroke="#FBD784"/>
+  <text x="70" y="58" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10">known pt</text>
+  <text x="175" y="95" fill="#FBD784" font-family="system-ui,sans-serif" font-size="10">check</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <ellipse cx="110" cy="100" rx="55" ry="38" fill="none" stroke="rgba(251,215,132,0.35)" stroke-width="1"/>
+  <path stroke="rgba(168,184,196,0.35)" stroke-width="0.6" d="M55 100 L165 100 M110 62 L110 138"/>
+  <text x="110" y="40" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9" text-anchor="middle">lat/lon</text>
+  <ellipse cx="210" cy="100" rx="55" ry="38" fill="none" stroke="rgba(251,215,132,0.5)" stroke-width="1"/>
+  <path stroke="rgba(168,184,196,0.35)" stroke-width="0.6" d="M155 100 L265 100 M210 62 L210 138"/>
+  <text x="210" y="40" fill="#FBD784" font-family="system-ui,sans-serif" font-size="9" text-anchor="middle">E,N</text>
+  <text x="160" y="185" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9" text-anchor="middle">datum + projection + units</text>
+</svg>

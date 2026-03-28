@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <path stroke="rgba(255,255,255,0.1)" d="M40 150h240"/>
+  <rect x="135" y="125" width="50" height="50" fill="none" stroke="#FBD784" stroke-width="1.5"/>
+  <line x1="135" y1="150" x2="185" y2="150" stroke="#FBD784" stroke-width="1.2"/>
+  <line x1="160" y1="125" x2="160" y2="175" stroke="#FBD784" stroke-width="1.2"/>
+  <circle cx="160" cy="150" r="4" fill="#FBD784"/>
+  <path stroke="rgba(251,215,132,0.4)" d="M160 40 L160 120"/>
+  <text x="168" y="35" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10">image tie</text>
+  <text x="160" y="195" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">known XY(Z)</text>
+</svg>

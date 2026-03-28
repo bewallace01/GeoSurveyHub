@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <ellipse cx="160" cy="100" rx="120" ry="70" stroke="#FBD784" stroke-width="1.5" fill="#162535"/>
+  <ellipse cx="160" cy="100" rx="120" ry="70" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <ellipse cx="160" cy="100" rx="90" ry="52" stroke="rgba(251,215,132,0.25)" stroke-width="0.8" fill="none"/>
+  <ellipse cx="160" cy="100" rx="55" ry="32" stroke="rgba(251,215,132,0.25)" stroke-width="0.8" fill="none"/>
+  <text x="160" y="185" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">WGS84 &amp; GRS80</text>
+</svg>

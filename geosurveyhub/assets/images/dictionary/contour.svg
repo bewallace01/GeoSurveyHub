@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <path stroke="rgba(251,215,132,0.35)" stroke-width="1" d="M60 140 Q120 100 180 120 T300 100"/>
+  <path stroke="rgba(251,215,132,0.55)" stroke-width="1" d="M50 155 Q110 115 175 135 T310 115"/>
+  <path stroke="#FBD784" stroke-width="1.2" d="M45 170 Q105 130 170 150 T315 128"/>
+  <text x="100" y="95" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9">100</text>
+  <text x="130" y="110" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9">101</text>
+  <text x="160" y="128" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9">102</text>
+  <text x="160" y="25" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">equal elevation</text>
+</svg>

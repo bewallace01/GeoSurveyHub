@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <rect x="70" y="50" width="90" height="70" fill="#162535" stroke="#FBD784" stroke-width="1.2"/>
+  <rect x="170" y="50" width="80" height="100" fill="#162535" stroke="#FBD784" stroke-width="1.2"/>
+  <rect x="70" y="130" width="180" height="40" fill="#162535" stroke="rgba(251,215,132,0.4)" stroke-width="1"/>
+  <text x="160" y="30" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">parcels · rights · records</text>
+</svg>

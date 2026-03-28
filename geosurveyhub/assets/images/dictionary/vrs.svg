@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <circle cx="100" cy="55" r="5" fill="#A8B8C4" opacity="0.8"/>
+  <circle cx="160" cy="45" r="5" fill="#A8B8C4" opacity="0.8"/>
+  <circle cx="220" cy="55" r="5" fill="#A8B8C4" opacity="0.8"/>
+  <path stroke="rgba(168,184,196,0.35)" stroke-width="0.8" d="M100 60 L160 95 M160 50 L160 95 M220 60 L160 95"/>
+  <rect x="130" y="100" width="60" height="36" rx="3" fill="#162535" stroke="#FBD784"/>
+  <text x="160" y="122" fill="#FBD784" font-family="system-ui,sans-serif" font-size="9" text-anchor="middle">VRS</text>
+  <path stroke="rgba(251,215,132,0.5)" stroke-width="1" d="M160 136 L160 158"/>
+  <rect x="135" y="158" width="50" height="22" rx="2" fill="#162535" stroke="rgba(251,215,132,0.6)"/>
+  <text x="160" y="173" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="8" text-anchor="middle">rover</text>
+</svg>

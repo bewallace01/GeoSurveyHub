@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <line x1="140" y1="40" x2="140" y2="170" stroke="#FBD784" stroke-width="2"/>
+  <text x="120" y="110" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" transform="rotate(-90 120 110)">H</text>
+  <path stroke="rgba(255,255,255,0.15)" d="M160 120 Q220 115 280 125"/>
+  <text x="170" y="108" fill="#FBD784" font-family="system-ui,sans-serif" font-size="10">geoid</text>
+  <text x="170" y="88" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9">ellipsoid h</text>
+</svg>

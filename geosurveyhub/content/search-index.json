@@ -20,6 +20,11 @@
     "text": "Glossary terms definitions topics hub links to every guide photogrammetry accuracy licensing"
   },
   {
+    "title": "Dictionary — surveying & geospatial terms",
+    "path": "pages/dictionary.html",
+    "text": "Dictionary definitions A-Z diagrams SVG surveying mapping GNSS RTK LiDAR photogrammetry datum geoid orthometric traverse CORS multipath RMSE GCP orthomosaic easement cadastral ALTA benchmark bearing"
+  },
+  {
     "title": "Photogrammetry",
     "path": "pages/photogrammetry.html",
     "text": "SfM structure from motion orthomosaic dense matching drone mapping Pix4D Agisoft RealityCapture camera overlap GCPs"

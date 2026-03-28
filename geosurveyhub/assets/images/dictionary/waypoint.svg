@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <path stroke="#FBD784" stroke-width="2" fill="none" d="M50 130 Q100 60 160 90 T270 70"/>
+  <circle cx="100" cy="95" r="6" fill="#162535" stroke="#FBD784"/>
+  <text x="100" y="99" fill="#FBD784" font-family="system-ui,sans-serif" font-size="8" text-anchor="middle">1</text>
+  <circle cx="180" cy="85" r="6" fill="#162535" stroke="#FBD784"/>
+  <text x="180" y="89" fill="#FBD784" font-family="system-ui,sans-serif" font-size="8" text-anchor="middle">2</text>
+  <circle cx="250" cy="72" r="6" fill="#162535" stroke="#FBD784"/>
+  <text x="250" y="76" fill="#FBD784" font-family="system-ui,sans-serif" font-size="8" text-anchor="middle">3</text>
+  <text x="160" y="175" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">stored positions along route</text>
+</svg>

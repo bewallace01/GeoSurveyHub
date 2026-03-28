@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+  <rect width="320" height="200" fill="#0B1D26"/>
+  <rect x="45" y="118" width="58" height="42" rx="3" fill="#162535" stroke="#FBD784"/>
+  <text x="74" y="145" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">base</text>
+  <path stroke="rgba(251,215,132,0.45)" stroke-width="1.2" stroke-dasharray="5 4" d="M103 139 L217 139"/>
+  <rect x="217" y="118" width="58" height="42" rx="3" fill="#162535" stroke="#FBD784"/>
+  <text x="246" y="145" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="10" text-anchor="middle">rover</text>
+  <text x="160" y="185" fill="#A8B8C4" font-family="system-ui,sans-serif" font-size="9" text-anchor="middle">known point sends corrections</text>
+</svg>

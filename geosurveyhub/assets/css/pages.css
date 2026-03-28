@@ -388,6 +388,104 @@ article.doc-page.doc-page-wide.catalog-page {
   line-height: 1.6;
 }
 
+/* Dictionary page: anchor targets clear sticky header */
+.dictionary-page h2 {
+  scroll-margin-top: 1.5rem;
+}
+
+.dictionary-jump {
+  font-size: calc(0.95rem + var(--card-text-bump));
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+/* Dictionary: term cards with illustrative images */
+.dictionary-page .dict-term-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 0 2.5rem;
+}
+
+.dictionary-page .dict-term {
+  display: grid;
+  grid-template-columns: minmax(168px, 260px) minmax(0, 1fr);
+  gap: 0;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+/* Media column stretches with the row; diagram stays same size and centers when text is taller */
+.dictionary-page .dict-term-media {
+  margin: 0;
+  align-self: stretch;
+  min-height: 140px;
+  background: rgba(11, 29, 38, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 12px;
+  box-sizing: border-box;
+}
+
+.dictionary-page .dict-term-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 140px;
+  max-height: 220px;
+  object-fit: cover;
+  display: block;
+  flex: 0 1 auto;
+}
+
+/* Term-specific SVG diagrams (not photos) — avoid height:100% with no parent height (invisible imgs) */
+.dictionary-page .dict-term-media img[src$=".svg"] {
+  object-fit: contain;
+  background: #0b1d26;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 320 / 200;
+  min-height: 140px;
+  max-height: 220px;
+}
+
+.dictionary-page .dict-term-body {
+  padding: 18px 20px 22px;
+  min-width: 0;
+}
+
+.dictionary-page .dict-term-body h3 {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  max-width: 62ch;
+}
+
+.dictionary-page .dict-term-body p {
+  margin: 0;
+  max-width: 62ch;
+  font-size: calc(0.95rem + var(--card-text-bump));
+  color: var(--text-body);
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .dictionary-page .dict-term {
+    grid-template-columns: 1fr;
+  }
+
+  .dictionary-page .dict-term-media img {
+    max-height: 200px;
+  }
+}
+
 /* Glossary grid */
 .glossary-grid {
   display: grid;
