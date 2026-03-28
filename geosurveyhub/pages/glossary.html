@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Topics &amp; Glossary — Surveying &amp; Geospatial Terms | GeoSurveyHub</title>
-  <meta name="description" content="Browse GeoSurveyHub topics: photogrammetry, LiDAR, GNSS, mobile mapping, accuracy, licensing, and links to every guide." />
+  <meta name="description" content="Browse GeoSurveyHub topics and quick definitions: photogrammetry, LiDAR, GNSS, CRS, SLAM, accuracy, licensing, and links to the full A–Z dictionary." />
   <link rel="canonical" href="https://www.geosurveyhub.com/pages/glossary.html" />
   <link rel="stylesheet" href="../assets/css/global.css?cb=20260363" />
   <link rel="stylesheet" href="../assets/css/animations.css?cb=20260327" />
   <link rel="stylesheet" href="../assets/css/pages.css?cb=20260352" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"Topics & Glossary","description":"Hub page linking to GeoSurveyHub educational guides and key surveying terms.","publisher":{"@type":"Organization","name":"GeoSurveyHub"}}
+  {"@context":"https://schema.org","@type":"WebPage","name":"Topics & Glossary","description":"Hub page linking to GeoSurveyHub educational guides, quick term definitions, and the full surveying dictionary.","publisher":{"@type":"Organization","name":"GeoSurveyHub"}}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -93,7 +93,7 @@
       <div class="page-hero-inner">
         <p class="kicker">Explore</p>
         <h1>Topics &amp; <em>Glossary</em></h1>
-        <p class="sub">Jump to a guide or scan definitions of common terms. For a longer A–Z list, open the <a href="dictionary.html">dictionary</a>. Start with the buyer’s guide if you are new to hardware choices.</p>
+        <p class="sub">Jump to a guide or scan the quick glossary below. For illustrated A–Z definitions (GNSS, datums, photogrammetry, and more), open the <a href="dictionary.html">dictionary</a>. New to hardware? Start with the <a href="guide.html">buyer’s guide</a>.</p>
       </div>
     </header>
 
@@ -104,6 +104,7 @@
           <h2 id="guides">All <em>topic</em> pages</h2>
         </div>
         <div class="grid-2" style="gap: 20px;">
+          <article class="news-card"><h3 class="news-title" style="font-size:1.1rem;">Dictionary</h3><p class="news-excerpt">A–Z terms with diagrams.</p><a class="read-more" href="dictionary.html">Open</a></article>
           <article class="news-card"><h3 class="news-title" style="font-size:1.1rem;">Buyer's Guide</h3><p class="news-excerpt">Quiz + overview of technologies.</p><a class="read-more" href="guide.html">Open</a></article>
           <article class="news-card"><h3 class="news-title" style="font-size:1.1rem;">Equipment catalog</h3><p class="news-excerpt">All products with approximate price ranges.</p><a class="read-more" href="catalog.html">Open</a></article>
           <article class="news-card"><h3 class="news-title" style="font-size:1.1rem;">Photogrammetry</h3><p class="news-excerpt">SfM, orthos, drone mapping.</p><a class="read-more" href="photogrammetry.html">Open</a></article>
@@ -130,15 +131,21 @@
           <h2 id="terms">Quick <em>terms</em></h2>
         </div>
         <dl class="glossary-grid">
-          <dt>DTM / DSM</dt><dd>Digital terrain model (bare earth) vs digital surface model (includes tops of objects).</dd>
-          <dt>GSD</dt><dd>Ground sample distance—pixel size on the ground for imagery or orthos.</dd>
-          <dt>RMSE</dt><dd>Root mean square error; common statistic for checking control accuracy.</dd>
-          <dt>Multipath</dt><dd>GNSS signal reflections that degrade position—common near buildings and metal.</dd>
-          <dt>GNSS</dt><dd>Global Navigation Satellite System—GPS, Galileo, GLONASS, BeiDou, etc. Survey use adds <a href="dictionary.html#term-rtk">RTK</a>/<a href="dictionary.html#term-ppk">PPK</a> for centimeter work.</dd>
-          <dt>PPK / RTK / network RTK</dt><dd><strong>PPK</strong> corrects GNSS in the office after the job. <strong>RTK</strong> applies base or network corrections in real time. <strong>Network RTK</strong> uses a CORS-style service (often via NTRIP) instead of your own base—see <a href="ppk-rtk-network.html">PPK vs RTK &amp; networks</a> and the <a href="dictionary.html">dictionary</a>.</dd>
-          <dt>Point cloud</dt><dd>Large set of XYZ points with optional attributes—from LiDAR or dense matching.</dd>
+          <dt>Base / rover</dt><dd>Reference GNSS receiver on a known point vs moving receiver—core to <a href="dictionary.html#term-rtk">RTK</a>/<a href="dictionary.html#term-ppk">PPK</a>. <a href="dictionary.html#term-base-rover">Dictionary</a></dd>
+          <dt>CRS</dt><dd>Coordinate reference system: datum, projection, units, and axis order (often cited by EPSG code). <a href="dictionary.html#term-crs">Dictionary</a></dd>
+          <dt>DTM / DSM</dt><dd>Digital terrain model (bare earth) vs digital surface model (includes tops of objects). <a href="dictionary.html#term-dtm-dsm">Dictionary</a></dd>
+          <dt>GNSS</dt><dd>Global Navigation Satellite System—GPS, Galileo, GLONASS, BeiDou, etc. Survey workflows add <a href="dictionary.html#term-rtk">RTK</a>, <a href="dictionary.html#term-ppk">PPK</a>, or <a href="dictionary.html#term-network-rtk">network RTK</a>. <a href="dictionary.html#term-gnss">Dictionary</a></dd>
+          <dt>GSD</dt><dd>Ground sample distance—pixel size on the ground for imagery or orthos. <a href="dictionary.html#term-gsd">Dictionary</a></dd>
+          <dt>LAS / LAZ</dt><dd>Standard point cloud file formats for LiDAR; LAZ is compressed. <a href="dictionary.html#term-las-laz">Dictionary</a></dd>
+          <dt>Multipath</dt><dd>GNSS signal reflections that degrade position—common near buildings and metal. <a href="dictionary.html#term-multipath">Dictionary</a></dd>
+          <dt>PPK / RTK / network RTK</dt><dd><strong>PPK</strong> post-processes GNSS in the office. <strong>RTK</strong> applies corrections in real time. <strong>Network RTK</strong> uses a service (often <a href="dictionary.html#term-ntrip">NTRIP</a> / <a href="dictionary.html#term-vrs">VRS</a>) instead of your own base. <a href="ppk-rtk-network.html">Guide</a> · <a href="dictionary.html#term-ppk">Dictionary</a></dd>
+          <dt>Point cloud</dt><dd>Large set of XYZ points with optional attributes—from LiDAR or dense matching. <a href="dictionary.html#term-point-cloud">Dictionary</a></dd>
+          <dt>Precision vs accuracy</dt><dd>Repeatability vs closeness to true value—both matter in specs and QA. <a href="surveying-accuracy.html">Accuracy guide</a> · <a href="dictionary.html#term-precision-accuracy">Dictionary</a></dd>
+          <dt>RMSE</dt><dd>Root mean square error; common statistic for comparing checkpoints to control. <a href="dictionary.html#term-rmse">Dictionary</a></dd>
+          <dt>RTCM</dt><dd>Standard binary messages carrying GNSS corrections (often over NTRIP). <a href="dictionary.html#term-rtcm">Dictionary</a></dd>
+          <dt>SLAM</dt><dd>Simultaneous localization and mapping—build a map and track pose from sensors, often with loop closure. <a href="mobile-mapping-slam.html">Guide</a> · <a href="dictionary.html#term-slam">Dictionary</a></dd>
         </dl>
-        <p><a href="dictionary.html" class="read-more">Full dictionary (A–Z)</a> · <a href="about.html" class="read-more">About GeoSurveyHub</a></p>
+        <p><a href="dictionary.html" class="read-more">Full dictionary (A–Z)</a> · <a href="learn.html" class="read-more">Learn overview</a> · <a href="about.html" class="read-more">About GeoSurveyHub</a></p>
       </div>
     </section>
   </main>
@@ -146,7 +153,7 @@
   <footer class="footer">
     <div class="footer-top container">
       <div><span class="footer-logo">Geo<span>Survey</span>Hub</span><p class="footer-desc">Free guides for surveying &amp; mapping—not professional advice.</p></div>
-      <div class="footer-col"><h4>Learn</h4><ul><li><a href="guide.html">Buyer's Guide</a></li><li><a href="glossary.html">Topics &amp; glossary</a></li><li><a href="about.html">About</a></li></ul></div>
+      <div class="footer-col"><h4>Learn</h4><ul><li><a href="guide.html">Buyer's Guide</a></li><li><a href="glossary.html">Topics &amp; glossary</a></li><li><a href="dictionary.html">Dictionary</a></li><li><a href="about.html">About</a></li></ul></div>
       <div class="footer-col"><h4>News</h4><ul><li><a href="news.html">Industry news</a></li></ul></div>
       <div class="footer-col"><h4>Finance</h4><ul><li><a href="financing.html">Financing</a></li></ul></div>
     </div>
