@@ -13,9 +13,9 @@
   <meta name="geo.position" content="35.2271;-80.0936" />
   <meta name="ICBM" content="35.2271, -80.0936" />
   <link rel="canonical" href="https://www.geosurveyhub.com/" />
-  <link rel="stylesheet" href="assets/css/global.css?cb=20260329" />
+  <link rel="stylesheet" href="assets/css/global.css?cb=20260334" />
   <link rel="stylesheet" href="assets/css/animations.css?cb=20260327" />
-  <link rel="stylesheet" href="assets/css/pages.css?cb=20260328" />
+  <link rel="stylesheet" href="assets/css/pages.css?cb=20260330" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebSite","name":"GeoSurveyHub","url":"https://www.geosurveyhub.com/","potentialAction":{"@type":"SearchAction","target":"https://www.geosurveyhub.com/pages/guide.html?q={search_term_string}","query-input":"required name=search_term_string"}}
   </script>
@@ -25,18 +25,61 @@
   <header>
     <nav class="nav" aria-label="Primary">
       <a href="index.html" class="nav-logo">Geo<span>Survey</span>Hub</a>
-      <div class="nav-links">
+      <div class="nav-links" id="primary-nav">
         <a href="index.html">Home</a>
-        <a href="pages/guide.html">Guide</a>
-        <a href="pages/catalog.html">Catalog</a>
-        <a href="pages/glossary.html">Topics</a>
-        <a href="pages/lidar.html">LiDAR</a>
-        <a href="pages/drones.html">Drones</a>
-        <a href="pages/gnss-rtk.html">GNSS</a>
-        <a href="pages/news.html">News</a>
-        <a href="pages/ai-ml.html">AI &amp; ML</a>
-        <a href="pages/financing.html">Financing</a>
-        <a href="pages/start-a-surveying-company.html">Start a Firm</a>
+        <div class="nav-dropdown" data-nav-dropdown>
+          <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-controls="nav-panel-learn" id="nav-btn-learn">Learn</button>
+          <div class="nav-dropdown-panel" id="nav-panel-learn" role="group" aria-label="Learn">
+            <a href="pages/learn.html" class="nav-dd-overview">Overview</a>
+            <a href="pages/guide.html">Buyer's guide</a>
+            <a href="pages/glossary.html">Topics &amp; glossary</a>
+            <a href="pages/news.html">News</a>
+            <a href="pages/about.html">About</a>
+            <a href="pages/ai-ml.html">AI &amp; machine learning</a>
+          </div>
+        </div>
+        <div class="nav-dropdown" data-nav-dropdown>
+          <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-controls="nav-panel-equipment" id="nav-btn-equipment">Equipment</button>
+          <div class="nav-dropdown-panel" id="nav-panel-equipment" role="group" aria-label="Equipment">
+            <a href="pages/equipment.html" class="nav-dd-overview">Overview</a>
+            <a href="pages/catalog.html">Product catalog</a>
+            <a href="pages/lidar.html">LiDAR</a>
+            <a href="pages/drones.html">Drones</a>
+            <a href="pages/gnss-rtk.html">GNSS / RTK</a>
+            <a href="pages/photogrammetry.html">Photogrammetry</a>
+            <a href="pages/total-stations.html">Total stations</a>
+            <a href="pages/mobile-mapping-slam.html">Mobile mapping &amp; SLAM</a>
+            <a href="pages/point-cloud-processing.html">Point cloud processing</a>
+            <a href="pages/sensors.html">Sensors</a>
+            <a href="pages/computers.html">Field computers</a>
+            <a href="pages/trucks.html">Survey trucks</a>
+          </div>
+        </div>
+        <div class="nav-dropdown" data-nav-dropdown>
+          <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-controls="nav-panel-practice" id="nav-btn-practice">Practice</button>
+          <div class="nav-dropdown-panel" id="nav-panel-practice" role="group" aria-label="Practice and standards">
+            <a href="pages/practice.html" class="nav-dd-overview">Overview</a>
+            <a href="pages/ppk-rtk-network.html">PPK vs RTK &amp; networks</a>
+            <a href="pages/surveying-accuracy.html">Surveying accuracy</a>
+            <a href="pages/surveying-license-us.html">U.S. surveying license</a>
+          </div>
+        </div>
+        <div class="nav-dropdown" data-nav-dropdown>
+          <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-controls="nav-panel-business" id="nav-btn-business">Business</button>
+          <div class="nav-dropdown-panel" id="nav-panel-business" role="group" aria-label="Business">
+            <a href="pages/business.html" class="nav-dd-overview">Overview</a>
+            <a href="pages/financing.html">Equipment financing</a>
+            <a href="pages/start-a-surveying-company.html">Start a surveying company</a>
+          </div>
+        </div>
+        <a href="pages/wallace-web-workers.html" class="nav-standalone">Studio</a>
+      </div>
+      <div class="nav-actions">
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <svg class="nav-toggle-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </nav>
   </header>
@@ -183,6 +226,24 @@
         </p>
       </div>
     </section>
+
+    <section class="studio-band" aria-labelledby="studio-band-title">
+      <div class="studio-band-inner">
+        <div>
+          <p class="studio-band-tag">Built for this demo</p>
+          <h2 id="studio-band-title">Site by <em>Wallace Web Workers</em></h2>
+          <p>GeoSurveyHub is a live reference build: deep content, fast pages, edge APIs, and a polished UI for technical buyers. If you want this level of craft for your business, we should talk.</p>
+          <a href="pages/wallace-web-workers.html" class="btn btn-primary">See the studio</a>
+        </div>
+        <aside class="studio-band-aside" aria-label="What we emphasize on client projects">
+          <ul>
+            <li><strong>Speed</strong> — static-first, lean assets, global edge</li>
+            <li><strong>Trust</strong> — accessibility, SEO, structured content</li>
+            <li><strong>Depth</strong> — guides, search, and flows that convert</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -194,6 +255,7 @@
       <div class="footer-col">
         <h4>Learn</h4>
         <ul>
+          <li><a href="pages/learn.html">Learn hub</a></li>
           <li><a href="pages/guide.html">Buyer's Guide</a></li>
           <li><a href="pages/glossary.html">Topics &amp; glossary</a></li>
           <li><a href="pages/ai-ml.html">AI &amp; Machine Learning</a></li>
@@ -204,6 +266,7 @@
       <div class="footer-col">
         <h4>Equipment</h4>
         <ul>
+          <li><a href="pages/equipment.html">Equipment hub</a></li>
           <li><a href="pages/catalog.html">Full catalog</a></li>
           <li><a href="pages/lidar.html">LiDAR</a></li>
           <li><a href="pages/photogrammetry.html">Photogrammetry</a></li>
@@ -214,13 +277,17 @@
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
+          <li><a href="pages/practice.html">Practice hub</a></li>
+          <li><a href="pages/business.html">Business hub</a></li>
           <li><a href="pages/news.html">News</a></li>
           <li><a href="pages/financing.html">Financing</a></li>
+          <li><a href="pages/wallace-web-workers.html">Wallace Web Workers</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom container">
       <p>© 2026 GeoSurveyHub · Charlotte, NC · Last updated March 2026</p>
+      <p class="footer-credit">Site by <a href="pages/wallace-web-workers.html">Wallace Web Workers</a></p>
       <p><a href="sitemap.xml">Sitemap</a></p>
     </div>
   </footer>

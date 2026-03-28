@@ -60,6 +60,31 @@
     "text": "Mission educational site we do not sell equipment independent guides"
   },
   {
+    "title": "Learn hub — guides, glossary, news",
+    "path": "pages/learn.html",
+    "text": "Learn explore buyer guide topics glossary news about AI machine learning education"
+  },
+  {
+    "title": "Equipment hub — catalog and technology guides",
+    "path": "pages/equipment.html",
+    "text": "Equipment hardware LiDAR drones GNSS photogrammetry total stations mobile mapping point cloud sensors computers trucks catalog"
+  },
+  {
+    "title": "Practice hub — accuracy, RTK, licensing",
+    "path": "pages/practice.html",
+    "text": "Practice field PPK RTK network CORS surveying accuracy professional license US standards"
+  },
+  {
+    "title": "Business hub — financing and firm startup",
+    "path": "pages/business.html",
+    "text": "Business financing lease loan start surveying company insurance operations"
+  },
+  {
+    "title": "Wallace Web Workers — web design & edge development",
+    "path": "pages/wallace-web-workers.html",
+    "text": "Charlotte NC web studio marketing sites content platforms Cloudflare Workers performance SEO accessibility GeoSurveyHub case study contact"
+  },
+  {
     "title": "AI & machine learning in geospatial",
     "path": "pages/ai-ml.html",
     "text": "Machine learning point cloud classification feature extraction automation deep learning ArcGIS"

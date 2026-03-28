@@ -16,20 +16,63 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header>
-    <nav class="nav" aria-label="Primary">
+        <nav class="nav" aria-label="Primary">
       <a href="../index.html" class="nav-logo">Geo<span>Survey</span>Hub</a>
-      <div class="nav-links">
+      <div class="nav-links" id="primary-nav">
         <a href="../index.html">Home</a>
-        <a href="guide.html">Guide</a>
-        <a href="catalog.html">Catalog</a>
-        <a href="glossary.html">Topics</a>
-        <a href="lidar.html">LiDAR</a>
-        <a href="drones.html">Drones</a>
-        <a href="gnss-rtk.html">GNSS</a>
-        <a href="news.html">News</a>
-        <a href="ai-ml.html">AI &amp; ML</a>
-        <a href="financing.html">Financing</a>
-        <a href="start-a-surveying-company.html">Start a Firm</a>
+        <div class="nav-dropdown" data-nav-dropdown>
+          <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-controls="nav-panel-learn" id="nav-btn-learn">Learn</button>
+          <div class="nav-dropdown-panel" id="nav-panel-learn" role="group" aria-label="Learn">
+            <a href="learn.html" class="nav-dd-overview">Overview</a>
+            <a href="guide.html">Buyer's guide</a>
+            <a href="glossary.html">Topics &amp; glossary</a>
+            <a href="news.html">News</a>
+            <a href="about.html">About</a>
+            <a href="ai-ml.html">AI &amp; machine learning</a>
+          </div>
+        </div>
+        <div class="nav-dropdown" data-nav-dropdown>
+          <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-controls="nav-panel-equipment" id="nav-btn-equipment">Equipment</button>
+          <div class="nav-dropdown-panel" id="nav-panel-equipment" role="group" aria-label="Equipment">
+            <a href="equipment.html" class="nav-dd-overview">Overview</a>
+            <a href="catalog.html">Product catalog</a>
+            <a href="lidar.html">LiDAR</a>
+            <a href="drones.html">Drones</a>
+            <a href="gnss-rtk.html">GNSS / RTK</a>
+            <a href="photogrammetry.html">Photogrammetry</a>
+            <a href="total-stations.html">Total stations</a>
+            <a href="mobile-mapping-slam.html">Mobile mapping &amp; SLAM</a>
+            <a href="point-cloud-processing.html">Point cloud processing</a>
+            <a href="sensors.html">Sensors</a>
+            <a href="computers.html">Field computers</a>
+            <a href="trucks.html">Survey trucks</a>
+          </div>
+        </div>
+        <div class="nav-dropdown" data-nav-dropdown>
+          <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-controls="nav-panel-practice" id="nav-btn-practice">Practice</button>
+          <div class="nav-dropdown-panel" id="nav-panel-practice" role="group" aria-label="Practice and standards">
+            <a href="practice.html" class="nav-dd-overview">Overview</a>
+            <a href="ppk-rtk-network.html">PPK vs RTK &amp; networks</a>
+            <a href="surveying-accuracy.html">Surveying accuracy</a>
+            <a href="surveying-license-us.html">U.S. surveying license</a>
+          </div>
+        </div>
+        <div class="nav-dropdown" data-nav-dropdown>
+          <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-controls="nav-panel-business" id="nav-btn-business">Business</button>
+          <div class="nav-dropdown-panel" id="nav-panel-business" role="group" aria-label="Business">
+            <a href="business.html" class="nav-dd-overview">Overview</a>
+            <a href="financing.html">Equipment financing</a>
+            <a href="start-a-surveying-company.html">Start a surveying company</a>
+          </div>
+        </div>
+        <a href="wallace-web-workers.html" class="nav-standalone">Studio</a>
+      </div>
+      <div class="nav-actions">
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <svg class="nav-toggle-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </nav>
   </header>
@@ -65,7 +108,10 @@
       <div class="footer-col"><h4>Learn</h4><ul><li><a href="glossary.html">Topics</a></li><li><a href="news.html">News</a></li></ul></div>
       <div class="footer-col"><h4>Finance</h4><ul><li><a href="financing.html">Financing</a></li></ul></div>
     </div>
-    <div class="footer-bottom container"><p>© 2026 GeoSurveyHub</p></div>
+        <div class="footer-bottom container">
+      <p>© 2026 GeoSurveyHub</p>
+      <p class="footer-credit">Site by <a href="wallace-web-workers.html">Wallace Web Workers</a></p>
+    </div>
   </footer>
 
   <script src="../assets/js/nav.js" defer></script>

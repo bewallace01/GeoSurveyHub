@@ -209,7 +209,12 @@
     if (!nav || document.getElementById('site-search-root')) return;
 
     const triggerBtn = buildNavButton();
-    nav.appendChild(triggerBtn);
+    const actions = nav.querySelector('.nav-actions');
+    if (actions) {
+      actions.appendChild(triggerBtn);
+    } else {
+      nav.appendChild(triggerBtn);
+    }
 
     const modal = buildModal();
     const input = modal.querySelector('#site-search-input');
