@@ -1,10 +1,9 @@
-Photography via Unsplash (unsplash.com/license) — free to use.
+Image credits
 
-hero-earth.jpg     — Earth / connectivity (NASA-related imagery on Unsplash)
-hero-globe.jpg     — Globe held in hands
-panel-topo-map.jpg — World map / cartography
-panel-mountain-aerial.jpg — Mountain landscape aerial
-panel-data-tech.jpg     — Laptop / workspace
-panel-field-engineering.jpg — Engineering / precision hardware
+panel-topo-map.jpg — Ludlow Engineering. Source: https://ludlowengineers.com/comprehensive-understanding-of-commercial-land-survey-fees/ · image https://ludlowengineers.com/wp-content/uploads/2026/02/land-surveyor-measuring-property-boundaries-with-modern-equipment-in-a-natural-landscape-b22c9d4b-2688-45fb-9cfb-7db6f36420e3.jpg · Licensed under CC BY-NC 4.0: https://creativecommons.org/licenses/by-nc/4.0/
 
-Replace filenames above with exact Unsplash photographer URLs in your repo if you need attribution lines for print or marketing.
+hero-globe.jpg — Stockcake: textured relief map. https://images.stockcake.com/public/5/a/b/5ab6f38d-f9ca-413b-9ff5-f8475f511e90_large/textured-relief-map-stockcake.jpg (see stockcake.com/license)
+
+Other JPEGs — Unsplash (unsplash.com/license): hero-earth.jpg, panel-mountain-aerial.jpg, panel-data-tech.jpg, panel-field-engineering.jpg.
+
+Replace with named photographer lines from unsplash.com/photos/{id} if you need full Unsplash attribution.
