@@ -341,30 +341,36 @@ class EquipmentQuiz {
     }
     const price = (p) => (typeof formatPriceRange === 'function' ? formatPriceRange(p) : 'See catalog');
     const cat = (p) => (typeof formatCategorySlug === 'function' ? formatCategorySlug(p.category) : p.category);
+    const imgFor = (p) => {
+      if (typeof productImageUrl !== 'function') {
+        return '<div class="product-card-img product-card-img--empty" aria-hidden="true"></div>';
+      }
+      const src = productImageUrl(p);
+      const fb =
+        typeof productImageFallback === 'function' ? productImageFallback(p) : src;
+      const alt = String(p.name).replace(/"/g, '&quot;') + ' — product';
+      return `<div class="product-card-img">
+              <img src="${src}" alt="${alt}" width="400" height="300" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${fb}'" />
+              ${p.badge ? `<span class="panel-badge">${p.badge}</span>` : ''}
+            </div>`;
+    };
     el.innerHTML = `
       <div class="grid-3 quiz-rec-grid" style="margin-top: 24px;">
         ${products
           .map(
             (p) => `
-          <div class="product-card">
-            <div class="product-card-img">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#FBD784" stroke-width="1" opacity="0.5">
-                <circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="8"/>
-                <line x1="12" y1="32" x2="4" y2="32"/><line x1="52" y1="32" x2="60" y2="32"/>
-                <line x1="32" y1="12" x2="32" y2="4"/><line x1="32" y1="52" x2="32" y2="60"/>
-              </svg>
-              ${p.badge ? `<span class="panel-badge">${p.badge}</span>` : ''}
-            </div>
+          <a class="product-card product-card--link" href="product.html?id=${encodeURIComponent(p.id)}" aria-label="Full specifications: ${String(p.name).replace(/"/g, '&quot;')}">
+            ${imgFor(p)}
             <div class="product-card-body">
               <div class="product-category">${cat(p)}</div>
               <div class="product-name">${p.name}</div>
               <div class="product-desc">${p.description.substring(0, 100)}...</div>
               <div class="product-footer">
                 <div class="product-price">${price(p)}</div>
-                <button class="add-to-quote">Add to Quote</button>
+                <span class="add-to-quote">Full specs</span>
               </div>
             </div>
-          </div>
+          </a>
         `
           )
           .join('')}
@@ -399,7 +405,7 @@ class EquipmentQuiz {
             .map(
               (p) => `
             <li class="quiz-catalog-item">
-              <span class="quiz-catalog-name">${p.name}</span>
+              <a class="quiz-catalog-name" href="product.html?id=${encodeURIComponent(p.id)}">${p.name}</a>
               <span class="quiz-catalog-price">${price(p)}</span>
             </li>
           `

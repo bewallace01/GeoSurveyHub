@@ -71,10 +71,12 @@
     if (rProducts.status === 'fulfilled' && Array.isArray(rProducts.value)) {
       rProducts.value.forEach((p) => {
         const desc = (p.description || '') + ' ' + (p.brand || '') + ' ' + (p.category || '');
+        const hl = Array.isArray(p.highlights) ? p.highlights.join(' ') : '';
+        const df = Array.isArray(p.downfalls) ? p.downfalls.join(' ') : '';
         out.push({
           title: p.name,
-          href: resolveHref('pages/catalog.html') + '#product-' + encodeURIComponent(p.id),
-          text: desc,
+          href: resolveHref('pages/product.html') + '?id=' + encodeURIComponent(p.id),
+          text: [desc, hl, df].filter(Boolean).join(' '),
           kind: 'equipment',
         });
       });
