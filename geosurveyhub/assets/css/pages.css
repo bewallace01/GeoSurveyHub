@@ -94,6 +94,22 @@
 
 .hero-content h1 { margin-bottom: 28px; }
 
+.hero-content h1.hero-title {
+  font-size: clamp(40px, 5.5vw, 76px);
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  line-height: 1.08;
+}
+
+.hero-content h2.hero-tagline {
+  font-size: clamp(26px, 3.5vw, 44px);
+  margin-top: 0;
+  margin-bottom: 28px;
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--white);
+}
+
 .hero-content > p.sub {
   font-size: calc(1.125rem + var(--card-text-bump));
   max-width: 560px;

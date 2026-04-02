@@ -296,9 +296,20 @@
     `;
   }
 
+  function setRobots(content) {
+    let m = document.querySelector('meta[name="robots"]');
+    if (!m) {
+      m = document.createElement('meta');
+      m.setAttribute('name', 'robots');
+      document.head.appendChild(m);
+    }
+    m.setAttribute('content', content);
+  }
+
   function setHead(p) {
     const title = `${p.name} — GeoSurveyHub`;
     document.title = title;
+    setRobots('index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
     const md = document.querySelector('meta[name="description"]');
     if (md) {
       const d = (p.description || '').slice(0, 155);
@@ -331,6 +342,7 @@
     const id = params.get('id');
 
     if (!id) {
+      setRobots('noindex, follow');
       root.innerHTML = `
         <p class="catalog-error">No product selected. <a href="catalog.html">Browse the catalog</a> and choose a product.</p>`;
       if (bc) bc.innerHTML = `<a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><a href="catalog.html">Catalog</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Product</span>`;
@@ -343,6 +355,7 @@
       const all = await res.json();
       const p = all.find((x) => x.id === id);
       if (!p) {
+        setRobots('noindex, follow');
         root.innerHTML = `<p class="catalog-error">Product not found. <a href="catalog.html">Back to catalog</a></p>`;
         return;
       }
@@ -362,6 +375,7 @@
       }
     } catch (e) {
       console.warn('Product detail load failed:', e);
+      setRobots('noindex, follow');
       root.innerHTML =
         '<p class="catalog-error">Could not load product data. Use a local web server so <code>products.json</code> can load, or try again later.</p>';
     }

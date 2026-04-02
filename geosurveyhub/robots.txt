@@ -17,4 +17,5 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# Sitemap index (lists sitemap-pages.xml + sitemap-products.xml). Submit this URL in Google Search Console.
 Sitemap: https://www.geosurveyhub.com/sitemap.xml
