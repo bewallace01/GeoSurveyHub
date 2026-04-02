@@ -263,6 +263,10 @@ function canonicalizeRequestUrl(url: URL): URL {
   if (u.pathname.length > 1 && u.pathname.endsWith('/')) {
     u.pathname = u.pathname.slice(0, -1);
   }
+  /** Homepage canonical is / — not /index.html (matches <link rel="canonical"> on index.html). */
+  if (u.pathname === '/index.html') {
+    u.pathname = '/';
+  }
   const htmlPath = extensionlessPagesHtml(u.pathname);
   if (htmlPath) {
     u.pathname = htmlPath;

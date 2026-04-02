@@ -6,9 +6,9 @@ const fs = require('fs');
 const path = require('path');
 
 const NAV_ROOT = `    <nav class="nav" aria-label="Primary">
-      <a href="index.html" class="nav-logo">Geo<span>Survey</span>Hub</a>
+      <a href="/" class="nav-logo">Geo<span>Survey</span>Hub</a>
       <div class="nav-links" id="primary-nav">
-        <a href="index.html">Home</a>
+        <a href="/">Home</a>
         <div class="nav-dropdown" data-nav-dropdown>
           <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-controls="nav-panel-learn" id="nav-btn-learn">Learn</button>
           <div class="nav-dropdown-panel" id="nav-panel-learn" role="group" aria-label="Learn">
@@ -66,9 +66,9 @@ const NAV_ROOT = `    <nav class="nav" aria-label="Primary">
     </nav>`;
 
 const NAV_PAGES = `    <nav class="nav" aria-label="Primary">
-      <a href="../index.html" class="nav-logo">Geo<span>Survey</span>Hub</a>
+      <a href="/" class="nav-logo">Geo<span>Survey</span>Hub</a>
       <div class="nav-links" id="primary-nav">
-        <a href="../index.html">Home</a>
+        <a href="/">Home</a>
         <div class="nav-dropdown" data-nav-dropdown>
           <button type="button" class="nav-dropdown-btn" aria-expanded="false" aria-controls="nav-panel-learn" id="nav-btn-learn">Learn</button>
           <div class="nav-dropdown-panel" id="nav-panel-learn" role="group" aria-label="Learn">

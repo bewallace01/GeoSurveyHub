@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
            <strong>Axiant Partners</strong>, who can help find funding for geospatial equipment.</p>
         <div class="success-actions">
           <a href="guide.html" class="read-more">Continue exploring the guide</a>
-          <a href="../index.html" class="read-more">Back to home</a>
+          <a href="/" class="read-more">Back to home</a>
         </div>
       </div>
     `;

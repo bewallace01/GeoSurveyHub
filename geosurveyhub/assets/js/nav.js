@@ -94,11 +94,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const current = path.split('/').pop() || 'index.html';
   const cur = current.split('?')[0];
 
+  function isHomeHref(href) {
+    if (!href || href.startsWith('#')) return false;
+    const h = href.split('?')[0];
+    return h === '/' || h === '../' || /(^|\/)index\.html$/.test(h);
+  }
+
+  const isHomePage = !path || cur === 'index.html';
+
   nav.querySelectorAll('.nav-links a[href]').forEach((link) => {
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#')) return;
     const last = href.split('/').pop().split('?')[0];
-    if (last === cur || (cur === '' && last === 'index.html')) {
+    if (last === cur || (isHomePage && isHomeHref(href))) {
       link.classList.add('active');
     }
   });
@@ -107,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const href = link.getAttribute('href');
     if (!href) return;
     const last = href.split('/').pop().split('?')[0];
-    if (last === cur) {
+    if (last === cur || (isHomePage && isHomeHref(href))) {
       link.classList.add('active');
       const dd = link.closest('[data-nav-dropdown]');
       const btn = dd && dd.querySelector('.nav-dropdown-btn');

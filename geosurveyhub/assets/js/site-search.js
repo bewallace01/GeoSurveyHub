@@ -14,7 +14,7 @@
   function resolveHref(path) {
     const inPages = /\/pages\//.test(window.location.pathname);
     if (path === 'index.html') {
-      return inPages ? '../index.html' : 'index.html';
+      return '/';
     }
     if (path.startsWith('pages/')) {
       const rest = path.slice('pages/'.length);

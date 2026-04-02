@@ -345,7 +345,7 @@
       setRobots('noindex, follow');
       root.innerHTML = `
         <p class="catalog-error">No product selected. <a href="catalog.html">Browse the catalog</a> and choose a product.</p>`;
-      if (bc) bc.innerHTML = `<a href="../index.html">Home</a><span class="breadcrumb-sep">/</span><a href="catalog.html">Catalog</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Product</span>`;
+      if (bc) bc.innerHTML = `<a href="/">Home</a><span class="breadcrumb-sep">/</span><a href="catalog.html">Catalog</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">Product</span>`;
       return;
     }
 
@@ -368,7 +368,7 @@
         const catHref = categoryHref(p.category);
         const catName = catLabel(p.category);
         bc.innerHTML = `
-          <a href="../index.html">Home</a><span class="breadcrumb-sep">/</span>
+          <a href="/">Home</a><span class="breadcrumb-sep">/</span>
           <a href="catalog.html">Catalog</a><span class="breadcrumb-sep">/</span>
           <a href="${catHref}">${esc(catName)}</a><span class="breadcrumb-sep">/</span>
           <span class="breadcrumb-current">${esc(p.name)}</span>`;
