@@ -248,23 +248,42 @@ function extensionlessPagesHtml(pathname: string): string | null {
   return `/pages/${rest}.html`;
 }
 
+/**
+ * Single canonical URL for SEO: https + www + .html for extensionless /pages/*.
+ * 301 so Google indexes one URL (matches <link rel="canonical"> on each page).
+ */
+function canonicalizeRequestUrl(url: URL): URL {
+  const u = new URL(url.href);
+  if (u.hostname === 'geosurveyhub.com') {
+    u.hostname = 'www.geosurveyhub.com';
+  }
+  if (u.protocol === 'http:') {
+    u.protocol = 'https:';
+  }
+  if (u.pathname.length > 1 && u.pathname.endsWith('/')) {
+    u.pathname = u.pathname.slice(0, -1);
+  }
+  const htmlPath = extensionlessPagesHtml(u.pathname);
+  if (htmlPath) {
+    u.pathname = htmlPath;
+  }
+  return u;
+}
+
 export default {
   async fetch(request, env): Promise<Response> {
     const url = new URL(request.url);
+    if (request.method === 'GET' || request.method === 'HEAD') {
+      const canonical = canonicalizeRequestUrl(url);
+      if (canonical.href !== url.href) {
+        return Response.redirect(canonical.toString(), 301);
+      }
+    }
     if (request.method === 'GET' && url.pathname === '/api/news/rss') {
       return handleRssProxy(url, env);
     }
     if (request.method === 'GET' && url.pathname === '/api/news/newsdata') {
       return handleNewsDataProxy(url, env);
-    }
-    const htmlPath = request.method === 'GET' ? extensionlessPagesHtml(url.pathname) : null;
-    if (htmlPath) {
-      const tryUrl = new URL(htmlPath, url.origin);
-      tryUrl.search = url.search;
-      const res = await env.ASSETS.fetch(new Request(tryUrl.toString(), request));
-      if (res.status !== 404) {
-        return res;
-      }
     }
     return env.ASSETS.fetch(request);
   },
